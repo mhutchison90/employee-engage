@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Private.css';
-import axios from 'axios';
+// import axios from 'axios';
 import {getUserInfo} from '../../ducks/users';
 import { connect } from 'react-redux';
 

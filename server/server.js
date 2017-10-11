@@ -5,7 +5,8 @@ const express = require('express')
     , bodyParser = require('body-parser')
     , massive = require('massive')
     , passport = require('passport')
-    , Auth0Strategy = require('passport-auth0');
+    , Auth0Strategy = require('passport-auth0')
+    , user_controller =require('./controllers/user_controller');
 
 // --SETUP APP--
 const app = express();
@@ -48,6 +49,7 @@ passport.use(new Auth0Strategy({
 ))
 
 // --ENDPOINTS--
+    // --AUTH ENDPOINTS--
 app.get('/auth', passport.authenticate('auth0'))
 app.get('/auth/callback', passport.authenticate('auth0', {
     successRedirect: 'http://localhost:3000/#/private',
@@ -75,6 +77,10 @@ passport.deserializeUser(function (id, done) {
         })
 })
 
+
+    // --CONTROLLER ENDPOINTS--
+    app.post( '/api/adduser', user_controller.createUser);    
+    app.get( '/api/users', user_controller.allUsers);
 
 // --SETUP APP TO LISTEN TO PORT--
 const PORT = 3005;
