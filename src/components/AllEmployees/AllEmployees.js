@@ -15,8 +15,7 @@ export default class AllEmployees extends Component {
     componentDidMount() {
         axios.get('/api/users/').then(res => {
             console.log(res)
-            console.log()
-
+            
             this.setState({
                 usersList: [res.data]
             })
@@ -30,6 +29,7 @@ export default class AllEmployees extends Component {
                 Get All Employees!
                 {/* {this.setState({usersList: res.data})} */}
                {console.log(this.state.usersList)}
+               
             </div> 
         );
     };

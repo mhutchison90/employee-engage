@@ -6,7 +6,8 @@ const express = require('express')
     , massive = require('massive')
     , passport = require('passport')
     , Auth0Strategy = require('passport-auth0')
-    , user_controller =require('./controllers/user_controller');
+    , user_controller = require('./controllers/user_controller')
+    , products_controller = require('./controllers/products_controller');
 
 // --SETUP APP--
 const app = express();
@@ -49,14 +50,14 @@ passport.use(new Auth0Strategy({
 ))
 
 // --ENDPOINTS--
-    // --AUTH ENDPOINTS--
+// --AUTH ENDPOINTS--
 app.get('/auth', passport.authenticate('auth0'))
 app.get('/auth/callback', passport.authenticate('auth0', {
     successRedirect: 'http://localhost:3000/#/private',
     failureRedirect: '/auth'
 }))
 app.get('/auth/me', (req, res) => {
-    if(!req.user) {
+    if (!req.user) {
         return res.status(404).send('User not found.')
     }
     return res.status(200).send(req.user);
@@ -64,7 +65,7 @@ app.get('/auth/me', (req, res) => {
 
 app.get('/auth/logout', (req, res) => {
     req.logOut();
-    res.redirect(302,'http://localhost:3000/#/logout')
+    res.redirect(302, 'http://localhost:3000/#/logout')
 })
 
 passport.serializeUser(function (id, done) {
@@ -78,9 +79,14 @@ passport.deserializeUser(function (id, done) {
 })
 
 
-    // --CONTROLLER ENDPOINTS--
-    app.post( '/api/adduser', user_controller.createUser);    
-    app.get( '/api/users', user_controller.allUsers);
+// --CONTROLLER ENDPOINTS--
+app.post('/api/add/user', user_controller.createUser);
+
+app.post('/api/add/product', products_controller.createProduct);
+
+app.get('/api/users', user_controller.allUsers);
+app.get('/api/list/users/:label', user_controller.autoCompleteUsersList);
+app.delete('/api/user/delete/:employeeid', user_controller.deleteUser);
 
 // --SETUP APP TO LISTEN TO PORT--
 const PORT = 3005;

@@ -8,29 +8,22 @@ export default class AddEmployee extends Component {
         super();
         this.state = {
             user:[],
-            // userrole: '',
-            // companyid: 0,
-            // lastname: '',
-            // firstname: '',
-            // reportsto: 0,
-            // email: '',
-            // pointbalance: 0,
-            // allowancebalance: 0
-            userrole: 'employee',
+            userrole: '',
             companyid: 1,
-            lastname: 'test',
-            firstname: 'test',
+            lastname: '',
+            firstname: '',
             reportsto: 1,
-            email: 'test@test.com',
-            pointbalance: 750,
-            allowancebalance: 2000
+            email: '',
+            pointbalance: 0,
+            allowancebalance: 0
+            
         }
         this.saveUser=this.saveUser.bind(this)
     }
 
     saveUser() {
         const {userrole, companyid, lastname, firstname, reportsto, email,	pointbalance, allowancebalance} = this.state
-        axios.post('/api/adduser', {userrole, companyid, lastname, firstname, reportsto, email,	pointbalance, allowancebalance}).then(res => {
+        axios.post('/api/add/user', {userrole, companyid, lastname, firstname, reportsto, email,	pointbalance, allowancebalance}).then(res => {
           this.setState({
             user: res.data
           })
