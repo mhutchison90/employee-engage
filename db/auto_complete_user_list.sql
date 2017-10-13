@@ -1,1 +1,1 @@
-SELECT employeeid as id ,firstname as label FROM employee; 
+SELECT employeeid as id ,CONCAT(firstname, ' ', lastname) as name FROM employee; 

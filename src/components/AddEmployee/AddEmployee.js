@@ -2,6 +2,8 @@ import React, { Component } from "react";
 // import { Link } from 'react-router-dom';
 import './AddEmployee.css';
 import axios from 'axios';
+import SearchAutoComplete from './SearchAutoComplete';
+
 
 export default class AddEmployee extends Component {
     constructor() {
@@ -15,17 +17,35 @@ export default class AddEmployee extends Component {
             reportsto: '',
             email: '',
             pointbalance: '',
-            allowancebalance: ''
+            allowancebalance: '',
+            usersList: [],
+            value: '',
+            targetValue: ''
 
         }
         this.saveUser = this.saveUser.bind(this)
+        this.changeHandler = this.changeHandler.bind(this)
+        this.handleValue = this.handleValue.bind(this)
     }
+
     componentDidMount() {
         axios.get('/api/list/users').then(res => {
-            console.log(res)            
+            // console.log(res)
             this.setState({
                 usersList: res.data
             })
+        })
+    }
+    changeHandler(e) {
+        this.setState({
+            value: e
+        })
+    }
+
+    handleValue(value) {
+
+        this.setState({
+            value: value
         })
     }
 
@@ -43,6 +63,7 @@ export default class AddEmployee extends Component {
         return (
             <div className='App'>
                 <h1>Add Employee</h1>
+
 
                 First Name: <input name='firstname' type='text' value={this.state.firstname} onChange={(e) => {
                     this.setState({
@@ -74,12 +95,14 @@ export default class AddEmployee extends Component {
                     })
                 }} />
 
-                {/* --ADD A SEARCH TO THIS FIELD-- */}
-                Reports To: <input name='reportsto' placeholder='number required' type='text' value={this.state.reportsto} onChange={(e) => {
-                    this.setState({
-                        reportsto: e.target.value
-                    })
-                }} />
+                Reports To: {this.state.usersList.length ? <SearchAutoComplete
+                    userData={this.state.usersList}
+                    changeHandler={this.changeHandler}
+                    handleValue={this.handleValue}
+                    value={this.state.value}
+                />
+                    : null}
+
 
                 User Role: <select name="userrole" onChange={(e) => {
                     this.setState({
@@ -94,6 +117,8 @@ export default class AddEmployee extends Component {
                 <div>
 
                     <button onClick={this.saveUser}>Save!</button>
+                {console.log('Value: ',this.state.value)}
+                {console.log('reportsto',this.state.reportsto)}
                 </div>
 
 

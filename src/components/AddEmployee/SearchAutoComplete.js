@@ -27,7 +27,6 @@ render() {
             }
             value={this.props.value}
             onChange={e => {
-                console.log(e.target.value)
                 this.props.changeHandler(e.target.value)}}
             onSelect={value => this.props.handleValue(value)}
         />
