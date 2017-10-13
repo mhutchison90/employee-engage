@@ -20,9 +20,9 @@ module.exports = {
 
   autoCompleteUsersList: (req, res) => {
     const db = req.app.get('db');
-    const { params } = req;
+    // const { params } = req;
 
-    db.auto_complete_user_list(params.label+'%')
+    db.auto_complete_user_list()
       .then(users => res.status(200).send(users))
       .catch(() => res.status(500).send());
   },

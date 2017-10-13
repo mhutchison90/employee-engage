@@ -85,7 +85,7 @@ app.post('/api/add/user', user_controller.createUser);
 app.post('/api/add/product', products_controller.createProduct);
 
 app.get('/api/users', user_controller.allUsers);
-app.get('/api/list/users/:label', user_controller.autoCompleteUsersList);
+app.get('/api/list/users', user_controller.autoCompleteUsersList);
 app.delete('/api/user/delete/:employeeid', user_controller.deleteUser);
 
 // --SETUP APP TO LISTEN TO PORT--
