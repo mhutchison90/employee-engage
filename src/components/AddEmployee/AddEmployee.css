@@ -1,5 +1,11 @@
 .App {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
   }
 
 input {
@@ -10,6 +16,8 @@ input {
     border-bottom: solid 1px;
     font-size: 15px;
     padding-left: 5px;
+    margin-bottom: 50px;
+    outline: solid 1px black
   }
   
   button {

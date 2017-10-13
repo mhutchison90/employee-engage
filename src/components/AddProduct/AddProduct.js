@@ -12,9 +12,9 @@ export default class AddEmployee extends Component {
             productname: '',
             imageurl: '',
             productdescription: '',
-            costprice: 0,
-            saleprice: 0,
-            inventory: 0
+            costprice: null,
+            saleprice: null,
+            inventory: null
         }
         this.saveNewProduct = this.saveNewProduct.bind(this)
     }
@@ -32,6 +32,7 @@ export default class AddEmployee extends Component {
     render() {
         return (
             <div className='App'>
+                <h1>Add Product</h1>
                 {console.log(this.state)}
 
 
@@ -53,19 +54,19 @@ export default class AddEmployee extends Component {
                     })
                 }} />
 
-                Cost Price: <input name='costprice' type='text' value={this.state.costprice} onChange={(e) => {
+                Cost Price: <input name='costprice' placeholder='number required' type='text' value={this.state.costprice} onChange={(e) => {
                     this.setState({
                         costprice: e.target.value
                     })
                 }} />
 
-                Sale Price: <input name='saleprice' type='text' value={this.state.saleprice} onChange={(e) => {
+                Sale Price: <input name='saleprice' placeholder='number required' type='text' value={this.state.saleprice} onChange={(e) => {
                     this.setState({
                         saleprice: e.target.value
                     })
                 }} />
                 
-                Inventory: <input name='inventory' type='text' value={this.state.inventory} onChange={(e) => {
+                Inventory (num): <input name='inventory' placeholder='number required' type='text' value={this.state.inventory} onChange={(e) => {
                     this.setState({
                         inventory: e.target.value
                     })

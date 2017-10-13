@@ -9,6 +9,7 @@ class Nav extends Component {
                 <ul>
                     <li><NavLink activeClassName='active' exact to='/'> </NavLink></li>
                     <li><NavLink activeClassName='active' exact to='/AddEmployee'>Add Employee</NavLink></li>
+                    <li><NavLink activeClassName='active' exact to='/EditEmployee'>Edit Employee</NavLink></li>
                     <li><NavLink activeClassName='active' exact to='/AddProduct'>Add Product</NavLink></li>
                     <li><NavLink activeClassName='active' exact to='/AllEmployees'>All Employees</NavLink></li>
                     <li><NavLink activeClassName='active' exact to='/AutoCompleteSearch'>Auto Complete Search</NavLink></li>

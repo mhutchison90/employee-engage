@@ -81,6 +81,7 @@ passport.deserializeUser(function (id, done) {
 
 // --CONTROLLER ENDPOINTS--
 app.post('/api/add/user', user_controller.createUser);
+app.put('/api/edit/user', user_controller.editUser);
 
 app.post('/api/add/product', products_controller.createProduct);
 

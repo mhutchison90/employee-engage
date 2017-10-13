@@ -3,10 +3,21 @@ module.exports = {
   createUser: (req, res, next) => {
     const db = req.app.get('db');
     const { userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance } = req.body;
-
+    
     db.add_user([userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance])
-      .then(() => res.status(200).send(req.body))
-      .catch(() => res.status(500).send());
+    .then(() => res.status(200).send(req.body))
+    .catch(() => res.status(500).send());
+  },
+  
+  editUser: (req, res, next) => {
+    const db = req.app.get('db');
+    // const { params } = req;
+    const {employeeid, userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance } = req.body;
+    
+    db.edit_employee([employeeid, userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance])
+    .then(() => res.status(200).send(req.body))
+    .catch(() => res.status(500).send());
+    console.log(req.body)
   },
   
   allUsers: (req, res) => {

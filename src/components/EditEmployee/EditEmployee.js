@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 // import { Link } from 'react-router-dom';
-import './AddEmployee.css';
+import './EditEmployee.css';
 import axios from 'axios';
 
-export default class AddEmployee extends Component {
+export default class EditEmployee extends Component {
     constructor() {
         super();
         this.state = {
@@ -12,26 +12,18 @@ export default class AddEmployee extends Component {
             companyid: 1,
             lastname: '',
             firstname: '',
-            reportsto: '',
+            reportsto: null,
             email: '',
-            pointbalance: '',
-            allowancebalance: ''
+            pointbalance: null,
+            allowancebalance: null
 
         }
-        this.saveUser = this.saveUser.bind(this)
-    }
-    componentDidMount() {
-        axios.get('/api/list/users').then(res => {
-            console.log(res)            
-            this.setState({
-                usersList: res.data
-            })
-        })
+        this.updateUser = this.updateUser.bind(this)
     }
 
-    saveUser() {
-        const { userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance } = this.state
-        axios.post('/api/add/user', { userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance }).then(res => {
+    updateUser() {
+        const { employeeid, userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance } = this.state
+        axios.post('/api/edit/user', { employeeid, userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance }).then(res => {
             this.setState({
                 user: res.data
             })
@@ -42,7 +34,8 @@ export default class AddEmployee extends Component {
     render() {
         return (
             <div className='App'>
-                <h1>Add Employee</h1>
+                <h1>Edit Employee</h1>
+                {console.log(this.state)}
 
                 First Name: <input name='firstname' type='text' value={this.state.firstname} onChange={(e) => {
                     this.setState({
@@ -74,7 +67,6 @@ export default class AddEmployee extends Component {
                     })
                 }} />
 
-                {/* --ADD A SEARCH TO THIS FIELD-- */}
                 Reports To: <input name='reportsto' placeholder='number required' type='text' value={this.state.reportsto} onChange={(e) => {
                     this.setState({
                         reportsto: e.target.value
@@ -93,7 +85,7 @@ export default class AddEmployee extends Component {
 
                 <div>
 
-                    <button onClick={this.saveUser}>Save!</button>
+                    <button onClick={this.updateUser}>Update User!</button>
                 </div>
 
 

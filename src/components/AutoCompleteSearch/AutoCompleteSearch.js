@@ -29,7 +29,8 @@ export default class Search extends Component {
   render() {
     return (
       <div className='App'>
-        Get All Employees!
+        <h1>AutoCompleteSearch</h1>
+        
       
       </div>
     );
