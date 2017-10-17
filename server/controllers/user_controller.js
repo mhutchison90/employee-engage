@@ -45,6 +45,16 @@ module.exports = {
     db.delete_user([params.employeeid])
       .then(() => res.status(200).send('USER DELETED'))
       .catch(() => res.status(500).send());
+  },
+  sendPoints: (req, res, next) => {
+    const db = req.app.get('db');
+    // const { params } = req;
+    const {me, sendTo, pointsSent } = req.body;
+    
+    db.send_points([me, sendTo, pointsSent])
+    .then(() => res.status(200).send(req.body))
+    .catch(() => res.status(500).send());
+    console.log(req.body)
   }
 };
 

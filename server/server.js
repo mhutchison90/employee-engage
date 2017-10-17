@@ -83,6 +83,9 @@ passport.deserializeUser(function (id, done) {
 app.post('/api/add/user', user_controller.createUser);
 app.put('/api/edit/user', user_controller.editUser);
 
+app.put('/api/sendpoints', user_controller.sendPoints);
+app.put('/api/transaction', products_controller.newPurchase);
+
 app.post('/api/add/product', products_controller.createProduct);
 
 app.get('/api/users', user_controller.allUsers);

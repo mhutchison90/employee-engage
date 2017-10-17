@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
-import './Nav.css'
+import './Shop.css'
 
-class Nav extends Component {
+class Shop extends Component {
     render() {
         return (
             <div>
@@ -25,5 +25,5 @@ class Nav extends Component {
         )
     }
 }
-export default Nav
+export default Shop
 

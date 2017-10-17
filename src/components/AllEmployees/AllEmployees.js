@@ -9,8 +9,9 @@ export default class AllEmployees extends Component {
         super(props);
         this.state = {
             usersList: [],
-            value:'',
-            targetValue: ''
+            value: '',
+            targetValue: '',
+            id: ''
         }
         this.changeHandler = this.changeHandler.bind(this)
         this.handleValue = this.handleValue.bind(this)
@@ -25,14 +26,15 @@ export default class AllEmployees extends Component {
         })
     }
 
-    changeHandler(e){
+
+    changeHandler(e) {
         this.setState({
-            value:e
+            value: e
         })
     }
 
-    handleValue(value){
-       
+    handleValue(value) {
+
         this.setState({
             value: value
         })
@@ -44,15 +46,13 @@ export default class AllEmployees extends Component {
                 <h1>All Employees Search</h1>
 
                 {this.state.usersList.length ? <SearchAutoComplete
-                
-                userData={this.state.usersList} 
-                changeHandler={this.changeHandler} 
-                handleValue={this.handleValue}
-                value={this.state.value}
-                /> 
-                
-                : null}
 
+                    userData={this.state.usersList}
+                    changeHandler={this.changeHandler}
+                    handleValue={this.handleValue}
+                    value={this.state.value}
+                />
+                    : null}
             </div>
         );
     };
