@@ -18,6 +18,9 @@ class Nav extends Component {
                     <li><NavLink activeClassName='active' exact to='/Logout'>Logout</NavLink></li>
                     <li><NavLink activeClassName='active' exact to='/Private'>Private</NavLink></li>
                     <li><NavLink activeClassName='active' exact to='/Shop'>Shop</NavLink></li>
+                    <li><NavLink activeClassName='active' exact to='/Profile'>Profile</NavLink></li>
+                    <li><NavLink activeClassName='active' exact to='/Balances'>Balances</NavLink></li>
+                    <li><NavLink activeClassName='active' exact to='/details'>Details</NavLink></li>
 
                     
                 </ul>

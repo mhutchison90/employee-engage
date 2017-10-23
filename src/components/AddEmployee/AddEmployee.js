@@ -30,7 +30,8 @@ export default class AddEmployee extends Component {
 
     componentDidMount() {
         axios.get('/api/list/users').then(res => {
-            // console.log(res)
+            console.log('res.data: ',res.data)
+            console.log('res.data.id: ',res.data)
             this.setState({
                 usersList: res.data
             })

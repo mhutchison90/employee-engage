@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import './AllEmployees.css';
 import SearchAutoComplete from './SearchAutoComplete';
+import AutoSuggest from './AutoSuggest'
 
 export default class AllEmployees extends Component {
     constructor(props) {
@@ -11,7 +12,7 @@ export default class AllEmployees extends Component {
             usersList: [],
             value: '',
             targetValue: '',
-            id: ''
+            id:''
         }
         this.changeHandler = this.changeHandler.bind(this)
         this.handleValue = this.handleValue.bind(this)
@@ -36,17 +37,22 @@ export default class AllEmployees extends Component {
     handleValue(value) {
 
         this.setState({
+
             value: value
         })
     }
+    // getId(targetValue) {
+    //     console.log('getId: ',targetValue)       
+    //     this.setState({
+    //         value: targetValue
+    //     })
+    // }
 
     render() {
         return (
-            <div className='App'>
-                <h1>All Employees Search</h1>
-
-                {this.state.usersList.length ? <SearchAutoComplete
-
+            <div className='App'>}
+               <h1>All Employees Search</h1>
+                {this.state.usersList.length ? <AutoSuggest
                     userData={this.state.usersList}
                     changeHandler={this.changeHandler}
                     handleValue={this.handleValue}

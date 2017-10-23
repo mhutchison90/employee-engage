@@ -14,14 +14,15 @@ export default class AddEmployee extends Component {
             productdescription: '',
             costprice: null,
             saleprice: null,
-            inventory: null
+            inventory: null,
+            category:''
         }
         this.saveNewProduct = this.saveNewProduct.bind(this)
     }
 
     saveNewProduct() {
-        const { companyid, productname, imageurl, productdescription, costprice, saleprice, inventory } = this.state
-        axios.post('/api/add/product', { companyid, productname, imageurl, productdescription, costprice, saleprice, inventory }).then(res => {
+        const { companyid, productname, imageurl, productdescription, costprice, saleprice, inventory,category } = this.state
+        axios.post('/api/add/product', { companyid, productname, imageurl, productdescription, costprice, saleprice, inventory,category }).then(res => {
             this.setState({
                 user: res.data
             })
@@ -69,6 +70,12 @@ export default class AddEmployee extends Component {
                 Inventory (num): <input name='inventory' placeholder='number required' type='text' value={this.state.inventory} onChange={(e) => {
                     this.setState({
                         inventory: e.target.value
+                    })
+                }} />
+
+                Category: <input name='category' placeholder='number required' type='text' value={this.state.category} onChange={(e) => {
+                    this.setState({
+                        category: e.target.value
                     })
                 }} />
 

@@ -79,18 +79,23 @@ passport.deserializeUser(function (id, done) {
 })
 
 
-// --CONTROLLER ENDPOINTS--
+// --USER ENDPOINTS--
 app.post('/api/add/user', user_controller.createUser);
 app.put('/api/edit/user', user_controller.editUser);
-
-app.put('/api/sendpoints', user_controller.sendPoints);
-app.put('/api/transaction', products_controller.newPurchase);
-
-app.post('/api/add/product', products_controller.createProduct);
-
 app.get('/api/users', user_controller.allUsers);
 app.get('/api/list/users', user_controller.autoCompleteUsersList);
 app.delete('/api/user/delete/:employeeid', user_controller.deleteUser);
+app.get('/api/user/:id', user_controller.getActiveUser);
+
+
+// --PRODUCT ENDPOINTS--
+app.put('/api/transaction', products_controller.newPurchase);
+app.put('/api/sendpoints', user_controller.sendPoints);
+app.post('/api/add/product', products_controller.createProduct);
+
+app.get('/api/products', products_controller.allProducts);
+app.get('/api/product/:id', products_controller.singleProduct);
+
 
 // --SETUP APP TO LISTEN TO PORT--
 const PORT = 3005;

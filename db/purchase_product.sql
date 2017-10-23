@@ -4,7 +4,8 @@ where employeeid = $2;
 
 update Products
 set inventory = inventory - 1 
-where productid = $1; 
+where productid = $1
+RETURNING *; 
 
 INSERT INTO transactions(
 productid, giver, orderdate, total

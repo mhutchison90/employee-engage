@@ -55,6 +55,15 @@ module.exports = {
     .then(() => res.status(200).send(req.body))
     .catch(() => res.status(500).send());
     console.log(req.body)
+  },
+
+  getActiveUser: (req, res, next) => {
+    const db = req.app.get('db');
+    const { params } = req;
+
+    db.get_active_user([params.id])
+    .then(user => res.status(200).send(user))
+    .catch(() => res.status(500).send());
   }
 };
 

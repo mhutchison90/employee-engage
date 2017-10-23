@@ -14,6 +14,9 @@ import Login from './components/Login/Login'
 import Logout from './components/Login/Login'
 import Private from './components/Private/Private'
 import Shop from './components/Shop/Shop'
+import Profile from './components/Profile/Profile'
+import Balances from './components/Balances/Balances'
+import Details from './components/Details/Details'
 
 
 export default (
@@ -29,5 +32,7 @@ export default (
         <Route path='/Logout' component={Logout} />
         <Route path='/Private' component={Private} />
         <Route path='/Shop' component={Shop} />
-    </Switch>
+        <Route path='/Balances' component={Balances} />
+        <Route path="/details/:productid" component={Details} /> 
+        </Switch>
 )

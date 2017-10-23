@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Private.css';
 // import axios from 'axios';
-import {getUserInfo} from '../../ducks/users';
+import {getUserInfo} from '../../ducks/reducer';
 import { connect } from 'react-redux';
 
 class Private extends Component {
