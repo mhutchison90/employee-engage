@@ -1,0 +1,16 @@
+.addToCart {
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: .3s;
+    border: 2px solid beige;
+    background-color: yellowgreen;
+  }
+  .addToCart:hover {
+    color:  RGBA(0, 220, 255, 1.00);
+    background-color: white;
+    border: 2px solid RGBA(0, 220, 255, 1.00);
+  }
+
+  

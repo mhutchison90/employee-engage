@@ -1,56 +1,46 @@
-import React from "react";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import './Cart.css'
+import { connect } from 'react-redux';
+import {removeProductFromCart} from '../../ducks/reducer'
 
-import "./Cart.css";
+class Cart extends Component {
 
-import { checkout } from "../../ducks/product";
+ 
+  render() {
+    console.log(this.props.cart)
+    const cart = this.props.cart;
+    var cartTotal = 0;
 
-import CartItem from "./CartItem/CartItem";
+    return (
+      <div className="cart">
+        {cart.map((item, i) => {
+          return (
+            <div className="itemInCart" key={i}>
+              <img alt={item.productname} src={item.imageurl} />
+              <p>{item.productname}</p>
+              <p>${item.saleprice}</p>
+              <div className="removeFromCart" onClick={() => this.props.removeProductFromCart(i)}>Remove from cart</div>
+            </div>
+          )
+        })}
+        TOTAL:
 
-export function Cart( { checkout, history, productsInCart } ) {
-	const products = productsInCart.map( product => (
-		<CartItem
-			key={ product.id }
-			logo={ product.logo }
-			name={ product.name }
-			price={ product.price }
-		/>
-	) );
+        {cart.map((item, i) => {
+          <div className="itemInCart" key={i}>
+            {cartTotal += item.saleprice}
+          </div>
+        })}
+        <div className='cartTotal'>
+          {cartTotal}
+        </div>
+      </div>
 
-	const cartTotal = productsInCart.reduce( ( total, { price } ) => total + price, 0 );
-
-	function checkoutAndRedirect() {
-		checkout();
-		history.push( "/thank-you" );
-	}
-
-	return (
-		<div className="cart">
-			<h1>Cart</h1>
-			{
-				products.length === 0
-					?
-						<h3>Nothing in cart! Go buy something!</h3>
-					:
-						<main>
-							{ products }
-							<div className="cart__total">
-								${ cartTotal }
-							</div>
-							<button
-								className="cart__checkout"
-								onClick={ checkoutAndRedirect }
-							>
-								Checkout
-							</button>
-						</main>
-			}
-		</div>
-	);
+    )
+  }
 }
 
-function mapStateToProps( { products, productsInCart } ) {
-	return { productsInCart: products.filter( product => productsInCart.includes( product.id ) ) }
+function mapStateToProps(state) {
+  return { cart: state.cart };
 }
 
-export default connect( mapStateToProps, { checkout } )( Cart );
+export default connect(mapStateToProps, {removeProductFromCart})(Cart);

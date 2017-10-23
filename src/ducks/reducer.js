@@ -2,17 +2,7 @@ import axios from 'axios';
 
 const initialState = {
     user: {},
-    product: [{
-        productid: '',
-        companyid: '',
-        productname: '',
-        imageurl: '',
-        productdescription: '',
-        costprice: '',
-        saleprice: '',
-        inventory: '',
-        category: ''
-    }],
+    product: {},
     employees: [{}],
     employeesList: [{}],
     cart: [],
@@ -27,6 +17,9 @@ const GET_BALANCES = 'GET_BALANCES';
 const GET_EMPLOYEES_LIST = 'GET_EMPLOYEES_LIST';
 const SET_ONE_PRODUCT_ON_REDUX = 'SET_ONE_PRODUCT_ON_REDUX';
 const SET_PRODUCTS_ON_REDUX = 'SET_PRODUCTS_ON_REDUX';
+const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART';
+const REMOVE_PRODUCT_FROM_CART = 'REMOVE_PRODUCT_FROM_CART';
+
 
 
 
@@ -41,21 +34,23 @@ export function getUserInfo() {
     }
 }
 
-export function getProductInfo() {
-    const productData = axios.get('/api/products').then(res => {
-        return res.data
-    })
+// export function getProductInfo() {
+//     const productData = axios.get('/api/products').then(res => {
+//         return res.data
+//     })
+//     return {
+//         type: GET_PRODUCT_INFO,
+//         payload: productData
+//     }
+// }
+
+export function setProductsOnRedux(val) {
+    console.log('set products reducer', val)
     return {
-        type: GET_PRODUCT_INFO,
-        payload: productData
+        type: SET_PRODUCTS_ON_REDUX,
+        payload: val
     }
 }
-export function setProductsOnRedux(val) {
-    return {
-      type: SET_PRODUCTS_ON_REDUX,
-      payload: val
-    }
-  }
 
 export function getActiveUser(employeeid) {
     const employees = axios.get(`/api/user/` + employeeid).then(res => { //I think i would need to get the active user Auth0 id set up and use it here
@@ -81,6 +76,19 @@ export function setOneProductOnRedux(val) {
         payload: val
     }
 }
+export function addProductToCart(val) {
+    return {
+        type: ADD_PRODUCT_TO_CART,
+        payload: val
+    }
+}
+
+export function removeProductFromCart(val) {
+    return {
+        type: REMOVE_PRODUCT_FROM_CART,
+        payload: val
+    }
+}
 
 // --REDUCER--
 export default function reducer(state = initialState, action) {
@@ -93,10 +101,18 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { employees: action.payload });
         case GET_EMPLOYEES_LIST + '_FULFILLED':
             return Object.assign({}, state, { employeesList: action.payload });
-        case SET_ONE_PRODUCT_ON_REDUX + '_FULFILLED':
+        case SET_ONE_PRODUCT_ON_REDUX:
             return Object.assign({}, state, { product: action.payload });
-        case SET_PRODUCTS_ON_REDUX + '_FULFILLED':
-            return Object.assign({}, state, {products: action.payload});
+        case SET_PRODUCTS_ON_REDUX:
+            return Object.assign({}, state, { products: action.payload });
+        case ADD_PRODUCT_TO_CART:
+            const newCart = state.cart.slice();
+            newCart.push(action.payload);
+            return Object.assign({}, state, { cart: newCart });
+        case REMOVE_PRODUCT_FROM_CART:
+            const copy = state.cart.slice();
+            copy.splice(action.payload, 1) 
+            return Object.assign({}, state, { cart: copy });
 
         default:
             return state;

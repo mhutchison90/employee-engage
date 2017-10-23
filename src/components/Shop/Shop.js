@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { getProductInfo } from '../../ducks/reducer';
+import { getProductInfo, setProductsOnRedux } from '../../ducks/reducer';
 import { connect } from 'react-redux';
 import './Shop.css'
 import { Link } from 'react-router-dom'
@@ -17,9 +17,17 @@ class Shop extends Component {
     this.purchaseProduct = this.purchaseProduct.bind(this)
   }
 
+  // componentDidMount() {
+  //   // console.log(this.props.product)
+  //   this.props.getProductInfo()
+  // }
+
   componentDidMount() {
-    // console.log(this.props.product)
-    this.props.getProductInfo()
+    axios.get('/api/products')
+      .then(products => {
+        this.props.setProductsOnRedux(products.data);
+        // console.log(products.data)
+      });
   }
 
   purchaseProduct() {
@@ -37,64 +45,38 @@ class Shop extends Component {
 
 
   render() {
+// console.log(this.props.products)
     return (
-      <div>
+      <div className="Shop">
 
-
-
-        <div className='Products-Container'>
-          {this.props.product.map((item, i) => {
+        <div className="Products-Container">
+          {this.props.products.map((product, i) => {
+            // map through products here to display all
             return (
-              <div className='Product-Container' key={i}>
-                <Link to={`/details/${item.productid}`} >
-                  {item.productname}
-                  <img src={item.imageurl} alt={item.productname} />
+              <div key={i} className="Product-Container">
+              
+                <Link to={`/details/${product.productid}`} >
+                  <img src={product.imageurl} alt={product.productname} />
+                  <p>{product.productname}</p>
                 </Link>
-                {/* <h3>{item.productname}</h3>
-                <img src={item.imageurl} alt={item.productname} />
-                <h5>Description: {item.productdescription}</h5>
-                <h5>Price: {item.saleprice}</h5>
-                <h5>Inventory: {item.inventory}</h5> */}
-                {/* 
-  {!this.state.total ? <button onClick={() => {
-    this.setState({
-      total: item.saleprice,
-      productid: item.productid
-    })
-  }
-}>Purchase</button>
-:<div>
-<button onClick={this.purchaseProduct}>Confirm Purchase</button>
-<button onClick={() => {
-  this.setState({
-    total: '',
-    productid: ''
-  })
-}
-}>Cancel</button>
-</div>
-} */}
 
-
-                {/* {console.log('total: ', this.state.total, 'productid: ', this.state.productid, 'giver: ', this.state.giver)} */}
-                {/* {console.log('product from  redux: ', this.props.product)} */}
               </div>
             )
           })}
-
         </div>
+
       </div>
-    )
+    );
   }
 }
 
 function mapStateToProps(state) {
-  if (!state) return {};
-  return { product: state.product };
+  return { products: state.products };
 }
 
-export default connect(mapStateToProps, { getProductInfo: getProductInfo })(Shop);
+const mapDispatchToProps = { setProductsOnRedux: setProductsOnRedux }
 
+export default connect(mapStateToProps, mapDispatchToProps)(Shop);
 
 
 
@@ -137,3 +119,44 @@ export default connect(mapStateToProps, { getProductInfo: getProductInfo })(Shop
           }> </button>
 
           */
+
+
+//           <div className='Products-Container'>
+//           {this.props.products.map((product, i) => {
+//             return (
+//               <div className='Product-Container' key={i}>
+//                 <Link to={`/details/${product.productid}`} >
+//                   {product.productname}
+//                   <img src={product.imageurl} alt={product.productname} />
+//                 </Link>
+//                 {/* <h3>{item.productname}</h3>
+//                 <img src={item.imageurl} alt={item.productname} />
+//                 <h5>Description: {item.productdescription}</h5>
+//                 <h5>Price: {item.saleprice}</h5>
+//                 <h5>Inventory: {item.inventory}</h5> */}
+//                 {/* 
+//   {!this.state.total ? <button onClick={() => {
+//     this.setState({
+//       total: item.saleprice,
+//       productid: item.productid
+//     })
+//   }
+// }>Purchase</button>
+// :<div>
+// <button onClick={this.purchaseProduct}>Confirm Purchase</button>
+// <button onClick={() => {
+//   this.setState({
+//     total: '',
+//     productid: ''
+//   })
+// }
+// }>Cancel</button>
+// </div>
+// } */}
+
+
+//                 {/* {console.log('total: ', this.state.total, 'productid: ', this.state.productid, 'giver: ', this.state.giver)} */}
+//                 {/* {console.log('product from  redux: ', this.props.product)} */}
+//               </div>
+//             )
+//           })}

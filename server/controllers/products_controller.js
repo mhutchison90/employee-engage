@@ -14,7 +14,10 @@ module.exports = {
         const { productid,	giver,total} = req.body;
         
         db.purchase_product([productid,	giver,total])
-        .then(() => res.status(200).send(req.body))
+        // .then(() => res.status(200).send(req.body))
+        // .then(response => {console.log('response', response)})
+        
+        .then(product => res.status(200).send('Product Purchased!'))
         .catch(() => res.status(500).send());
     },
 
@@ -30,9 +33,9 @@ module.exports = {
       singleProduct: (req, res, next) => {
         const db = req.app.get('db');
         const { params } = req;
-    
+        
         db.get_single_product([params.id])
-        .then(user => res.status(200).send(user))
+        .then(product => res.status(200).send(product[0]))
         .catch(() => res.status(500).send());
       }
 };

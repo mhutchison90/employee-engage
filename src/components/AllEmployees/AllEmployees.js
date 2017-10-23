@@ -50,7 +50,7 @@ export default class AllEmployees extends Component {
 
     render() {
         return (
-            <div className='App'>}
+            <div className='App'>
                <h1>All Employees Search</h1>
                 {this.state.usersList.length ? <AutoSuggest
                     userData={this.state.usersList}

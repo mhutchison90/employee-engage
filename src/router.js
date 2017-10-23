@@ -17,6 +17,7 @@ import Shop from './components/Shop/Shop'
 import Profile from './components/Profile/Profile'
 import Balances from './components/Balances/Balances'
 import Details from './components/Details/Details'
+import Cart from './components/Cart/Cart'
 
 
 export default (
@@ -34,5 +35,6 @@ export default (
         <Route path='/Shop' component={Shop} />
         <Route path='/Balances' component={Balances} />
         <Route path="/details/:productid" component={Details} /> 
+        <Route path="/cart" component={Cart} /> 
         </Switch>
 )

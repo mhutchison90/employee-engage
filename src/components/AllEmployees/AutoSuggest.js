@@ -1,95 +1,79 @@
 import React, { Component } from "react";
-import Autosuggest from 'react-autosuggest';
+import ReactAutocomplete from 'react-autocomplete';
 
-// Imagine you have a list of languages that you'd like to autosuggest. 
-const languages = [
- {
-   name: 'C',
-   year: 1972
- },
- {
-   name: 'Elm',
-   year: 2012
- }
-];
 
-// Teach Autosuggest how to calculate suggestions for any given input value. 
-const getSuggestions = value => {
- const inputValue = value.trim().toLowerCase();
- const inputLength = inputValue.length;
+export default class SearchAutoComplete extends Component {
+    constructor(props){
+        super(props)
 
- return inputLength === 0 ? [] : languages.filter(lang =>
-   lang.name.toLowerCase().slice(0, inputLength) === inputValue
- );
-};
+        this.state = {
+            userInput: ''
+        }
+    }
 
-// When suggestion is clicked, Autosuggest needs to populate the input 
-// based on the clicked suggestion. Teach Autosuggest how to calculate the 
-// input value for every given suggestion. 
-const getSuggestionValue = suggestion => suggestion.name;
+render() {
+    return (
+        <ReactAutocomplete
+            items={this.props.userData}
+            shouldItemRender={(item, value) => item.name.toLowerCase().indexOf(value.toLowerCase()) > -1}
+            getItemValue={item => item.name}
+            renderItem={(item, highlighted) =>
+                <div
+                    key={item.id}
+                    style={{ backgroundColor: highlighted ? '#eee' : 'transparent' }}
+                >
+                    {item.name}
+                </div>
+            }
+            value={this.props.value}
+            onChange={e => {
+                this.props.changeHandler(e.target.value)}}
+            onSelect={value => this.props.handleValue(value)}
+        />
+    )
+}}
 
-// Use your imagination to render suggestions. 
-const renderSuggestion = suggestion => (
- <div>
-   {suggestion.name}
- </div>
-);
-export default class AutoSuggest extends Component {
- constructor() {
-   super();
 
-   // Autosuggest is a controlled component. 
-   // This means that you need to provide an input value 
-   // and an onChange handler that updates this value (see below). 
-   // Suggestions also need to be provided to the Autosuggest, 
-   // and they are initially empty because the Autosuggest is closed. 
-   this.state = {
-     value: '',
-     suggestions: []
-   };
- }
+// import React, { Component } from "react";
+// import ReactAutocomplete from 'react-autocomplete';
+// import { connect } from 'react-redux';
+// import { setEmployeesListOnRedux } from '../../ducks/reducer';
 
- onChange = (event, { newValue }) => {
-   this.setState({
-     value: newValue
-   });
- };
 
- // Autosuggest will call this function every time you need to update suggestions. 
- // You already implemented this logic above, so just use it. 
- onSuggestionsFetchRequested = ({ value }) => {
-   this.setState({
-     suggestions: getSuggestions(value)
-   });
- };
 
- // Autosuggest will call this function every time you need to clear suggestions. 
- onSuggestionsClearRequested = () => {
-   this.setState({
-     suggestions: []
-   });
- };
+// class SearchAutoComplete extends Component {
+//     constructor(props){
+//         super(props)
 
- render() {
-   const { value, suggestions } = this.state;
+//         this.state = {
+//             userInput: ''
+//         }
+//     }
 
-   // Autosuggest will pass through all these props to the input. 
-   const inputProps = {
-     placeholder: 'Type employee Name',
-     value,
-     onChange: this.onChange
-   };
+// render() {
+//     return (
+//         <ReactAutocomplete
+//             items={this.props.userData}
+//             shouldItemRender={(item, value) => item.name.toLowerCase().indexOf(value.toLowerCase()) > -1}
+//             getItemValue={item => item.name}
+//             renderItem={(item, highlighted) =>
+//                 <div
+//                     key={item.id}
+//                     style={{ backgroundColor: highlighted ? '#eee' : 'transparent' }}
+//                 >
+//                     {item.name}
+//                 </div>
+//             }
+//             value={this.props.value}
+//             onChange={e => {
+//                 this.props.changeHandler(e.target.value)}}
+//             onSelect={value => this.props.handleValue(value)}
+//         />
+//     )
+// }}
+// function mapStateToProps(state) {
+//   return { employeesList: state.employeesList };
+// }
 
-   // Finally, render it! 
-   return (
-     <Autosuggest
-       suggestions={suggestions}
-       onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-       onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-       getSuggestionValue={getSuggestionValue}
-       renderSuggestion={renderSuggestion}
-       inputProps={inputProps}
-     />
-   );
- }
-}
+// export default connect(mapStateToProps, mapDispatchToProps)(SearchAutoComplete);
+// export default connect(mapStateToProps,  { setEmployeesListOnRedux })(SearchAutoComplete);
