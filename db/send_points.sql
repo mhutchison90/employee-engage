@@ -7,9 +7,9 @@ set 	pointbalance = 	pointbalance + $3
 where employeeid = $2; --USER TO SEND POINTS TO
 
 INSERT INTO transactions(
-productid, giver, reciever, orderdate, total
+giver, reciever, orderdate, total
 )VALUES(
-1, $1, $2, CURRENT_DATE, $3
+$1, $2, CURRENT_DATE, $3
 );
 
 -- $1 = Active User

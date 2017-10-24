@@ -6,7 +6,8 @@ const initialState = {
     employees: [{}],
     employeesList: [{}],
     cart: [],
-    products: []
+    products: [],
+    employeeList:[],
 }
 
 // --ACTION CONSTRAINTS--
@@ -19,11 +20,21 @@ const SET_ONE_PRODUCT_ON_REDUX = 'SET_ONE_PRODUCT_ON_REDUX';
 const SET_PRODUCTS_ON_REDUX = 'SET_PRODUCTS_ON_REDUX';
 const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART';
 const REMOVE_PRODUCT_FROM_CART = 'REMOVE_PRODUCT_FROM_CART';
-
+const SET_LIST_OF_EMPLOYEES = 'SET_LIST_OF_EMPLOYEES';
 
 
 
 // --ACTION CREATORS--
+export function getListOfEmployees(employeeid) {
+    const employeesListData = axios.get('/api/list/users').then(res => {
+        return res.data
+    })
+    return {
+        type: SET_LIST_OF_EMPLOYEES,
+        payload: employeesListData
+    }
+}
+
 export function getUserInfo() {
     const userData = axios.get('/auth/me').then(res => {
         return res.data
@@ -51,6 +62,7 @@ export function setProductsOnRedux(val) {
         payload: val
     }
 }
+
 
 export function getActiveUser(employeeid) {
     const employees = axios.get(`/api/user/` + employeeid).then(res => { //I think i would need to get the active user Auth0 id set up and use it here
@@ -111,8 +123,10 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { cart: newCart });
         case REMOVE_PRODUCT_FROM_CART:
             const copy = state.cart.slice();
-            copy.splice(action.payload, 1) 
+            copy.splice(action.payload, 1)
             return Object.assign({}, state, { cart: copy });
+            case SET_LIST_OF_EMPLOYEES:
+            return Object.assign({}, state, { employeeList: action.payload });
 
         default:
             return state;

@@ -30,8 +30,8 @@ export default class AddEmployee extends Component {
 
     componentDidMount() {
         axios.get('/api/list/users').then(res => {
-            console.log('res.data: ',res.data)
-            console.log('res.data.id: ',res.data)
+            // console.log('res.data: ',res.data)
+            // console.log('res.data.id: ',res.data)
             this.setState({
                 usersList: res.data
             })
@@ -43,10 +43,11 @@ export default class AddEmployee extends Component {
         })
     }
 
-    handleValue(value) {
+    handleValue(value,id) {
 
         this.setState({
-            value: value
+            value: value,
+            reportsto: id
         })
     }
 
@@ -103,6 +104,7 @@ export default class AddEmployee extends Component {
                     value={this.state.value}
                 />
                     : null}
+                    {/* {console.log('this is the state', this.state.reportsto)} */}
 
 
                 User Role: <select name="userrole" onChange={(e) => {
@@ -118,8 +120,6 @@ export default class AddEmployee extends Component {
                 <div>
 
                     <button onClick={this.saveUser}>Save!</button>
-                {console.log('Value: ',this.state.value)}
-                {console.log('reportsto',this.state.reportsto)}
                 </div>
 
 

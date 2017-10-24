@@ -2,18 +2,56 @@ import React, { Component } from "react";
 // import { Link } from 'react-router-dom';
 import './GivePoints.css';
 import axios from 'axios';
+import SearchAutoComplete from './SearchAutoComplete';
+import { getListOfEmployees } from '../../ducks/reducer'
+import { connect } from 'react-redux';
 
-export default class GivePoints extends Component {
+
+
+class GivePoints extends Component {
     constructor() {
         super();
         this.state = {
             user: [],
             me: 1,
             sendTo: '',
-            pointsSent:''
+            pointsSent:'',
+            value: '',
+            targetValue: '',
+            usersList: [],
+            employeeList:[],
 
         }
         this.sendPoints = this.sendPoints.bind(this)
+        this.changeHandler = this.changeHandler.bind(this)
+        this.handleValue = this.handleValue.bind(this)
+    }
+
+    // componentDidMount() {
+    //     this.props.getListOfEmployees();
+    // }
+
+    componentDidMount() {
+        axios.get('/api/list/users').then(res => {
+            // console.log('res.data: ',res.data)
+            // console.log('res.data.id: ',res.data)
+            this.setState({
+                usersList: res.data
+            })
+        })
+    }
+    changeHandler(e) {
+        this.setState({
+            value: e
+        })
+    }
+
+    handleValue(value,id) {
+
+        this.setState({
+            value: value,
+            sendTo: id
+        })
     }
 
     sendPoints() {
@@ -27,6 +65,8 @@ export default class GivePoints extends Component {
 
 
     render() {
+        console.log("state from GivePoints", this.props)
+        
         return (
             <div className='App'>
                 <h1>Send Points</h1>
@@ -37,6 +77,13 @@ export default class GivePoints extends Component {
                         sendTo: e.target.value
                     })
                 }} />
+                                Who Do You Appreciate:  {this.state.usersList.length ? <SearchAutoComplete
+                    userData={this.state.usersList}
+                    changeHandler={this.changeHandler}
+                    handleValue={this.handleValue}
+                    value={this.state.value}
+                />
+                    : null}
 
                 How Many Points To Send: <input name='pointsSent' placeholder='number required' type='text' value={this.state.pointsSent} onChange={(e) => {
                     this.setState({
@@ -55,3 +102,11 @@ export default class GivePoints extends Component {
         );
     };
 };
+
+function mapStateToProps(state) {
+    return {
+        employeeList: state.employeeList
+    }
+}
+
+export default connect(mapStateToProps,  { getListOfEmployees })(GivePoints);

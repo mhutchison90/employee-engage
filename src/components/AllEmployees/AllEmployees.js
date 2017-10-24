@@ -20,7 +20,7 @@ export default class AllEmployees extends Component {
 
     componentDidMount() {
         axios.get('/api/list/users').then(res => {
-            console.log(res)
+            // console.log(res)
             this.setState({
                 usersList: res.data
             })
@@ -37,7 +37,6 @@ export default class AllEmployees extends Component {
     handleValue(value) {
 
         this.setState({
-
             value: value
         })
     }
@@ -49,6 +48,7 @@ export default class AllEmployees extends Component {
     // }
 
     render() {
+        console.log('all employees state: ',this.state.value)        
         return (
             <div className='App'>
                <h1>All Employees Search</h1>

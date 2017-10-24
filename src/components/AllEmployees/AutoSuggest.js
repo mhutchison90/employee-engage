@@ -12,6 +12,7 @@ export default class SearchAutoComplete extends Component {
     }
 
 render() {
+  // console.log('auto suggest state: ',this.state)
     return (
         <ReactAutocomplete
             items={this.props.userData}
@@ -32,6 +33,9 @@ render() {
         />
     )
 }}
+
+
+
 
 
 // import React, { Component } from "react";
