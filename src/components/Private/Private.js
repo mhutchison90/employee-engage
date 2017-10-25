@@ -17,10 +17,6 @@ class Private extends Component {
         this.props.getUserInfo();
     }
 
-    bankBalance() {
-        return '$' + Math.floor((Math.random() + 1) * 100) + '.00';
-    }
-
     render() {
         const user = this.props.user;
         return (
@@ -30,8 +26,12 @@ class Private extends Component {
                 {user.id ? <img className='avatar' src={user.img} alt=''/> : null}
                 <p>Username: {user.id ? user.user_name : null}</p>
                 <p>Email: {user.id ? user.email : null} </p>
-                <p>ID: {user.id ? user.auth_id : null} </p>
-                <h4>Available balance:  { user.id ? '$' + Math.floor((Math.random() + 1) * 100) + '.00' : '$0.00' }</h4>
+                <p>Auth ID: {user.id ? user.auth_id : null} </p>
+                <p>EmployeeID: {user.id ? user.employeeid : null} </p>
+                <p>allowancebalance: {user.id ? user.allowancebalance : null} </p>
+                <p>pointbalance: {user.id ? user.pointbalance : null} </p>
+                <p>userrole: {user.id ? user.userrole : null} </p>
+                
                 <a href='http://localhost:3005/auth/logout'><button>Log out</button></a>
             </div>
         )

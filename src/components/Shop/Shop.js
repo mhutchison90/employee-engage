@@ -10,7 +10,7 @@ class Shop extends Component {
     super();
     this.state = {
       user: [],
-      giver: 1,
+      giver: 283,
       productid: '',
       total: '',
     }
@@ -56,7 +56,7 @@ class Shop extends Component {
               <div key={i} className="Product-Container">
               
                 <Link to={`/details/${product.productid}`} >
-                  <img src={product.imageurl} alt={product.productname} />
+                  <img className='shop-image' src={product.imageurl} alt={product.productname} />
                   <p>{product.productname}</p>
                 </Link>
 

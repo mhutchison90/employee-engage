@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import './AddEmployee.css';
 import axios from 'axios';
 import SearchAutoComplete from './SearchAutoComplete';
+import { Link } from 'react-router-dom';
+
 
 
 export default class AddEmployee extends Component {
@@ -67,37 +69,37 @@ export default class AddEmployee extends Component {
                 <h1>Add Employee</h1>
 
 
-                First Name: <input name='firstname' type='text' value={this.state.firstname} onChange={(e) => {
+                <input name='firstname' placeholder='First Name' type='text' value={this.state.firstname} onChange={(e) => {
                     this.setState({
                         firstname: e.target.value
                     })
                 }} />
 
-                Last Name: <input name='lastname' type='text' value={this.state.lastname} onChange={(e) => {
+                <input name='lastname' placeholder='Last Name' type='text' value={this.state.lastname} onChange={(e) => {
                     this.setState({
                         lastname: e.target.value
                     })
                 }} />
 
-                Email Address: <input name='email' type='text' value={this.state.email} onChange={(e) => {
+                <input name='email' placeholder='Email Address' type='text' value={this.state.email} onChange={(e) => {
                     this.setState({
                         email: e.target.value
                     })
                 }} />
 
-                Starting Point Balance: <input name='pointbalance' placeholder='number required' type='text' value={this.state.pointbalance} onChange={(e) => {
+                <input name='pointbalance' placeholder='Starting Balance' type='text' value={this.state.pointbalance} onChange={(e) => {
                     this.setState({
                         pointbalance: e.target.value
                     })
                 }} />
 
-                Starting Point Allowance: <input name='allowancebalance' placeholder='number required' type='text' value={this.state.allowancebalance} onChange={(e) => {
+                <input name='allowancebalance' placeholder='Starting Allowance' type='text' value={this.state.allowancebalance} onChange={(e) => {
                     this.setState({
                         allowancebalance: e.target.value
                     })
                 }} />
 
-                Reports To: {this.state.usersList.length ? <SearchAutoComplete
+                Reports To: {this.state.usersList.length ? <SearchAutoComplete 
                     userData={this.state.usersList}
                     changeHandler={this.changeHandler}
                     handleValue={this.handleValue}
@@ -119,7 +121,9 @@ export default class AddEmployee extends Component {
 
                 <div>
 
+                   <Link to='/admin'>
                     <button onClick={this.saveUser}>Save!</button>
+                   </Link>
                 </div>
 
 

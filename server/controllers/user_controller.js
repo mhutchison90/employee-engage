@@ -62,7 +62,7 @@ module.exports = {
     const { params } = req;
 
     db.get_active_user([params.id])
-    .then(user => res.status(200).send(user))
+    .then(user => res.status(200).send(user[0]))
     .catch(() => res.status(500).send());
   }
 };

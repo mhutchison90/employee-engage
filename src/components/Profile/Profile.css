@@ -1,0 +1,25 @@
+.Purchase-History-Container{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: stretch;
+}
+
+.purchase-history-image{
+    order:1;
+    height: 50px;
+}
+
+.purchase-history-productname{
+    order:2;
+}
+
+.purchase-history-productdescription{
+    order:3;
+}
+
+.purchase-history-saleprice{
+    order:4;
+}

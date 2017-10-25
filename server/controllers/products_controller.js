@@ -37,6 +37,14 @@ module.exports = {
         db.get_single_product([params.id])
         .then(product => res.status(200).send(product[0]))
         .catch(() => res.status(500).send());
-      }
+      },
+      myTransactions: (req, res) => {
+        const db = req.app.get('db');
+        const { params } = req;
+    
+        db.active_users_transactions([params.id])
+          .then(transactions => res.status(200).send(transactions))
+          .catch(() => res.status(500).send());
+      },
 };
 

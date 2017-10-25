@@ -7,7 +7,9 @@ const express = require('express')
     , passport = require('passport')
     , Auth0Strategy = require('passport-auth0')
     , user_controller = require('./controllers/user_controller')
-    , products_controller = require('./controllers/products_controller');
+    , products_controller = require('./controllers/products_controller')
+    // , http = require('http').Server(app)
+    // , io = require('socket.io');
 
 // --SETUP APP--
 const app = express();
@@ -53,7 +55,7 @@ passport.use(new Auth0Strategy({
 // --AUTH ENDPOINTS--
 app.get('/auth', passport.authenticate('auth0'))
 app.get('/auth/callback', passport.authenticate('auth0', {
-    successRedirect: 'http://localhost:3000/#/private',
+    successRedirect: 'http://localhost:3000/#/profile',
     failureRedirect: '/auth'
 }))
 app.get('/auth/me', (req, res) => {
@@ -95,7 +97,13 @@ app.post('/api/add/product', products_controller.createProduct);
 
 app.get('/api/products', products_controller.allProducts);
 app.get('/api/product/:id', products_controller.singleProduct);
+app.get('/api/user/transactions/:id', products_controller.myTransactions);
 
+
+// --SOCKET--
+// io.on('connection', function(socket){
+//     console.log('a user connected');
+//   });
 
 // --SETUP APP TO LISTEN TO PORT--
 const PORT = 3005;

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 // import { Link } from 'react-router-dom';
 import './AddProduct.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 export default class AddEmployee extends Component {
     constructor() {
@@ -80,8 +82,9 @@ export default class AddEmployee extends Component {
                 }} />
 
                 <div>
-
+                <Link to='/admin'>
                     <button onClick={this.saveNewProduct}>Save!</button>
+                </Link>
                 </div>
 
 

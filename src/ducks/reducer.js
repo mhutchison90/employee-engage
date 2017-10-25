@@ -8,6 +8,7 @@ const initialState = {
     cart: [],
     products: [],
     employeeList:[],
+    // cartTotal: ''
 }
 
 // --ACTION CONSTRAINTS--

@@ -10,7 +10,7 @@ export default class Home extends Component {
         super();
         this.state = {
         }
-    }   
+    }
 
 
 
@@ -20,16 +20,15 @@ export default class Home extends Component {
                 <div>
                     <ul>
                         <li><NavLink activeClassName='active' exact to='/'>Home</NavLink></li>
-                        <li><NavLink activeClassName='active' exact to='/About'>Add Employee</NavLink></li>
-                        <li><NavLink activeClassName='active' exact to='/Pricing'>Edit Employee</NavLink></li>
-                        <li><NavLink activeClassName='active' exact to='/Contact'>Add Product</NavLink></li>
-                        <li><NavLink activeClassName='active' exact to='/Login'>Login</NavLink></li>
+                        <li><NavLink activeClassName='active' exact to='/About'>About</NavLink></li>
+                        <li><NavLink activeClassName='active' exact to='/Pricing'>Pricing</NavLink></li>
+                        <li><NavLink activeClassName='active' exact to='/Contact'>Contact</NavLink></li>
                     </ul>
                 </div>
                 <h1>HOME</h1>
                 <button>Learn More</button>
                 <h1>HOME</h1>
-
+                <div id="hiw-login-container"></div>
                 <div>
                 </div>
 

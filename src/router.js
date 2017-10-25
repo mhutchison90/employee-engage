@@ -12,12 +12,13 @@ import AllEmployees from './components/AllEmployees/AllEmployees'
 import AutoCompleteSearch from './components/AutoCompleteSearch/AutoCompleteSearch'
 import Login from './components/Login/Login'
 import Logout from './components/Login/Login'
-import Private from './components/Private/Private'
 import Shop from './components/Shop/Shop'
 import Profile from './components/Profile/Profile'
 import Balances from './components/Balances/Balances'
 import Details from './components/Details/Details'
 import Cart from './components/Cart/Cart'
+import Admin from './components/Admin/Admin'
+import FriendProfile from './components/FriendProfile/FriendProfile'
 
 
 export default (
@@ -31,10 +32,20 @@ export default (
         <Route path='/AutoCompleteSearch' component={AutoCompleteSearch} />
         <Route path='/Login' component={Login} />
         <Route path='/Logout' component={Logout} />
-        <Route path='/Private' component={Private} />
         <Route path='/Shop' component={Shop} />
         <Route path='/Balances' component={Balances} />
         <Route path="/details/:productid" component={Details} /> 
         <Route path="/cart" component={Cart} /> 
+        <Route path="/admin" component={Admin} /> 
+        <Route path="/profile" component={Profile} /> 
+        <Route path="/friendprofile/:id" component={FriendProfile} /> 
+
+        {/* <Route path='/profile' render={() => {
+            return (
+                <Profile>
+                    <Route path='/profile/GivePoints' component={GivePoints} />
+                </Profile>
+            )
+        }} /> */}
         </Switch>
 )
