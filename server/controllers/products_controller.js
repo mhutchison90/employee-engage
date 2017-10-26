@@ -46,5 +46,22 @@ module.exports = {
           .then(transactions => res.status(200).send(transactions))
           .catch(() => res.status(500).send());
       },
+
+      myPointHistory: (req, res) => {
+        const db = req.app.get('db');
+        const { params } = req;
+    
+        db.users_point_history([params.id])
+          .then(transactions => res.status(200).send(transactions))
+          .catch(() => res.status(500).send());
+      },
+      deleteProduct: (req, res) => {
+        const db = req.app.get('db');
+        const { params } = req;
+    
+        db.delete_product([params.productid])
+          .then(() => res.status(200).send('PRODUCT DELETED'))
+          .catch(() => res.status(500).send());
+      }
 };
 

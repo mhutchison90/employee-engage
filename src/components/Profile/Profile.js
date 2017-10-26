@@ -14,7 +14,8 @@ class Profile extends Component {
 
         this.state = {
             userInfo: {},
-            transactions: []
+            transactions: [],
+            pointHistory: []
         }
     }
 
@@ -25,13 +26,24 @@ class Profile extends Component {
                 transactions: res.data
             })
         })
+        axios.get('/api/user/pointhistory/' + this.props.user.employeeid).then(res => {
+            this.setState({
+                pointHistory: res.data
+            })
+        })
     }
 
     render() {
-        transactionArr=this.state.transactions;
+        transactionArr = this.state.transactions;
         // console.log('TransactionArr: ',transactionArr)
         const user = this.props.user;
         console.log(this.state.transactions)
+        console.log(this.state.pointHistory)
+
+
+
+
+
         return (
             <div className=''>
 
@@ -46,32 +58,63 @@ class Profile extends Component {
                 <p>pointbalance: {user.id ? user.pointbalance : null} </p>
                 <p>userrole: {user.id ? user.userrole : null} </p>
 
+                <Link to={'/editprofile/' + user.employeeid}>EDIT PROFILE</Link>
+
+
+
+
+
+
+
 
                 <div className="Transaction-History-Container">
-                    {this.state.transactions.map((product, i) => {
-                        // map through products here to display all
-                        return (
-                            <div key={i} className="Purchase-History-Container">
+                    <div className="Purchase-History-Container">
+                        {this.state.transactions.map((product, i) => {
+                            // map through products here to display all
+                            return (
+                                <div key={i} className='purchase-history-item'>
+                                    <Link to={`/details/${product.productid}`} >
+                                        <img className='purchase-history-image' src={product.imageurl} alt={product.productname} />
+                                    </Link>
+                                    <div className='purchase-history-productname'>
+                                        {product.productname}
+                                    </div>
+                                    <div className='purchase-history-productdescription'>
+                                        {product.productdescription}
+                                    </div>
+                                    <div className='purchase-history-saleprice'>
+                                        {product.saleprice}
+                                    </div>
+                                    <div className='purchase-history-orderdate'>
+                                        {product.orderdate}
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </div>
 
-                                <Link to={`/details/${product.productid}`} >
-                                    <img className='purchase-history-image' src={product.imageurl} alt={product.productname} />
-                                </Link>
-                                <div className='purchase-history-productname'>
-                                    {product.productname}
+                        
+                    <div className="Point-History-Container">
+                        {this.state.pointHistory.map((points, i) => {
+                            // map through products here to display all
+                            return (
+                                <div key={i} className='point-history-item'>
+                                    <div className='point-history-giver'>
+                                        {points.sender}
+                                    </div>
+                                    <div className='point-history-reciever'>
+                                        {points.reciever}
+                                    </div>
+                                    <div className='point-history-reciever'>
+                                        {points.total}
+                                    </div>
+                                    <div className='point-history-timestamp'>
+                                        {points.timestamp}
+                                    </div>
                                 </div>
-                                <div className='purchase-history-productdescription'>
-                                    {product.productdescription}
-                                </div>
-                                <div className='purchase-history-saleprice'>
-                                    {product.saleprice}
-                                </div>
-                                <div className='purchase-history-orderdate'>
-                                    {product.orderdate}
-                                </div>
-
-                            </div>
-                        )
-                    })}
+                            )
+                        })}
+                    </div>
                 </div>
 
 

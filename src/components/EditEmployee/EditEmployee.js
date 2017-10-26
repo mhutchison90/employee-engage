@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 // import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import './EditEmployee.css';
 import axios from 'axios';
 
-export default class EditEmployee extends Component {
+class EditEmployee extends Component {
     constructor() {
         super();
         this.state = {
@@ -95,3 +96,14 @@ export default class EditEmployee extends Component {
         );
     };
 };
+
+function mapStateToProps(state) {
+    console.log('user state from edit employee: ', state)
+    return { 
+        user: state.user
+     };
+
+   }
+
+
+export default connect(mapStateToProps)(EditEmployee);

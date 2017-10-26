@@ -1,1 +1,1 @@
-SELECT employeeid as id ,CONCAT(firstname, ' ', lastname) as name FROM employee; 
+SELECT employeeid as id ,viewName as name FROM employee; 

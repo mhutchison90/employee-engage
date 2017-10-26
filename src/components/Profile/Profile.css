@@ -1,4 +1,12 @@
-.Purchase-History-Container{
+.purchase-history-item{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: stretch;
+}
+.point-history-item{
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;

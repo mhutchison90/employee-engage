@@ -14,6 +14,7 @@ export default class AddEmployee extends Component {
             user: [],
             userrole: '',
             companyid: 1,
+            viewName: '',
             lastname: '',
             firstname: '',
             reportsto: '',
@@ -54,8 +55,8 @@ export default class AddEmployee extends Component {
     }
 
     saveUser() {
-        const { userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance } = this.state
-        axios.post('/api/add/user', { userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance }).then(res => {
+        const { userrole, companyid, viewName,/*lastname, firstname, */ reportsto, email, pointbalance, allowancebalance } = this.state
+        axios.post('/api/add/user', { userrole, companyid, viewName,/*lastname, firstname, */ reportsto, email, pointbalance, allowancebalance }).then(res => {
             this.setState({
                 user: res.data
             })
@@ -64,22 +65,23 @@ export default class AddEmployee extends Component {
 
 
     render() {
+        console.log(this.state.usersList)
         return (
             <div className='App'>
                 <h1>Add Employee</h1>
 
 
-                <input name='firstname' placeholder='First Name' type='text' value={this.state.firstname} onChange={(e) => {
+                <input name='viewName' placeholder='View Name' type='text' value={this.state.viewName} onChange={(e) => {
                     this.setState({
-                        firstname: e.target.value
+                        viewName: e.target.value
                     })
                 }} />
 
-                <input name='lastname' placeholder='Last Name' type='text' value={this.state.lastname} onChange={(e) => {
+               {/*  <input name='lastname' placeholder='Last Name' type='text' value={this.state.lastname} onChange={(e) => {
                     this.setState({
                         lastname: e.target.value
                     })
-                }} />
+                }} /> */}
 
                 <input name='email' placeholder='Email Address' type='text' value={this.state.email} onChange={(e) => {
                     this.setState({

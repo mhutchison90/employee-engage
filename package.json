@@ -21,7 +21,9 @@
     "react-scripts": "1.0.14",
     "redux": "^3.7.2",
     "redux-promise-middleware": "^4.4.1",
-    "socket.io": "^2.0.4"
+    "socket.io": "^2.0.4",
+    "sweetalert": "^2.0.8",
+    "sweetalert2": "^6.11.1"
   },
   "scripts": {
     "start": "react-scripts start",

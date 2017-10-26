@@ -13,7 +13,7 @@ export default class SearchAutoComplete extends Component {
     }
 
 render() {
-    console.log('id from autocomplete ', this.state.id)
+    console.log('LIST', this.props.userData)
     return (
         <ReactAutocomplete
             items={this.props.userData}

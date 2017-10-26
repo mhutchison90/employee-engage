@@ -2,24 +2,24 @@ module.exports = {
   //ADD NEW USER
   createUser: (req, res, next) => {
     const db = req.app.get('db');
-    const { userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance } = req.body;
-    
-    db.add_user([userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance])
-    .then(() => res.status(200).send(req.body))
-    .catch(() => res.status(500).send());
+    const { userrole, companyid, viewName,/*lastname, firstname, */  reportsto, email, pointbalance, allowancebalance } = req.body;
+
+    db.add_user([userrole, companyid, viewName,/*lastname, firstname, */  reportsto, email, pointbalance, allowancebalance])
+      .then(() => res.status(200).send(req.body))
+      .catch(() => res.status(500).send());
   },
-  
+
   editUser: (req, res, next) => {
     const db = req.app.get('db');
     // const { params } = req;
-    const {employeeid, userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance } = req.body;
-    
+    const { employeeid, userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance } = req.body;
+
     db.edit_employee([employeeid, userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance])
-    .then(() => res.status(200).send(req.body))
-    .catch(() => res.status(500).send());
+      .then(() => res.status(200).send(req.body))
+      .catch(() => res.status(500).send());
     console.log(req.body)
   },
-  
+
   allUsers: (req, res) => {
     const db = req.app.get('db');
     // const { params } = req;
@@ -49,11 +49,11 @@ module.exports = {
   sendPoints: (req, res, next) => {
     const db = req.app.get('db');
     // const { params } = req;
-    const {me, sendTo, pointsSent } = req.body;
-    
+    const { me, sendTo, pointsSent } = req.body;
+
     db.send_points([me, sendTo, pointsSent])
-    .then(() => res.status(200).send(req.body))
-    .catch(() => res.status(500).send());
+      .then(() => res.status(200).send(req.body))
+      .catch(() => res.status(500).send());
     console.log(req.body)
   },
 
@@ -62,8 +62,32 @@ module.exports = {
     const { params } = req;
 
     db.get_active_user([params.id])
-    .then(user => res.status(200).send(user[0]))
-    .catch(() => res.status(500).send());
-  }
+      .then(user => res.status(200).send(user[0]))
+      .catch(() => res.status(500).send());
+  },
+
+  // isUserInEmployeeTable: (req, res, next) => {
+  //   const db = req.app.get('db');
+  //   const { params } = req;
+    
+  //   db.find_in_employee_table([params.id])
+    
+  //   //   if (!res.email) {
+  //     //     return res.status(404).send('email not found')
+  //     //   }
+  //     //   return res.status(200).send(res.email);
+  //     // }
+      
+  //     .then(email => {
+  //       if(params.id===email[0].email){
+  //       //  return email[0].email
+         
+  //       }
+  //     // console.log('console.log1: ',params.id)
+  //     // console.log('console.log2: ',email[0].email)
+  //     res.status(200).send(email[0].email)
+  //     })
+  //   .catch(() => res.status(500).send('No matching user found in the employee table'));
+  // }
 };
 

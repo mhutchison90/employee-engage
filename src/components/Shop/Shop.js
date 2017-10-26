@@ -4,6 +4,7 @@ import { getProductInfo, setProductsOnRedux } from '../../ducks/reducer';
 import { connect } from 'react-redux';
 import './Shop.css'
 import { Link } from 'react-router-dom'
+import swal from 'sweetalert';
 
 class Shop extends Component {
   constructor() {
@@ -13,8 +14,11 @@ class Shop extends Component {
       giver: 283,
       productid: '',
       total: '',
+      test: ''
     }
     this.purchaseProduct = this.purchaseProduct.bind(this)
+    this.deleteProduct = this.deleteProduct.bind(this)
+
   }
 
   // componentDidMount() {
@@ -43,22 +47,53 @@ class Shop extends Component {
     })
   }
 
+  deleteProduct(id) {
+    // const { productid } = this.state
+    console.log('deleted!')
+    axios.delete('/api/product/delete/'+id)
+    .then(res => {
+      this.setState({
+        test: res.data
+      })
+    })
+}
+
 
   render() {
-// console.log(this.props.products)
+    // console.log(this.props.products)
     return (
       <div className="Shop">
+
 
         <div className="Products-Container">
           {this.props.products.map((product, i) => {
             // map through products here to display all
             return (
               <div key={i} className="Product-Container">
-              
+
                 <Link to={`/details/${product.productid}`} >
                   <img className='shop-image' src={product.imageurl} alt={product.productname} />
                   <p>{product.productname}</p>
                 </Link>
+                <div className='delete-product-from-shop'
+                  onClick={_ => swal({
+                    title: "Are you sure?",
+                    text: "Once deleted, you will not be able to recover "+ product.productname,
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                  })
+                    .then((willDelete) => {
+                      if (willDelete) {
+                        this.deleteProduct(product.productid)
+                        swal(product.productname+" has been deleted from the shop", {
+                          icon: "success",
+                        });
+                      } else {
+                        swal("this "+ product.productname +" is safe!");
+                      }
+                    })}
+                >DELETE</div>
 
               </div>
             )

@@ -19,6 +19,7 @@ import Details from './components/Details/Details'
 import Cart from './components/Cart/Cart'
 import Admin from './components/Admin/Admin'
 import FriendProfile from './components/FriendProfile/FriendProfile'
+import EditProfile from './components/EditProfile/EditProfile'
 
 
 export default (
@@ -26,6 +27,7 @@ export default (
         <Route exact path='/' component={Home} />
         <Route path='/AddEmployee' component={AddEmployee} />
         <Route path='/EditEmployee' component={EditEmployee} />
+        <Route path='/EditProfile/:id' component={EditProfile} />
         <Route path='/GivePoints' component={GivePoints} />
         <Route path='/AddProduct' component={AddProduct} />
         <Route path='/AllEmployees' component={AllEmployees} />
