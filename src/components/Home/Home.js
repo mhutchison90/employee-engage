@@ -19,10 +19,10 @@ export default class Home extends Component {
             <div className='App'>
                 <div>
                     <ul>
-                        <li><NavLink activeClassName='active' exact to='/'>Home</NavLink></li>
-                        <li><NavLink activeClassName='active' exact to='/About'>About</NavLink></li>
-                        <li><NavLink activeClassName='active' exact to='/Pricing'>Pricing</NavLink></li>
-                        <li><NavLink activeClassName='active' exact to='/Contact'>Contact</NavLink></li>
+                        <li><NavLink className='nav-link' activeClassName='active' exact to='/'>Home</NavLink></li>
+                        <li><NavLink className='nav-link' activeClassName='active' exact to='/About'>About</NavLink></li>
+                        <li><NavLink className='nav-link' activeClassName='active' exact to='/Pricing'>Pricing</NavLink></li>
+                        <li><NavLink className='nav-link' activeClassName='active' exact to='/Contact'>Contact</NavLink></li>
                     </ul>
                 </div>
                 <h1>HOME</h1>

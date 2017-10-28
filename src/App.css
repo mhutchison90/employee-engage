@@ -1,16 +1,53 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+.App-Container {
+  font-family: 'Montserrat';
+  font-size: 16px;
+  color: #000000;
+  
+}
+
+.Nav-Container{
+height: 6vh;
+background-color: #253237;
+
+display: flex;
+flex-direction: column;
+justify-content: center;
 }
 .Body-Container{
-
-}
-.login-button{
-  height: 300px;
-  width: 300px;
+display:flex;
+height:94vh;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.Left-Body-Container{
+  order:1;
+  background-color: #F4F4F9;
+  /* flex-grow:2;   */
+  width: 25%;
+  height:100%;
+}
+  .Left-Side-Bar-Container{
+
+  }
+
+.Center-Body-Container{
+  order:1;
+  background-color: #B8DBD9;
+  /* flex-grow:3; */
+  width: 50%;
+  height:100%;
+  /* background: linear-gradient(to bottom right, #B8DBD9, #586F7C); */
 }
 
+
+.Right-Body-Container{
+  order:1;
+  background-color: #F4F4F9; 
+  /* flex-grow:2; */
+  width: 25%;
+  height:100%;
+}
+  .Right-Body-Container{
+
+  }

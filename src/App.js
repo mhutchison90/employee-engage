@@ -12,8 +12,28 @@ class App extends Component {
         <div className='Nav-Container'>
           <Nav />
         </div>
+
+
+
         <div className='Body-Container'>
-        {router}
+
+          <div className='Left-Body-Container'>
+            
+          <div className='Left-Side-Bar-Container'>
+
+          </div>
+          </div>
+          <div className='Center-Body-Container'>
+            
+          {router}
+          </div>
+          <div className='Right-Body-Container'>
+            
+          <div className='Right-Side-Bar-Container'>
+
+          </div>
+          </div>
+
         </div>
       </div>
 

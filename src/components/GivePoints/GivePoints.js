@@ -36,6 +36,7 @@ class GivePoints extends Component {
         // }
         
         componentDidMount() {
+            getListOfEmployees();
             axios.get('/api/list/users').then(res => {
                 // console.log('res.data: ',res.data)
                 // console.log('res.data.id: ',res.data)

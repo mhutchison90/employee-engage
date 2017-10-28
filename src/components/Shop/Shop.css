@@ -8,12 +8,13 @@
     align-content: stretch;
     height: 100%;
     width: 100%;
+}
 
-}
 .Product-Container {
-    width: 30%;
 }
+
 .shop-image{
+
 }
 
 .delete-product-from-shop {

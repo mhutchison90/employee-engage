@@ -66,53 +66,56 @@ class Cart extends Component {
     // cart.length===0? cartTotal=0 :null
 
     return (
-      <div className="cart">
-        {cart.map((item, i) => {
-          return (
-            <div className="itemInCart" key={i}>
-              <img alt={item.productname} src={item.imageurl} />
-              <p>{item.productname}</p>
+      <div className='Cart-Container'>
 
-              <p>ID: {item.productid}</p>
-              <p>{item.saleprice} Points</p>
+        <div className="cart">
+          {cart.map((item, i) => {
+            return (
+              <div className="itemInCart" key={i}>
+                <img alt={item.productname} src={item.imageurl} />
+                <p>{item.productname}</p>
 
-              <div className="removeFromCart" onClick={() => {
-                console.log('removed!')
-                // {cartTotal -= item.saleprice}
-                this.props.removeProductFromCart(i)
-              }}>Remove from cart</div>
-            </div>
-          )
-        })}
+                <p>ID: {item.productid}</p>
+                <p>{item.saleprice} Points</p>
 
-{cart.map((item, i) => {
-  return (
-    <div className="itemInCart" key={i}>
-      {item.saleprice} 
-      {_.sumBy(cart, 'saleprice')}
-    </div>
-  )
-})}
+                <div className="removeFroomCart" onClick={() => {
+                  console.log('removed!')
+                  // {cartTotal -= item.saleprice}
+                  this.props.removeProductFromCart(i)
+                }}>Remove from cart</div>
+              </div>
+            )
+          })}
 
-{/* TOTAL: {cart.map((item, i) => {
+          {cart.map((item, i) => {
+            return (
+              <div className="itemInCart" key={i}>
+                {item.saleprice}
+                {_.sumBy(cart, 'saleprice')}
+              </div>
+            )
+          })}
+
+          {/* TOTAL: {cart.map((item, i) => {
   return(
     <div>
-      {item.saleprice}
-         {_.sumBy(cart, 'saleprice')}
+    {item.saleprice}
+    {_.sumBy(cart, 'saleprice')}
     </div>
   )}} */}
 
-     
 
-        {/* {cart.map((item, i) => {
+
+          {/* {cart.map((item, i) => {
           <div className="itemInCart" key={i}>
-            {cartTotal += item.saleprice}
+          {cartTotal += item.saleprice}
           </div>
         })} */}
-        {/* {cartTotal} */}
-        <button onClick={this.purchaseProduct}>Confirm Purchase</button>
-      </div>
+          {/* {cartTotal} */}
+          <button onClick={this.purchaseProduct}>Confirm Purchase</button>
+        </div>
 
+      </div>
     )
   }
 }

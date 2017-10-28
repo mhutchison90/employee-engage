@@ -14,7 +14,7 @@ const initialState = {
 // --ACTION CONSTRAINTS--
 const GET_USER_INFO = 'GET_USER_INFO';
 const GET_PRODUCT_INFO = 'GET_PRODUCT_INFO';
-const GET_PRODUCTS = 'GET_PRODUCTS';
+const GET_PRODUCTS = 'GET_PRODUCTS'; 
 const GET_BALANCES = 'GET_BALANCES';
 const GET_EMPLOYEES_LIST = 'GET_EMPLOYEES_LIST';
 const SET_ONE_PRODUCT_ON_REDUX = 'SET_ONE_PRODUCT_ON_REDUX';
@@ -28,6 +28,7 @@ const SET_LIST_OF_EMPLOYEES = 'SET_LIST_OF_EMPLOYEES';
 // --ACTION CREATORS--
 export function getListOfEmployees(employeeid) {
     const employeesListData = axios.get('/api/list/users').then(res => {
+        console.log('getListOfEmployees from REDUCER',res.data)
         return res.data
     })
     return {
