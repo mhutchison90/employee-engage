@@ -98,6 +98,7 @@ class Nav extends Component {
                             />
                                 : null}
                                 <NavLink className='li-nav-search-button' activeClassName='active' exact to={`/friendprofile/${this.state.userId}`}>Search</NavLink></li>
+                                < li className='li-nav-link'><NavLink className='nav-link' activeClassName='active' exact to='/dashboard'>Dashboard</NavLink></li>
                             < li className='li-nav-link'><NavLink className='nav-link' activeClassName='active' exact to='/profile'>Profile</NavLink></li>
                             < li className='li-nav-link'><NavLink className='nav-link' activeClassName='active' exact to='/GivePoints'>Give Points</NavLink></li>
                             < li className='li-nav-link'><NavLink className='nav-link' activeClassName='active' exact to='/Shop'>Shop</NavLink></li>
@@ -107,7 +108,7 @@ class Nav extends Component {
                             < li className='li-nav-link'> <NavLink className='nav-link' activeClassName='active' exact to='/'>Home</NavLink></li>
                             {/* < li className='li-nav-link-image' onClick={_ => { this.toggle_showNotification('dropdown-content') }}> <NavLink className='nav-link-image' exact to='/profile'><img className='nav-bar-profile-image' src={this.props.user.img} alt='' /></NavLink></li> */}
 
-                    <div className='li-nav-link-notification'> <NavLink className='nav-link-notification' exact to='/profile' onClick={_ => { this.toggle_showNotification('dropdown-content') }}><img className='nav-bar-profile-image' onClick={_ => { this.toggle_showNotification('dropdown-content') }} src={this.props.user.img} alt='' />000</NavLink> </div>
+                            <div className='li-nav-link-notification'> <NavLink className='nav-link-notification' exact to='/profile' onClick={_ => { this.toggle_showNotification('dropdown-content') }}><img className='nav-bar-profile-image' onClick={_ => { this.toggle_showNotification('dropdown-content') }} src={this.props.user.img} alt='' />000</NavLink> </div>
                         </ul>
 
                     </div>

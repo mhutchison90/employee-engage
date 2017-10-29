@@ -20,6 +20,7 @@ import Cart from './components/Cart/Cart'
 import Admin from './components/Admin/Admin'
 import FriendProfile from './components/FriendProfile/FriendProfile'
 import EditProfile from './components/EditProfile/EditProfile'
+import Dashboard from './components/Dashboard/Dashboard'
 
 
 export default (
@@ -41,6 +42,7 @@ export default (
         <Route path="/admin" component={Admin} /> 
         <Route path="/profile" component={Profile} /> 
         <Route path="/friendprofile/:id" component={FriendProfile} /> 
+        <Route path="/dashboard" component={Dashboard} /> 
 
         {/* <Route path='/profile' render={() => {
             return (

@@ -66,7 +66,7 @@
 	justify-content: space-between;
 	height: 20px;
 	margin-top: -20px;
-animation: open_current_form .70s;
+animation: slide-down .70s;
 animation-fill-mode: both; 	
 }
 	/* .purchase-history-item{
@@ -103,7 +103,7 @@ animation-fill-mode: both;
 		justify-content: space-between;
 		height: 20px;
 		margin-top: -20px;
-	animation: open_current_form .70s;
+	animation: slide-down .70s;
 	animation-fill-mode: both; 	
 	}
 		.point-history-item{
@@ -144,23 +144,8 @@ animation-fill-mode: both;
 			}
 
 
-@keyframes open_current_form {
-	/* 0%   { opacity: 0; }
-	0%   { opacity: 1; }
-	0%   { opacity: 2; }
-	80%   { opacity: 3; }
-	90%   { opacity: 4; }
-	100% { opacity: 5; } */
-	/* from{
-	margin-top: 20px
-} */
+@keyframes slide-down {
 	to {
 		margin-top: 0px; }
 	}
-	
-		
 
-@keyframes close_current_form {
-	to {
-			margin-top: -275px; } 
-}

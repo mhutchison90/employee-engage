@@ -1,0 +1,96 @@
+.Dashboard-Body-Container {
+width: 100%;
+display: flex;
+align-items: center;
+flex-direction: column;
+
+
+}
+.Dashboard-Give-Points-Container{
+
+}
+.give-Points-drop-down-box{
+background-color: #F4F4F9;
+width: 100%;
+}
+.give-Points-drop-down {
+
+}
+
+.toggle_GivePoints{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 70%;
+}
+
+
+.ANIMATION{
+    margin-top: -130px;
+    animation: slide-down .70s;
+    animation-fill-mode: both;
+}
+
+.Dashboard-History-Container{
+width:90%;
+display: flex;
+/* align-items: center; */
+flex-direction: column;
+}
+
+.Dashboard-Point-Tiles-Container {
+/* outline: solid black 1px; */
+}
+
+.dashboard-point-history-tile{
+/* outline: solid black 1px; */
+/* background-color: #F4F4F9; */
+height: 120px;
+width:100%;
+/*margin-top: 20px; */
+/* background: linear-gradient(to bottom right, #F4F4F9, #B8DBD9); */
+margin: 5px;
+border-radius: 10px;
+background: linear-gradient(#F4F4F9 90%, #B8DBD9); /* Standard syntax */
+}
+
+.dashboard-tile-header {
+
+}
+
+.dashboard-tile-recievers-name {
+    
+    }
+    
+.dashboard-tile-title {
+    
+    }
+    
+.dashboard-tile-message {
+    
+    }
+    
+.dashboard-tile-footer {
+    
+    }
+    
+.dashboard-tile-like-button {
+    
+    }
+    
+.dashboard-tile-likes {
+    
+    }
+    
+    @keyframes slide-down {
+        
+            to {
+                margin-top: 0px; }
+            }

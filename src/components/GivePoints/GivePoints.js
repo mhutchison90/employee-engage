@@ -18,6 +18,7 @@ class GivePoints extends Component {
             me: '',
             sendTo: '',
             pointsSent: '',
+            message:'',
             value: '',
             targetValue: '',
             usersList: [],
@@ -64,8 +65,8 @@ class GivePoints extends Component {
         }
         
         sendPoints() {
-            const { me, sendTo, pointsSent } = this.state
-            axios.put('/api/sendpoints', { me, sendTo, pointsSent }).then(res => {
+            const { me, sendTo, pointsSent, message } = this.state
+            axios.put('/api/sendpoints', { me, sendTo, pointsSent, message }).then(res => {
                 this.setState({
                     user: res.data,
                     allowancebalance: this.state.allowancebalance-=this.state.pointsSent,
@@ -95,13 +96,18 @@ class GivePoints extends Component {
                         pointsSent: e.target.value
                     })
                 }} />
+                Message: <input name='message' type='text' value={this.state.message} onChange={(e) => {
+                    this.setState({
+                        message: e.target.value
+                    })
+                }} />
 
                 <div>
                     {this.state.sent===''?<button onClick={this.sendPoints}>Send Points!</button>: this.state.sent}
                     
                 </div>
-                <p>pointbalance:{this.state.pointbalance}</p>
-                <p>allowancebalance:{this.state.allowancebalance}</p>
+                {/* <p>pointbalance:{this.state.pointbalance}</p>
+                <p>allowancebalance:{this.state.allowancebalance}</p> */}
 
 
 

@@ -49,9 +49,9 @@ module.exports = {
   sendPoints: (req, res, next) => {
     const db = req.app.get('db');
     // const { params } = req;
-    const { me, sendTo, pointsSent } = req.body;
+    const { me, sendTo, pointsSent, message } = req.body;
 
-    db.send_points([me, sendTo, pointsSent])
+    db.send_points([me, sendTo, pointsSent, message])
       .then(() => res.status(200).send(req.body))
       .catch(() => res.status(500).send());
     console.log(req.body)
