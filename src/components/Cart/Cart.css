@@ -8,9 +8,9 @@
     align-items: center;
     border-bottom: thin solid #777;
   }
-  .itemInCart img {
+  /* .itemInCart img {
     height: 100px;
-  }
+  } */
   .itemInCart * {
     margin-left: 30px;
     margin-right: 30px;

@@ -13,6 +13,7 @@ class EditProfile extends Component {
             companyid: 1,
             lastname: '',
             firstname: '',
+            profilePicture: '',
             reportsto: '',
             email: '',
             pointbalance: '',
@@ -36,13 +37,14 @@ class EditProfile extends Component {
             email: user.email,
             pointbalance: user.pointbalance,
             allowancebalance: user.allowancebalance,
-            employeeid: user.employeeid
+            employeeid: user.employeeid,
+            profilePicture: user.img
         })
     }
 
     updateUser() {
-        const { employeeid, userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance } = this.state
-        axios.put('/api/edit/user', { employeeid, userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance }).then(res => {
+        const { employeeid, userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance,profilePicture } = this.state
+        axios.put('/api/edit/user', { employeeid, userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance,profilePicture }).then(res => {
             this.setState({
                 user: res.data,
                 saved: 'CHANGES SAVED!'
@@ -53,21 +55,25 @@ class EditProfile extends Component {
 
     render() {
         const user = this.props.user;
-        console.log('this.state edit profile',this.state)
+        console.log('this.state edit profile',this.user)
         return (
             <div className='App'>
                 <h1>Edit Profile</h1>
-                {console.log(this.state)}
 
-                <div className='edit-profile-'>First Name: <input name='firstname' type='text' value={this.state.firstname} onChange={(e) => {
+                <div className='edit-profile-first-name'>First Name: <input name='firstname' type='text' value={this.state.firstname} onChange={(e) => {
                     this.setState({
                         firstname: e.target.value
                     })
                 }} /></div>
 
-                <div className='edit-profile-'>Last Name: <input name='lastname' type='text' value={this.state.lastname} onChange={(e) => {
+                <div className='edit-profile-last-namwe'>Last Name: <input name='lastname' type='text' value={this.state.lastname} onChange={(e) => {
                     this.setState({
                         lastname: e.target.value
+                    })
+                }} /></div>
+                <div className='edit-profile-picture'>Profile Picture: <input name='profile-picture' type='text' value={this.state.profilePicture} onChange={(e) => {
+                    this.setState({
+                        profilePicture: e.target.value
                     })
                 }} /></div>
                 <div className='edit-profile-email'>Email Address: {user.email} </div>

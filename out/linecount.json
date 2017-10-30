@@ -1,0 +1,649 @@
+{
+    "extension": "linecount",
+    "version": "0.1.7",
+    "workspace": "/Users/michael/devmountain/personal-projects/devmtn-personal-project",
+    "linecount": [
+        {
+            "version": "0.1.7",
+            "counttime": "2017-10-28 18:40:09",
+            "filesum": 105,
+            "codesum": 13794,
+            "commentsum": 552,
+            "blanksum": 559,
+            "filelist": [
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 3,
+                    "filename": ".env"
+                },
+                {
+                    "blank": 7,
+                    "code": 18,
+                    "comment": 1,
+                    "filename": ".gitignore"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "db/active_users_transactions.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "db/add_product.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 1,
+                    "filename": "db/add_user.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "db/all_products.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "db/all_users.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "db/auto_complete_user_list.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "db/create_tables/company_table.sql"
+                },
+                {
+                    "blank": 3,
+                    "code": 230,
+                    "comment": 6,
+                    "filename": "db/create_tables/dummyData/employee_table_data.sql"
+                },
+                {
+                    "blank": 2,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "db/create_tables/dummyData/product_table_data.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "db/create_tables/employee_table.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "db/create_tables/messages_table.sql"
+                },
+                {
+                    "blank": 1,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "db/create_tables/products_tables.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "db/create_tables/transactions_table.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 1,
+                    "filename": "db/create_user.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "db/delete_product.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "db/delete_user.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "db/edit_employee.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "db/employees_and_users_joined_on_email.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 2,
+                    "filename": "db/find_current_user.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "db/find_in_employee_table.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "db/find_in_users_table.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "db/find_user.sql"
+                },
+                {
+                    "blank": 1,
+                    "code": 2,
+                    "comment": 5,
+                    "filename": "db/get_active_user.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "db/get_single_product.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "db/PPSQL/create_company.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "db/PPSQL/create_transaction.sql"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 5,
+                    "filename": "db/purchase_product.sql"
+                },
+                {
+                    "blank": 3,
+                    "code": 11,
+                    "comment": 6,
+                    "filename": "db/send_points.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "db/users_point_history.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "db/users_table.sql"
+                },
+                {
+                    "blank": 0,
+                    "code": 10909,
+                    "comment": 0,
+                    "filename": "package-lock.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 36,
+                    "comment": 0,
+                    "filename": "package.json"
+                },
+                {
+                    "filename": "personal-project-planning-sketch.sketch",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "public/favicon.ico",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 17,
+                    "comment": 23,
+                    "filename": "public/index.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "public/manifest.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "README.md"
+                },
+                {
+                    "blank": 13,
+                    "code": 50,
+                    "comment": 4,
+                    "filename": "server/controllers/products_controller.js"
+                },
+                {
+                    "blank": 18,
+                    "code": 51,
+                    "comment": 24,
+                    "filename": "server/controllers/user_controller.js"
+                },
+                {
+                    "blank": 32,
+                    "code": 82,
+                    "comment": 53,
+                    "filename": "server/server.js"
+                },
+                {
+                    "blank": 9,
+                    "code": 41,
+                    "comment": 4,
+                    "filename": "src/App.css"
+                },
+                {
+                    "blank": 14,
+                    "code": 32,
+                    "comment": 0,
+                    "filename": "src/App.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "src/App.test.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 16,
+                    "comment": 1,
+                    "filename": "src/assets/notification.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 40,
+                    "filename": "src/components/AddEmployee/AddEmployee.css"
+                },
+                {
+                    "blank": 26,
+                    "code": 105,
+                    "comment": 7,
+                    "filename": "src/components/AddEmployee/AddEmployee.js"
+                },
+                {
+                    "blank": 7,
+                    "code": 36,
+                    "comment": 0,
+                    "filename": "src/components/AddEmployee/SearchAutoComplete.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 40,
+                    "filename": "src/components/AddProduct/AddProduct.css"
+                },
+                {
+                    "blank": 18,
+                    "code": 77,
+                    "comment": 1,
+                    "filename": "src/components/AddProduct/AddProduct.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src/components/Admin/Admin.css"
+                },
+                {
+                    "blank": 17,
+                    "code": 33,
+                    "comment": 1,
+                    "filename": "src/components/Admin/Admin.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src/components/AllEmployees/AllEmployees.css"
+                },
+                {
+                    "blank": 8,
+                    "code": 50,
+                    "comment": 7,
+                    "filename": "src/components/AllEmployees/AllEmployees.js"
+                },
+                {
+                    "blank": 15,
+                    "code": 30,
+                    "comment": 38,
+                    "filename": "src/components/AllEmployees/AutoSuggest.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 34,
+                    "comment": 1,
+                    "filename": "src/components/AllEmployees/SearchAutoComplete.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src/components/AutoCompleteSearch/AutoCompleteSearch.css"
+                },
+                {
+                    "blank": 10,
+                    "code": 26,
+                    "comment": 2,
+                    "filename": "src/components/AutoCompleteSearch/AutoCompleteSearch.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src/components/AutoSuggest/AutoSuggest.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src/components/Balances/Balances.css"
+                },
+                {
+                    "blank": 10,
+                    "code": 42,
+                    "comment": 2,
+                    "filename": "src/components/Balances/Balances.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 30,
+                    "comment": 0,
+                    "filename": "src/components/Cart/Cart.css"
+                },
+                {
+                    "blank": 21,
+                    "code": 78,
+                    "comment": 35,
+                    "filename": "src/components/Cart/Cart.js"
+                },
+                {
+                    "blank": 26,
+                    "code": 64,
+                    "comment": 6,
+                    "filename": "src/components/Dashboard/Dashboard.css"
+                },
+                {
+                    "blank": 17,
+                    "code": 85,
+                    "comment": 2,
+                    "filename": "src/components/Dashboard/Dashboard.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "src/components/Details/Details.css"
+                },
+                {
+                    "blank": 10,
+                    "code": 42,
+                    "comment": 5,
+                    "filename": "src/components/Details/Details.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 13,
+                    "comment": 14,
+                    "filename": "src/components/EditEmployee/EditEmployee.css"
+                },
+                {
+                    "blank": 22,
+                    "code": 86,
+                    "comment": 1,
+                    "filename": "src/components/EditEmployee/EditEmployee.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src/components/EditProfile/EditProfile.css"
+                },
+                {
+                    "blank": 18,
+                    "code": 81,
+                    "comment": 1,
+                    "filename": "src/components/EditProfile/EditProfile.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src/components/FriendProfile/FriendProfile.css"
+                },
+                {
+                    "blank": 6,
+                    "code": 28,
+                    "comment": 0,
+                    "filename": "src/components/FriendProfile/FriendProfile.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src/components/GivePoints/GivePoints.css"
+                },
+                {
+                    "blank": 24,
+                    "code": 99,
+                    "comment": 7,
+                    "filename": "src/components/GivePoints/GivePoints.js"
+                },
+                {
+                    "blank": 7,
+                    "code": 36,
+                    "comment": 0,
+                    "filename": "src/components/GivePoints/SearchAutoComplete.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src/components/Home/custom.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "src/components/Home/Home.css"
+                },
+                {
+                    "blank": 9,
+                    "code": 31,
+                    "comment": 1,
+                    "filename": "src/components/Home/Home.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "src/components/Login/Login.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src/components/Login/Login.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src/components/Logout/Logout.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "src/components/Logout/Logout.js"
+                },
+                {
+                    "blank": 14,
+                    "code": 68,
+                    "comment": 23,
+                    "filename": "src/components/Nav/Nav.css"
+                },
+                {
+                    "blank": 19,
+                    "code": 125,
+                    "comment": 4,
+                    "filename": "src/components/Nav/Nav.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src/components/Nav/Notification.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src/components/Nav/Notification.js"
+                },
+                {
+                    "blank": 7,
+                    "code": 35,
+                    "comment": 0,
+                    "filename": "src/components/Nav/SearchAutoComplete.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src/components/Private/Private.css"
+                },
+                {
+                    "blank": 7,
+                    "code": 40,
+                    "comment": 1,
+                    "filename": "src/components/Private/Private.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src/components/Profile/GivePoints.js"
+                },
+                {
+                    "blank": 22,
+                    "code": 118,
+                    "comment": 11,
+                    "filename": "src/components/Profile/Profile.css"
+                },
+                {
+                    "blank": 14,
+                    "code": 137,
+                    "comment": 8,
+                    "filename": "src/components/Profile/Profile.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "src/components/Shop/Shop.css"
+                },
+                {
+                    "blank": 24,
+                    "code": 90,
+                    "comment": 83,
+                    "filename": "src/components/Shop/Shop.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src/components/SideBar/SideBar.css"
+                },
+                {
+                    "blank": 8,
+                    "code": 29,
+                    "comment": 6,
+                    "filename": "src/components/SideBar/SideBar.js"
+                },
+                {
+                    "blank": 23,
+                    "code": 110,
+                    "comment": 28,
+                    "filename": "src/ducks/reducer.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 42,
+                    "comment": 5,
+                    "filename": "src/index.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "src/index.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "src/logo.svg"
+                },
+                {
+                    "blank": 10,
+                    "code": 72,
+                    "comment": 26,
+                    "filename": "src/registerServiceWorker.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 43,
+                    "comment": 7,
+                    "filename": "src/router.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "src/store.js"
+                }
+            ]
+        }
+    ]
+}

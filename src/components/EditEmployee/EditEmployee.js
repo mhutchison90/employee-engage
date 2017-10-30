@@ -34,7 +34,7 @@ class EditEmployee extends Component {
 
     render() {
         return (
-            <div className='App'>
+            <div className='EditEmployee-Body-Container'>
                 <h1>Edit Employee</h1>
                 {console.log(this.state)}
 

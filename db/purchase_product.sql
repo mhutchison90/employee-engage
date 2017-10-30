@@ -8,9 +8,9 @@ where productid = $1;
 -- RETURNING *; 
 
 INSERT INTO transactions(
-productid, giver, total, timestamp
+productid, giver, total
 )VALUES(
-$1, $2, $3, (CURRENT_TIMESTAMP-7:00)
+$1, $2, $3
 );
 
 -- select * from products;

@@ -1,0 +1,31 @@
+.Side-Bar-Container{
+    margin: 10px;
+}
+.Sidebar-Balances-Container{
+}
+
+.Balance-Container-Box{
+    background-color: #586F7C;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16x;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 9px;
+}
+
+
+
+.side-bar-balance{
+    font-size: 24px;
+    /* margin-right:10px; */
+    
+}

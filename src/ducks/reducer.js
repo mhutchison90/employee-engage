@@ -8,6 +8,7 @@ const initialState = {
     cart: [],
     products: [],
     employeeList:[],
+    pointHistory:[],
     // cartTotal: ''
 }
 
@@ -22,13 +23,14 @@ const SET_PRODUCTS_ON_REDUX = 'SET_PRODUCTS_ON_REDUX';
 const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART';
 const REMOVE_PRODUCT_FROM_CART = 'REMOVE_PRODUCT_FROM_CART';
 const SET_LIST_OF_EMPLOYEES = 'SET_LIST_OF_EMPLOYEES';
+const GET_POINT_HISTORY = 'GET_POINT_HISTORY';
 
 
 
 // --ACTION CREATORS--
 export function getListOfEmployees(employeeid) {
     const employeesListData = axios.get('/api/list/users').then(res => {
-        console.log('getListOfEmployees from REDUCER',res.data)
+        // console.log('getListOfEmployees from REDUCER',res.data)
         return res.data
     })
     return {
@@ -47,6 +49,17 @@ export function getUserInfo() {
     }
 }
 
+export function getPointHistory() {
+    const pointHistoryData = axios.get('/api/user/pointhistory/*').then(res => {
+        return res.data
+    })
+    return {
+        type: GET_POINT_HISTORY,
+        payload: pointHistoryData
+    }
+}
+
+
 // export function getProductInfo() {
 //     const productData = axios.get('/api/products').then(res => {
 //         return res.data
@@ -58,7 +71,7 @@ export function getUserInfo() {
 // }
 
 export function setProductsOnRedux(val) {
-    console.log('set products reducer', val)
+    // console.log('set products reducer', val)
     return {
         type: SET_PRODUCTS_ON_REDUX,
         payload: val
@@ -129,6 +142,8 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { cart: copy });
             case SET_LIST_OF_EMPLOYEES:
             return Object.assign({}, state, { employeeList: action.payload });
+            case GET_POINT_HISTORY + '_FULFILLED':
+            return Object.assign({}, state, { pointHistory: action.payload });
 
         default:
             return state;

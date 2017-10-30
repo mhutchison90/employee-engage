@@ -15,8 +15,11 @@ export default class SearchAutoComplete extends Component {
 render() {
     console.log('id from autocomplete ', this.state.id)
     return (
+        // <div className='ReactAutocomplete-input'>
         <ReactAutocomplete
+        wrapperStyle={this.props.wrapperProps}
             items={this.props.userData}
+            menuStyle={this.props.menuStyle}
             shouldItemRender={(item, value) => {
                 
                 return item.name.toLowerCase().indexOf(value.toLowerCase()) > -1}}
@@ -38,6 +41,8 @@ render() {
                 this.props.changeHandler(e.target.value)}}
             onSelect={(value,item) => {
                 this.props.handleValue(value, item.id)}}
-        />
+        />        
+        // </div>
+
     )
 }}

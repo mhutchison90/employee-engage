@@ -23,7 +23,8 @@
     "redux-promise-middleware": "^4.4.1",
     "socket.io": "^2.0.4",
     "sweetalert": "^2.0.8",
-    "sweetalert2": "^6.11.1"
+    "sweetalert2": "^6.11.1",
+    "timeago.js": "^3.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

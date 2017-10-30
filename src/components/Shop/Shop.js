@@ -14,7 +14,7 @@ class Shop extends Component {
       giver: 283,
       productid: '',
       total: '',
-      test: ''
+      test: '',
     }
     this.purchaseProduct = this.purchaseProduct.bind(this)
     this.deleteProduct = this.deleteProduct.bind(this)
@@ -50,54 +50,167 @@ class Shop extends Component {
   deleteProduct(id) {
     // const { productid } = this.state
     console.log('deleted!')
-    axios.delete('/api/product/delete/'+id)
-    .then(res => {
-      this.setState({
-        test: res.data
+    axios.delete('/api/product/delete/' + id)
+      .then(res => {
+        this.setState({
+          test: res.data
+        })
       })
-    })
-}
+  }
+
 
 
   render() {
     // console.log(this.props.products)
     return (
-      <div className="Shop">
-
-
+      <div className="Shop-Body-Container">
         <div className="Products-Container">
-          {this.props.products.map((product, i) => {
-            // map through products here to display all
-            return (
-              <div key={i} className="Product-Container">
+          {/* <div id='toggle-edit-shop-button'> </div> */}
 
-                <Link to={`/details/${product.productid}`} >
-                  <img className='shop-image' src={product.imageurl} alt={product.productname} />
-                  <p>{product.productname}</p>
-                </Link>
-                <div className='delete-product-from-shop'
-                  onClick={_ => swal({
-                    title: "Are you sure?",
-                    text: "Once deleted, you will not be able to recover "+ product.productname,
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-                  })
-                    .then((willDelete) => {
-                      if (willDelete) {
-                        this.deleteProduct(product.productid)
-                        swal(product.productname+" has been deleted from the shop", {
-                          icon: "success",
-                        });
-                      } else {
-                        swal("this "+ product.productname +" is safe!");
-                      }
-                    })}
-                >DELETE</div>
+          <div className='shop-category-header'>DRINKS</div>
+          <div className='shop-category-container'>
+            {this.props.products.map((product, i) => {
+              // map through products here to display all
+              if (product.category === 'Drinks') {
+                return (
+                  <div key={i} className="Product-Container">
 
-              </div>
-            )
-          })}
+                    <Link className='shop-link-to-details' to={`/details/${product.productid}`} >
+                      <div className='shop-product-image-container' > <img className='shop-product-image' src={product.imageurl} alt={product.productname} /> </div>
+                      <div className='shop-product-name' >{product.productname}</div>
+                    </Link>
+                    <div className='delete-product-from-shop'
+                      onClick={_ => swal({
+                        title: "Are you sure?",
+                        text: "Once deleted, you will not be able to recover " + product.productname,
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                      })
+                        .then((willDelete) => {
+                          if (willDelete) {
+                            this.deleteProduct(product.productid)
+                            swal(product.productname + " has been deleted from the shop", {
+                              icon: "success",
+                            });
+                          } else {
+                            swal("this " + product.productname + " is safe!");
+                          }
+                        })}
+                    >DELETE</div>
+
+                  </div>
+                )
+              }
+            })}</div>
+          <div className='shop-category-header'>Snacks</div>
+          <div className='shop-category-container'>
+            {this.props.products.map((product, i) => {
+              // map through products here to display all
+              if (product.category === 'Snacks') {
+                return (
+                  <div key={i} className="Product-Container">
+
+                    <Link className='shop-link-to-details' to={`/details/${product.productid}`} >
+                      <div className='shop-product-image-container' > <img className='shop-product-image' src={product.imageurl} alt={product.productname} /> </div>
+                      <div className='shop-product-name' >{product.productname}</div>
+                    </Link>
+                    <div className='delete-product-from-shop'
+                      onClick={_ => swal({
+                        title: "Are you sure?",
+                        text: "Once deleted, you will not be able to recover " + product.productname,
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                      })
+                        .then((willDelete) => {
+                          if (willDelete) {
+                            this.deleteProduct(product.productid)
+                            swal(product.productname + " has been deleted from the shop", {
+                              icon: "success",
+                            });
+                          } else {
+                            swal("this " + product.productname + " is safe!");
+                          }
+                        })}
+                    >DELETE</div>
+
+                  </div>
+                )
+              }
+            })}</div>
+          <div className='shop-category-header'>Gift Cards</div>
+          <div className='shop-category-container'>
+            {this.props.products.map((product, i) => {
+              // map through products here to display all
+              if (product.category === 'Gift Cards') {
+                return (
+                  <div key={i} className="Product-Container">
+
+                    <Link className='shop-link-to-details' to={`/details/${product.productid}`} >
+                      <div className='shop-product-image-container' > <img className='shop-product-image' src={product.imageurl} alt={product.productname} /> </div>
+                      <div className='shop-product-name' >{product.productname}</div>
+                    </Link>
+                    <div className='delete-product-from-shop'
+                      onClick={_ => swal({
+                        title: "Are you sure?",
+                        text: "Once deleted, you will not be able to recover " + product.productname,
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                      })
+                        .then((willDelete) => {
+                          if (willDelete) {
+                            this.deleteProduct(product.productid)
+                            swal(product.productname + " has been deleted from the shop", {
+                              icon: "success",
+                            });
+                          } else {
+                            swal("this " + product.productname + " is safe!");
+                          }
+                        })}
+                    >DELETE</div>
+
+                  </div>
+                )
+              }
+            })}</div>
+          <div className='shop-category-header'>SWAG</div>
+          <div className='shop-category-container'>
+            {this.props.products.map((product, i) => {
+              // map through products here to display all
+              if (product.category === 'SWAG') {
+                return (
+                  <div key={i} className="Product-Container">
+
+                    <Link className='shop-link-to-details' to={`/details/${product.productid}`} >
+                      <div className='shop-product-image-container' > <img className='shop-product-image' src={product.imageurl} alt={product.productname} /> </div>
+                      <div className='shop-product-name' >{product.productname}</div>
+                    </Link>
+                    <div className='delete-product-from-shop'
+                      onClick={_ => swal({
+                        title: "Are you sure?",
+                        text: "Once deleted, you will not be able to recover " + product.productname,
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                      })
+                        .then((willDelete) => {
+                          if (willDelete) {
+                            this.deleteProduct(product.productid)
+                            swal(product.productname + " has been deleted from the shop", {
+                              icon: "success",
+                            });
+                          } else {
+                            swal("this " + product.productname + " is safe!");
+                          }
+                        })}
+                    >DELETE</div>
+
+                  </div>
+                )
+              }
+            })}</div>
         </div>
 
       </div>

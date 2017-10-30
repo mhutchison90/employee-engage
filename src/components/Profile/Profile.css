@@ -1,10 +1,12 @@
 .Profile-Body-Container {
+ height: 94vh;
  width: 100%;
  display: flex;
  flex-direction: column;
  align-items: center;
  
 }
+
 
 	.Profile-User-Info-Container{
 		width: 70%;
@@ -97,24 +99,25 @@ animation-fill-mode: both;
 			order:4;
 		}
 
-	*[class^='point-history-item']{
+.Point-History-Drop-Down-Container{
+    overflow: hidden;    	
+}
+#Point-History-Container {
+    margin-top: -130px;
+    animation: slide-down .70s;
+    animation-fill-mode: forwards;
+    /* z-index: -1; */
+}
+
+
+
+	.point-history-item {
 		outline: solid black 1px;
 		display: flex;
 		justify-content: space-between;
 		height: 20px;
-		margin-top: -20px;
-	animation: slide-down .70s;
-	animation-fill-mode: both; 	
+
 	}
-		.point-history-item{
-			outline: solid black 1px;
-			display: flex;
-			justify-content: space-between;
-			/* height: 25px;			 */
-
-			
-		}
-
 			.point-history-giver{
 				margin-left: 10px;
 				margin-top: 5px;

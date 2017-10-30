@@ -1,0 +1,26 @@
+.Give-Points-Container{
+   display: flex;
+   flex-direction: column; 
+}
+
+
+.number-of-points{}
+.give-points-message{}
+.give-points-send-button{}
+
+/* .ReactAutocomplete-input{
+    height: 50px;
+    width: 200px;
+
+    color: #bbbb5d
+} */
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: red; 
+}

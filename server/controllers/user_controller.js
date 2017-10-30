@@ -12,9 +12,9 @@ module.exports = {
   editUser: (req, res, next) => {
     const db = req.app.get('db');
     // const { params } = req;
-    const { employeeid, userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance } = req.body;
+    const { employeeid, userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance,profilePicture } = req.body;
 
-    db.edit_employee([employeeid, userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance])
+    db.edit_employee([employeeid, userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance,profilePicture])
       .then(() => res.status(200).send(req.body))
       .catch(() => res.status(500).send());
     console.log(req.body)
@@ -49,9 +49,9 @@ module.exports = {
   sendPoints: (req, res, next) => {
     const db = req.app.get('db');
     // const { params } = req;
-    const { me, sendTo, pointsSent, message } = req.body;
+    const { me, sendTo, pointsSent, message,timestamp } = req.body;
 
-    db.send_points([me, sendTo, pointsSent, message])
+    db.send_points([me, sendTo, pointsSent, message,timestamp])
       .then(() => res.status(200).send(req.body))
       .catch(() => res.status(500).send());
     console.log(req.body)

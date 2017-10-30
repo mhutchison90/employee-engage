@@ -1,4 +1,5 @@
 .Dashboard-Body-Container {
+height: 94vh;
 width: 100%;
 display: flex;
 align-items: center;
@@ -9,18 +10,23 @@ flex-direction: column;
 .Dashboard-Give-Points-Container{
 
 }
-.give-Points-drop-down-box{
-background-color: #F4F4F9;
-width: 100%;
-}
-.give-Points-drop-down {
 
+
+.give-Points-drop-down-box{
+    overflow: hidden;    
+}
+#give-Points-drop-down {
+    margin-top: -130px;
+    animation: slide-down .70s;
+    animation-fill-mode: forwards;
+    z-index: -1;
 }
 
 .toggle_GivePoints{
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
+    background-color: #9DDDDB;
+    /* border: solid 3px linear-gradient(#9DDDDB, #586F7C); */
+    border-radius: 9px;
+    color: #253237;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -29,14 +35,12 @@ width: 100%;
     margin: 4px 2px;
     cursor: pointer;
     width: 70%;
+    background: rgb(64, 172, 39);
+
 }
 
 
-.ANIMATION{
-    margin-top: -130px;
-    animation: slide-down .70s;
-    animation-fill-mode: both;
-}
+
 
 .Dashboard-History-Container{
 width:90%;
@@ -45,6 +49,10 @@ display: flex;
 flex-direction: column;
 }
 
+
+
+
+
 .Dashboard-Point-Tiles-Container {
 /* outline: solid black 1px; */
 }
@@ -52,45 +60,71 @@ flex-direction: column;
 .dashboard-point-history-tile{
 /* outline: solid black 1px; */
 /* background-color: #F4F4F9; */
-height: 120px;
+height: 160px;
 width:100%;
 /*margin-top: 20px; */
 /* background: linear-gradient(to bottom right, #F4F4F9, #B8DBD9); */
 margin: 5px;
 border-radius: 10px;
-background: linear-gradient(#F4F4F9 90%, #B8DBD9); /* Standard syntax */
+background: linear-gradient(to top, #f5f5f5 90%, #B8DBD9); /* Standard syntax */
 }
 
-.dashboard-tile-header {
 
-}
 
-.dashboard-tile-recievers-name {
-    
+
+
+/* ------  DashTile.js CSS  ------ */
+
+
+    .dashboard-tile-header {
+        font-size: 16px;
+        color: #536976;
+        display: flex;
+        justify-content: space-between;        
     }
-    
-.dashboard-tile-title {
-    
+    .dashboard-tile-receivers-profile-picture{
+        height: 100px;
     }
-    
-.dashboard-tile-message {
-    
+    .dash-tile-profile-picture{
+			width: 70px;
+			height: 70px;
+			border: solid #F4F4F9 3px;
+			border-radius: 50%;
     }
-    
-.dashboard-tile-footer {
-    
+        .dashboard-tile-receivers-name {
+            margin-top:9px;
+            
+        }
+        .dashboard-tile-when-received{
+            margin-top:5px;
+        }
+.dashboard-tile-title{
+    font-size: 20px;
+    color: #536976;
+    display: flex;
+    justify-content: space-between;  
+} 
+    .dashboard-tile-body {
+        font-size: 30px;
+        color: #536976; 
     }
-    
-.dashboard-tile-like-button {
-    
-    }
-    
-.dashboard-tile-likes {
-    
-    }
-    
-    @keyframes slide-down {
         
-            to {
-                margin-top: 0px; }
-            }
+    .dashboard-tile-message {
+        
+    }
+        
+    .dashboard-tile-footer {
+        display: flex;
+        justify-content: center;
+    }
+        .dashboard-tile-like-button {
+            margin-right:5px;
+        } 
+        .dashboard-tile-likes {
+        }
+        
+@keyframes slide-down {
+
+    to {
+        margin-top: 0px; }
+    }

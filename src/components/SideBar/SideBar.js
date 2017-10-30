@@ -23,18 +23,25 @@ class SideBar extends Component {
 
         return (
             <div className='Side-Bar-Container'>
-                
-                <div className='you-can-give-sidebar'> You Can Give: {this.props.user.allowancebalance} </div>
-                <div className='you-can-spend-sidebar'> You Can Spend: {this.props.user.pointbalance} </div>
-                <div><GivePoints/></div>
-                
+                <div className='Sidebar-Balances-Container'>
+                    <div className='Balance-Container-Box'>
+                         You Can Give:
+                     <div className='side-bar-balance'>951{this.props.user.allowancebalance}</div>
+                    </div>
+                    <div className='Balance-Container-Box'> 
+                        You Can Spend:
+                         <div className='side-bar-balance'>26{this.props.user.pointbalance}</div>
+                    </div>
+                </div>
+                {/* <div><GivePoints/></div> */}
+
             </div>
         );
     };
 };
 
 function mapStateToProps(state) {
-    console.log("State from SideBar", state)
+    // console.log("State from SideBar", state)
     return {
         user: state.user
     }

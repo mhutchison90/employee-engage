@@ -94,27 +94,33 @@ class Profile extends Component {
                 <div className="Transaction-History-Container">
 
                     <button onClick={_ => { this.toggle_showPointHistory('Point-History-Container') }}>Show Point History</button>
-                    <div id="Point-History-Container">
-                        {this.state.pointHistory.length ? null : 'No history to show at this time.'}
-                        {this.state.pointHistory.map((points, i) => {
-                            return (
-                                <div key={i} className={`point-history-item${i}`}>
-                                    <div className='point-history-giver'>
-                                        {points.sender}
-                                    </div>
-                                    <div className='point-history-reciever'>
-                                        {points.reciever}
-                                    </div>
-                                    <div className='point-history-total'>
-                                        {points.total}
-                                    </div>
-                                    {/* <div className='point-history-timestamp'>
+
+                    <div className='Point-History-Drop-Down-Container'>
+                        <div id="Point-History-Container">
+                            {this.state.pointHistory.length ? null : 'No history to show at this time.'}
+                            {this.state.pointHistory.map((points, i) => {
+                                return (
+                                    <div key={i} className={`point-history-item`}>
+                                        <div className='point-history-giver'>
+                                            {points.sender}
+                                        </div>
+                                        <div className='point-history-reciever'>
+                                            {points.reciever}
+                                        </div>
+                                        <div className='point-history-total'>
+                                            {points.total}
+                                        </div>
+                                        {/* <div className='point-history-timestamp'>
                                         {points.timestamp}
                                     </div> */}
-                                </div>
-                            )
-                        })}
+                                    </div>
+                                )
+                            })}
+                        </div>
                     </div>
+
+
+
                     <button onClick={_ => { this.toggle_showPurchaseHistory('Purchase-History-Container') }}>Show Purchase History</button>
                     <div id="Purchase-History-Container">
                         {this.state.transactions.length ? null : 'No history to show at this time.'}
@@ -148,7 +154,7 @@ class Profile extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log("state from Profile", state)
+    // console.log("state from Profile", state)
     return {
         user: state.user
     }
