@@ -31,7 +31,7 @@ class DashTile extends Component {
         
         return (
             <div className="dashboard-point-tile">
-            {timeago().format(1509005645-Date.now())}
+           { /* {timeago().format(1509005645-Date.now())} */}
             {/* 10/28/2017 - 4:30 pm */}
             
 
@@ -44,13 +44,13 @@ class DashTile extends Component {
                             <div className='dashboard-tile-header'>
                                 <div className='dashboard-tile-receivers-profile-picture'><img className='dash-tile-profile-picture' src={points.img} alt=''/> </div>
                                 <div className='dashboard-tile-receivers-name'>{points.reciever}</div>
-                                <div className='dashboard-tile-when-received'>{timeago().format(Date.now()-points.timestamp) }</div>
+                                <div className='dashboard-tile-when-received'>{points.timestamp }</div>
                             </div>
                             <div className='dashboard-tile-title'> Recognized by {points.sender} </div>
                             <div className='dashboard-tile-message'> {points.message} </div>
 
                             <div className='dashboard-tile-footer'>
-                                <div className='dashboard-tile-like-button'>Like Button</div>
+                                {/* <div className='dashboard-tile-like-button'>Like Button</div> */}
                                 <div className='dashboard-tile-likes'>Likes: 5 </div>
                             </div>
                         </div>

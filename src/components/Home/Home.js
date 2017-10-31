@@ -16,7 +16,7 @@ export default class Home extends Component {
 
     render() {
         return (
-            <div className='App'>
+            <div className='Home-Container'>
                 <div>
                     <ul>
                         <li><NavLink className='nav-link' activeClassName='active' exact to='/'>Home</NavLink></li>

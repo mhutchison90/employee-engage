@@ -57,7 +57,7 @@ class EditProfile extends Component {
         const user = this.props.user;
         console.log('this.state edit profile',this.user)
         return (
-            <div className='App'>
+            <div className='Edit-Profile-Container'>
                 <h1>Edit Profile</h1>
 
                 <div className='edit-profile-first-name'>First Name: <input name='firstname' type='text' value={this.state.firstname} onChange={(e) => {

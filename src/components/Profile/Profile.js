@@ -76,10 +76,13 @@ class Profile extends Component {
 
         return (
             <div className='Profile-Body-Container'>
-                <div className='Profile-User-Info-Container'>
+                <div className='profile-header'>
+                    <div className='user-name-header'>{user.id ? user.user_name + "'s Profile" : null}</div>
+                    <div className='profile-image'><img className='profile-picture' src={user.img} alt='' /></div>
+                </div>
+
+                
                     <div className='profile-user-info'>
-                        <div className='user-name-header'>{user.id ? user.user_name + "'s Profile" : null}</div>
-                        <div className='profile-image'>{user.id ? <img className='profile-picture' src={user.img} alt='' /> : null}</div>
                         <div className='profile-user-name'><p>Username: {user.id ? user.user_name : null}</p></div>
                         <div className='profile-email'><p>Email: {user.id ? user.email : null} </p></div>
                         <div className='profile-authid'><p>Auth ID: {user.id ? user.auth_id : null} </p></div>
@@ -89,11 +92,11 @@ class Profile extends Component {
                         <div className='profile-userrole'><p>userrole: {user.id ? user.userrole : null} </p></div>
                         <Link className='edit-profile-button' to={'/editprofile/' + user.employeeid}>EDIT PROFILE</Link>
                     </div>
-                </div>
+               
 
                 <div className="Transaction-History-Container">
 
-                    <button onClick={_ => { this.toggle_showPointHistory('Point-History-Container') }}>Show Point History</button>
+                    <div className='toggle_PointHistory' onClick={_ => { this.toggle_showPointHistory('Point-History-Container') }}>Show Point History</div>
 
                     <div className='Point-History-Drop-Down-Container'>
                         <div id="Point-History-Container">
@@ -121,7 +124,7 @@ class Profile extends Component {
 
 
 
-                    <button onClick={_ => { this.toggle_showPurchaseHistory('Purchase-History-Container') }}>Show Purchase History</button>
+                    <div className='toggle_PurchaseHistory' onClick={_ => { this.toggle_showPurchaseHistory('Purchase-History-Container') }}>Show Purchase History</div>
                     <div id="Purchase-History-Container">
                         {this.state.transactions.length ? null : 'No history to show at this time.'}
                         {this.state.transactions.map((product, i) => {

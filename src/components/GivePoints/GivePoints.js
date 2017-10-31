@@ -9,7 +9,7 @@ import dateCreator from '../DateCreator';
 
 const pointBalanceDisplay = 0;
 const allowanceBalanceDisplay = 0;
-
+const menuStyle= {}
 
 class GivePoints extends Component {
     constructor() {
@@ -29,8 +29,7 @@ class GivePoints extends Component {
             sent: '',
             pointHistory: [],
             timestamp: Date.now(),
-            menuStyle:{},
-            wrapperStyle:{}
+            
             }
         this.sendPoints = this.sendPoints.bind(this)
         this.changeHandler = this.changeHandler.bind(this)
@@ -82,67 +81,63 @@ class GivePoints extends Component {
         })
     }
 
+    // handleWordCount = event => {
+    //     const charCount = this.state.message.length;
+        
+    //     const charLeft = 140 - charCount;
+    //     this.setState({ chars_left: charLeft});
+    // }
 
     render() {
-        this.state.menuStyle={
-            borderRadius: '9px',
-            boxShadow: '0 2px 12px rgba(0, 0, 0, 0.1)',
-            background: '#bbbb5d',
-            padding: '2px 0',
-            fontSize: '90%',
-            position: 'fixed',
-            overflow: 'auto',
-            maxHeight: '50%', // TODO: don't cheat, let it flow to the bottom
-          }
-          this.state.wrapperStyle={
-            width: '100%',
-            padding: '12px 20px',
-            margin: '8px 0',
-            display: 'inline-block',
-            border: '1px solid #ccc',
-            borderRadius: '4px',
-            boxSizing: 'border-box'
-          }
+
         return (
             <div className='Give-Points-Container'>
-                <h1>Send Points</h1>
-                {/* {console.log(this.state)} */}
+                <div className='give-points-drop-down-content' >
+                <div className='give-points-drop-down-header'>Send Points</div>
                 <div className='send-points-to-name'>
                 <div className='give-points-field-name'>Who Do You Appreciate:  </div>
-               {/* <div className=''></div> */}
                 {this.state.usersList.length ? <SearchAutoComplete
                     userData={this.state.usersList}
                     changeHandler={this.changeHandler}
                     handleValue={this.handleValue}
                     value={this.state.value}
-                    wrapperStyle={this.state.wrapperStyle}
-                    menuStyle={this.state.menuStyle}
                 />
                     : null}
                     </div>
 
                 <div className='number-of-points'>
-                <div className='give-points-field-name'></div>
-                    How Many Points To Send: <input name='pointsSent' placeholder='number required' type='text' value={this.state.pointsSent} onChange={(e) => {
+                <div className='give-points-field-name'>How Many Points To Send: </div>
+                    <input className='num-pts-send' name='pointsSent' placeholder='number required' type='number' value={this.state.pointsSent} onChange={(e) => {
                         this.setState({
                             pointsSent: e.target.value
                         })
                     }} />
                 </div>
                 <div className='give-points-message'>
-                <div className='give-points-field-name'></div>
-                    Message: <textarea name='message' type='text' value={this.state.message} onChange={(e) => {
-                        this.setState({
+                <div className='give-points-field-name'>Message: </div>
+                    <textarea 
+                    className='send-points-textarea'
+                    name='message' 
+                    type='text' 
+                    maxlength='200'
+                    value={this.state.message} 
+                    onChange={(e) => {
+                       this.setState({
                             message: e.target.value
                         })
                     }} />
+
+                    <div className='Message-Char-Remaining-Container'>
+                    <div className='message-char-remaining'>
+                    remaining: {200-this.state.message.length}
+                    </div>
+                    </div>
                 </div>
 
                 <div className='give-points-send-button'>
                     {this.state.sent === '' ? <button onClick={this.sendPoints}>Send Points!</button> : this.state.sent}
                 </div>
-
-<div className='give-points-field-name'></div>
+                </div>
 
             </div>
         );

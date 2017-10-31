@@ -1,5 +1,6 @@
 .Shop-Body-Container{
-    height: 94vh;
+    height: 100%;
+    
 }
 
  
@@ -25,6 +26,7 @@
     height: 100%;
     width: 100%;
     background-color: #B8DBD9;
+    margin-bottom: 60px;
 }
 
   .Product-Container {

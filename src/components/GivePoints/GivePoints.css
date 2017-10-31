@@ -2,25 +2,89 @@
    display: flex;
    flex-direction: column; 
 }
+.give-points-drop-down-content{
+    background-color: #F4F4F9;
+    border-radius: 2px;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+}
+
+.give-points-drop-down-header{
+    font-size: 16px;
+    color: #253237;
+margin-bottom: 20px;
+}
 
 
-.number-of-points{}
-.give-points-message{}
-.give-points-send-button{}
+.number-of-points{
+display: flex;
+flex-direction: column;
+align-items: center;
 
-/* .ReactAutocomplete-input{
-    height: 50px;
-    width: 200px;
+}
+.send-points-to-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
 
-    color: #bbbb5d
+.num-pts-send{
+        width: 350px;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 100%;
+        /* background: red;  */
+        text-align: center;
+}
+
+.give-points-field-name{
+    color: #536976;
+}
+/* textarea {
 } */
-input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
+
+
+.give-points-message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+}
+.send-points-textarea{
+    border-radius: 9px; 
+    height: 75px;
+    resize: none;
+    width: 350px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    background-color: red; 
+    font-size: 12px;
 }
+.Message-Char-Remaining-Container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.message-char-remaining{
+    font-size: 10px;
+    color: #253237;
+    margin-top:5px;
+}
+.give-points-send-button{}
+
+
+
+
+/* THIS IS THE DIV IN THE SEARCH AUTO COMPLETE FILE */
+
+/* .ReactAutocomplete-input ReactAutocomplete{
+width: 100%;
+} */

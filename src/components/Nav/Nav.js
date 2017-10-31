@@ -47,15 +47,14 @@ class Nav extends Component {
     }
 
     render() {
-        //if (!this.props.user.id) {
-        if (1 === 2) {
+        if (!this.props.user.id) {
             return (
                 <div className='Nav-Bar-Container'>
                     <div className='nav-bar'>
                         <ul className='nav-ul-links'>
                             {/* --NOT LOGGED IN NAV-- */}
                             < li className='li-nav-link'> <NavLink className='nav-link' activeClassName='active' exact to='/'>Home</NavLink></li>
-                            < li className='li-nav-link'><NavLink className='nav-link' activeClassName='active' exact to='/Login'>Login</NavLink></li>
+                            {/* < li className='li-nav-link'><NavLink className='nav-link' activeClassName='active' exact to='/Login'>Login</NavLink></li> */}
                             < li className='li-nav-link'><a href={process.env.REACT_APP_LOGIN}><button>Login</button></a> </li>
                         </ul>
                     </div>
@@ -85,8 +84,8 @@ class Nav extends Component {
                             < div className='nav-logout-link'><a className='nav-logout-link' href='http://localhost:3005/auth/logout'>Log out</a></div>
                         </div>
                     </div>
-                    <div class="dropdown">
-                        <div class="dropbtn"><img className='nav-bar-notification-svg' src={notificationIcon} alt='' /></div>
+                    <div className="dropdown">
+                        <div className="dropbtn"><img className='nav-bar-notification-svg' src={notificationIcon} alt='' /></div>
                         <div className='dropdown-content' >
                             <div className='nav-notification-item'>Rob Aschliman just sent you some points!</div>
                             <div className='nav-notification-item'>Thank you for purchasing a Diet Mtn Dew</div>

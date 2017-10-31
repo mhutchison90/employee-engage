@@ -19,7 +19,7 @@ class Admin extends Component {
     render() {
         
         return (
-            <div className='App'>
+            <div className='Admin-Container'>
                 <h3>Admin Page</h3>
                 <div>
             {this.props.user.userrole === 'admin' ? 

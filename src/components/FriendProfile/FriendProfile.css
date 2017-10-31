@@ -1,0 +1,132 @@
+.f-Profile-Body-Container{
+    height: 94vh;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    outline: solid black 1px;    
+}
+
+.f-profile-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    margin-top: 20px; 
+}
+
+.f-profile-user-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    margin-top: 20px; 
+
+    height: 160px;
+    width:450px;
+    /*margin-top: 20px; */
+    /* background: linear-gradient(to bottom right, #F4F4F9, #B8DBD9); */
+    margin: 5px;
+    border-radius: 10px;
+    /* background: linear-gradient(to bottom,#D1E8E6 90%, #B8DBD9 );  */
+    background: #D1E8E6;
+}
+.f-user-name-header{
+    font-size: 30px;
+    color: #253237;
+    order: 1
+}
+.f-profile-image{
+    order: 2
+}
+.f-profile-user-name{
+    font-size: 20px;
+    color: #253237;
+}
+.f-profile-email{
+    font-size: 20px;
+    color: #253237;
+}
+.f-profile-employee-id{
+    font-size: 20px;
+    color: #253237;
+}
+.f-profile-allowancebalance{
+    font-size: 20px;
+    color: #253237;
+}
+.f-profile-pointbalance{
+    font-size: 20px;
+    color: #253237;
+}
+.f-profile-userrole{
+    font-size: 20px;
+    color: #253237;
+}
+.f-profile-picture{			
+    width: 190px;
+    height: 190px;
+    border: solid #F4F4F9 5px;
+    border-radius: 50%;}
+
+/* 
+.Profile-Body-Container{
+    display: flex;
+    flex-direction: column;
+    outline: solid black 1px;    
+}
+
+.profile-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    margin-top: 20px; 
+}
+
+.profile-user-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    margin-top: 20px; 
+
+    height: 160px;
+    width:450px;
+    
+    margin: 5px;
+    border-radius: 10px;
+    
+    background: #D1E8E6;
+}
+.user-name-header{
+    font-size: 30px;
+    color: #253237;
+    order: 1
+}
+.profile-image{
+    order: 2
+}
+.profile-user-name{
+    font-size: 20px;
+    color: #253237;
+}
+.profile-email{
+    font-size: 20px;
+    color: #253237;
+}
+.profile-employee-id{
+    font-size: 20px;
+    color: #253237;
+}
+.profile-allowancebalance{
+    font-size: 20px;
+    color: #253237;
+}
+.profile-pointbalance{
+    font-size: 20px;
+    color: #253237;
+}
+.profile-userrole{
+    font-size: 20px;
+    color: #253237;
+} */

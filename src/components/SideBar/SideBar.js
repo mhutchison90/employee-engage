@@ -21,22 +21,29 @@ class SideBar extends Component {
 
     render() {
 
+        
+        if (this.props.user.id) {
         return (
             <div className='Side-Bar-Container'>
                 <div className='Sidebar-Balances-Container'>
                     <div className='Balance-Container-Box'>
                          You Can Give:
-                     <div className='side-bar-balance'>951{this.props.user.allowancebalance}</div>
+                     <div className='side-bar-balance'>{this.props.user.allowancebalance}</div>
                     </div>
                     <div className='Balance-Container-Box'> 
                         You Can Spend:
-                         <div className='side-bar-balance'>26{this.props.user.pointbalance}</div>
+                         <div className='side-bar-balance'>{this.props.user.pointbalance}</div>
                     </div>
                 </div>
                 {/* <div><GivePoints/></div> */}
 
             </div>
         );
+    }else{
+        return(
+            <div className='Side-Bar-Container'></div>
+        )
+    }
     };
 };
 

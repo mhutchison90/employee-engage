@@ -1,3 +1,4 @@
+
 .Profile-Body-Container {
  height: 94vh;
  width: 100%;
@@ -6,14 +7,29 @@
  align-items: center;
  
 }
+.profile-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    margin-top: 20px; 
+}
 
 
-	.Profile-User-Info-Container{
-		width: 70%;
-		display: flex;		
-	}
 		.profile-user-info{
-			order:2;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;  
+			margin-top: 20px; 
+			height: 200px;
+			width:450px;
+			/*margin-top: 20px; */
+			/* background: linear-gradient(to bottom right, #F4F4F9, #B8DBD9); */
+			margin: 5px;
+			border-radius: 10px;
+			/* background: linear-gradient(to bottom,#D1E8E6 90%, #B8DBD9 );  */
+			background: #D1E8E6;
 		}
 		.user-name-header{
 
@@ -52,22 +68,35 @@
 		}
 		.edit-profile-button {
 			order:2;
+			text-decoration: none;
+			margin:10px;
+			display: inline-block;
+			padding: 10px;
+			cursor: pointer;
+			border-radius: 3px;
+			transition: .3s;
+			background: rgb(64, 172, 39);
 		}
-
+		.edit-profile-button:hover {
+			color:  RGBA(0, 220, 255, 1.00);
+			background-color: white;
+			border: 2px solid RGBA(0, 220, 255, 1.00);
+		  }
 .Transaction-History-Container{
 	width:70%;
 	display: flex;
 	/* align-items: center; */
 	flex-direction: column;
+	align-items: center;
 	
 	
 }
-*[class^='purchase-history-item']{
+.purchase-history-item{
 	outline: solid black 1px;
 	display: flex;
 	justify-content: space-between;
 	height: 20px;
-	margin-top: -20px;
+	margin-top: -300px;
 animation: slide-down .70s;
 animation-fill-mode: both; 	
 }
@@ -100,13 +129,15 @@ animation-fill-mode: both;
 		}
 
 .Point-History-Drop-Down-Container{
-    overflow: hidden;    	
+	overflow: hidden;  
+	width: 100%;  	
 }
 #Point-History-Container {
     margin-top: -130px;
     animation: slide-down .70s;
     animation-fill-mode: forwards;
-    /* z-index: -1; */
+	/* z-index: -1; */
+	
 }
 
 
@@ -152,3 +183,35 @@ animation-fill-mode: both;
 		margin-top: 0px; }
 	}
 
+	.toggle_PointHistory{
+		background-color: #9DDDDB;
+		/* border: solid 3px linear-gradient(#9DDDDB, #586F7C); */
+		border-radius: 9px;
+		color: #253237;
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 4px 2px;
+		cursor: pointer;
+		width: 70%;
+		background: rgb(64, 172, 39);
+	}
+	.toggle_PurchaseHistory{
+		background-color: #9DDDDB;
+		/* border: solid 3px linear-gradient(#9DDDDB, #586F7C); */
+		border-radius: 9px;
+		color: #253237;
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 4px 2px;
+		cursor: pointer;
+		width: 70%;
+		background: rgb(64, 172, 39);
+	}
+	
+	
