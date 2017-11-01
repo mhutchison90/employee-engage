@@ -81,7 +81,7 @@ class Nav extends Component {
                         </ul>
 
                         <div className='nav-logout-button'>
-                            < div className='nav-logout-link'><a className='nav-logout-link' href='http://localhost:3005/auth/logout'>Log out</a></div>
+                            < div className='nav-logout-link'><a className='nav-logout-link' href='/auth/logout'>Log out</a></div>
                         </div>
                     </div>
                     <div className="dropdown">

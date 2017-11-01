@@ -32,7 +32,7 @@ class Private extends Component {
                 <p>pointbalance: {user.id ? user.pointbalance : null} </p>
                 <p>userrole: {user.id ? user.userrole : null} </p>
                 
-                <a href='http://localhost:3005/auth/logout'><button>Log out</button></a>
+                <a href='/auth/logout'><button>Log out</button></a>
             </div>
         )
     }
