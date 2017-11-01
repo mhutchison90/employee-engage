@@ -132,7 +132,7 @@ app.get('*', (req, res)=>{
 //     console.log('a user connected');
 //   });
 
-// --SETUP APP TO LISTEN TO PORT--
+// --SETUP APP TO LISTEN TO PORT---
 const PORT = 80;
 app.listen(PORT, () => console.log(`Listening on ${PORT}`))
 
