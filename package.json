@@ -33,5 +33,4 @@
     "eject": "react-scripts eject"
   },
   "main": "./server/server.js"
-  
 }
