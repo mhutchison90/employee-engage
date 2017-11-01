@@ -13,6 +13,7 @@ const express = require('express')
 
 // --SETUP APP--
 const app = express();
+app.use( express.static( `${__dirname}/../build` ) );
 
 app.use(bodyParser.json());
 app.use(session({
@@ -72,7 +73,7 @@ passport.use(new Auth0Strategy({
 // --AUTH ENDPOINTS--
 app.get('/auth', passport.authenticate('auth0'))
 app.get('/auth/callback', passport.authenticate('auth0', {
-    successRedirect: 'http://localhost:3000/#/profile',
+    successRedirect: 'http://localhost:3005/#/profile',
     failureRedirect: '/auth'
 }))
 app.get('/auth/me', (req, res) => {
@@ -84,7 +85,7 @@ app.get('/auth/me', (req, res) => {
 
 app.get('/auth/logout', (req, res) => {
     req.logOut();
-    res.redirect(302, 'http://localhost:3000/#/logout')
+    res.redirect(302, 'http://localhost:3005/#/logout')
 })
 
 passport.serializeUser(function (id, done) {
@@ -120,6 +121,11 @@ app.get('/api/user/pointhistory/:id', products_controller.myPointHistory);
 app.delete('/api/product/delete/:productid', products_controller.deleteProduct);
 
 
+// -- LAST END POINT -- DO NOT PUT ANY END POINTS BELOW HERE --
+const path = require('path')
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+})
 
 // --SOCKET--
 // io.on('connection', function(socket){
