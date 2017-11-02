@@ -4,6 +4,9 @@ import { Route, Switch } from 'react-router-dom';
 
 // --IMPORTING COMPONTENTS--
 import Home from './components/Home/Home'
+import About from './components/Home/About'
+import Contact from './components/Home/Contact'
+import Pricing from './components/Home/Pricing'
 import AddEmployee from './components/AddEmployee/AddEmployee'
 import GivePoints from './components/GivePoints/GivePoints'
 import EditEmployee from './components/EditEmployee/EditEmployee'
@@ -26,6 +29,9 @@ import Dashboard from './components/Dashboard/Dashboard'
 export default (
     <Switch>
         <Route exact path='/' component={Home} />
+        <Route path='/About' component={About} />
+        <Route path='/Contact' component={Contact} />
+        <Route path='/Pricing' component={Pricing} />
         <Route path='/AddEmployee' component={AddEmployee} />
         <Route path='/EditEmployee' component={EditEmployee} />
         <Route path='/EditProfile/:id' component={EditProfile} />
