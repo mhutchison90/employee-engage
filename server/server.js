@@ -133,7 +133,7 @@ app.get('*', (req, res)=>{
 //   });
 
 // --SETUP APP TO LISTEN TO PORT--
-const PORT = 80;
+const PORT = 8080;
 app.listen(PORT, () => console.log(`Listening on ${PORT}`))
 
 
