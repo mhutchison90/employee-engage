@@ -7,6 +7,7 @@ import { getListOfEmployees } from '../../ducks/reducer';
 import SearchAutoComplete from './SearchAutoComplete';
 import './Nav.css';
 import notificationIcon from '../../assets/notification.svg';
+import mobileMenu from '../../assets/mobileMenu.svg';
 // import Notification from './Notification'
 
 class Nav extends Component {
@@ -47,7 +48,8 @@ class Nav extends Component {
     }
 
     render() {
-        if (!this.props.user.id) {
+        // if (!this.props.user.id) {
+        if (1 + 1 === 3) {
             return (
                 <div className='Nav-Bar-Container'>
                     <div className='nav-bar'>
@@ -82,6 +84,25 @@ class Nav extends Component {
 
                         <div className='nav-logout-button'>
                             < div className='nav-logout-link'><a className='nav-logout-link' href='/auth/logout'>Log out</a></div>
+                        </div>
+                    </div>
+                    <div className='mobile-nav-bar'>
+                        <div className='mobile-nav-dropdown'>
+                            <div className="mobile-dropbtn"><img className='mobile-nav-bar-menu-svg' src={mobileMenu} alt='' /></div>
+                            <div className='mobile-dropdown-content' >
+                                < div className='mobile-nav-search-bar'>{this.state.usersList.length ? <SearchAutoComplete
+                                    userData={this.state.usersList}
+                                    changeHandler={this.changeHandler}
+                                    handleValue={this.handleValue}
+                                    value={this.state.value}
+                                />
+                                    : null}
+                                    <NavLink className='li-nav-search-button' activeClassName='active' exact to={`/friendprofile/${this.state.userId}`}>Search</NavLink></div>
+                                <div className='mobile-nav-link-container'><NavLink className='mobile-nav-link' activeClassName='active' exact to='/dashboard'>Dashboard</NavLink></div>
+                                <div className='mobile-nav-link-container'><NavLink className='mobile-nav-link' activeClassName='active' exact to='/profile'>Profile</NavLink></div>
+                                <div className='mobile-nav-link-container'><NavLink className='mobile-nav-link' activeClassName='active' exact to='/Shop'>Shop</NavLink></div>
+                                <div className='mobile-nav-link-container'>{this.props.user.userrole === 'admin' ? <NavLink className='mobile-nav-link' activeClassName='active' exact to='/admin'>Admin</NavLink> : null}</div>
+                            </div>
                         </div>
                     </div>
                     <div className="dropdown">

@@ -1,6 +1,15 @@
 /* a:visited {color:white;} */
 /* a:hover {color:#F4F4F9;} */
-
+.mobile-nav-bar-menu-svg{
+    height:50px;
+    width: 50px;
+     
+ }
+.mobile-dropbtn{
+    height:50px;
+    width: 50px;
+     
+ }
 .Nav-Bar-Container {
     height: 100%;
  /* background-color: #586F7C; */
@@ -19,6 +28,7 @@
     align-items: center;    
     z-index: 1; 
 }
+
 .nav-ul-links{
     list-style: none;
     /* display:flex;
@@ -122,4 +132,149 @@
     color: white;
     text-decoration: none;
     margin-bottom: 9px;
+}
+.mobile-nav-bar{
+display:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+/* Portrait */
+@media only screen 
+/* and (min-device-width: 414px)  */
+and (max-device-width: 1150px) 
+/* and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait)  */
+{ 
+
+/* a:visited {color:white;} */
+/* a:hover {color:#F4F4F9;} */
+
+.Nav-Bar-Container {
+    height: 100%;
+ align-items: center;
+ justify-content: center;
+ display: flex;
+ background-color: #253237;
+ z-index: 2; 
+}
+
+.nav-bar {   
+    display: none;
+}
+.mobile-nav-bar{
+    display: inline;
+    width:100vh;
+    
+}
+
+.mobile-dropbtn {
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+
+}
+
+.mobile-nav-dropdown {
+    position: relative;
+    display: inline-block;   
+    z-index: 1; 
+}
+
+.mobile-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100vh;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin-top: -130px;
+    animation: slide-down .76s;
+    animation-fill-mode: forwards;
+    z-index: -1; 
+}
+
+.mobile-dropdown-content div {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.mobile-dropdown-content div:hover {background-color: #f1f1f1}
+
+.mobile-nav-dropdown:hover .mobile-dropdown-content {
+    display: block;
+}
+
+
+@keyframes slide-down {
+	to {
+		margin-top: 0px; }
+	}
+
+
+/* Dropdown Button */
+
 }
