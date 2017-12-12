@@ -61,7 +61,7 @@ class Shop extends Component {
 
 
   render() {
-    // console.log(this.props.products)
+    // console.log(this.props.products)    
     return (
       <div className="Shop-Body-Container">
         <div className="Products-Container">
@@ -79,6 +79,7 @@ class Shop extends Component {
                       <div className='shop-product-image-container' > <img className='shop-product-image' src={product.imageurl} alt={product.productname} /> </div>
                       <div className='shop-product-name' >{product.productname}</div>
                     </Link>
+                    {this.props.user.userrole === 'admin'? 
                     <div className='delete-product-from-shop'
                       onClick={_ => swal({
                         title: "Are you sure?",
@@ -98,7 +99,7 @@ class Shop extends Component {
                           }
                         })}
                     >DELETE</div>
-
+                    : null }
                   </div>
                 )
               }
@@ -115,6 +116,7 @@ class Shop extends Component {
                       <div className='shop-product-image-container' > <img className='shop-product-image' src={product.imageurl} alt={product.productname} /> </div>
                       <div className='shop-product-name' >{product.productname}</div>
                     </Link>
+                    {this.props.user.userrole === 'admin'? 
                     <div className='delete-product-from-shop'
                       onClick={_ => swal({
                         title: "Are you sure?",
@@ -134,7 +136,7 @@ class Shop extends Component {
                           }
                         })}
                     >DELETE</div>
-
+                    : null }
                   </div>
                 )
               }
@@ -151,6 +153,7 @@ class Shop extends Component {
                       <div className='shop-product-image-container' > <img className='shop-product-image' src={product.imageurl} alt={product.productname} /> </div>
                       <div className='shop-product-name' >{product.productname}</div>
                     </Link>
+                    {this.props.user.userrole === 'admin'? 
                     <div className='delete-product-from-shop'
                       onClick={_ => swal({
                         title: "Are you sure?",
@@ -170,7 +173,7 @@ class Shop extends Component {
                           }
                         })}
                     >DELETE</div>
-
+                    : null }
                   </div>
                 )
               }
@@ -187,6 +190,7 @@ class Shop extends Component {
                       <div className='shop-product-image-container' > <img className='shop-product-image' src={product.imageurl} alt={product.productname} /> </div>
                       <div className='shop-product-name' >{product.productname}</div>
                     </Link>
+                    {this.props.user.userrole === 'admin'? 
                     <div className='delete-product-from-shop'
                       onClick={_ => swal({
                         title: "Are you sure?",
@@ -206,7 +210,7 @@ class Shop extends Component {
                           }
                         })}
                     >DELETE</div>
-
+                    : null }
                   </div>
                 )
               }
@@ -219,7 +223,8 @@ class Shop extends Component {
 }
 
 function mapStateToProps(state) {
-  return { products: state.products };
+  return { products: state.products,
+    user: state.user };
 }
 
 const mapDispatchToProps = { setProductsOnRedux: setProductsOnRedux }
