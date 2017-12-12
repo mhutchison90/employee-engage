@@ -54,7 +54,7 @@ class Dashboard extends Component {
 
         return (
             <div className='Dashboard-Body-Container'>
-                <div className='toggle_GivePoints' onClick={_ => this.toggle_GivePoints('give-Points-drop-down')}>Show Give Points</div>
+                <div className='toggle_GivePoints' onClick={_ => this.toggle_GivePoints('give-Points-drop-down')}>Send Points</div>
                 <div className='Dashboard-Give-Points-Container'>
                     <div className='give-Points-drop-down-box'>
                         <div id='give-Points-drop-down'>

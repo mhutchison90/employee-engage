@@ -78,7 +78,21 @@ align-items: center;
     color: #253237;
     margin-top:5px;
 }
-.give-points-send-button{}
+.give-points-send-button > button{
+    display: inline-block;
+    padding: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 9px;
+    transition: .3s;
+    border: 2px solid #253237;
+    background-color: #253237;
+    color: #ffffff;
+    width: 16vw;
+    font-size: 14px;
+    outline: none;
+}
+
 
 
 

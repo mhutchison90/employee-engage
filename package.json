@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "aspectratio": "^2.2.2",
     "axios": "^0.16.2",
     "body-parser": "^1.18.2",
     "dotenv": "^4.0.0",
@@ -13,12 +14,14 @@
     "passport": "^0.4.0",
     "passport-auth0": "^0.6.0",
     "react": "^16.0.0",
+    "react-aspect-ratio": "^1.0.17",
     "react-autocomplete": "^1.7.2",
     "react-autosuggest": "^9.3.2",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.14",
+    "react-timeago": "^3.4.3",
     "redux": "^3.7.2",
     "redux-promise-middleware": "^4.4.1",
     "socket.io": "^2.0.4",
@@ -32,5 +35,6 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "main": "./server/server.js"
+  "main": "./server/server.js",
+  "proxy": "http://localhost:3005"
 }

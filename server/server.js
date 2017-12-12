@@ -133,7 +133,8 @@ app.get('*', (req, res)=>{
 //   });
 
 // --SETUP APP TO LISTEN TO PORT--
-const PORT = 8082;
+// const PORT = 8082; // Deployment Port
+const PORT = 3005; // Development Port
 app.listen(PORT, () => console.log(`Listening on ${PORT}`))
 
 

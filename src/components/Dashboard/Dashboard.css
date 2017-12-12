@@ -26,7 +26,7 @@ flex-direction: column;
     background-color: #9DDDDB;
     /* border: solid 3px linear-gradient(#9DDDDB, #586F7C); */
     border-radius: 9px;
-    color: #253237;
+    color: #ffffff;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -35,8 +35,7 @@ flex-direction: column;
     margin: 4px 2px;
     cursor: pointer;
     width: 70%;
-    background: rgb(64, 172, 39);
-
+    background: #253237;
 }
 
 
@@ -83,17 +82,27 @@ background: linear-gradient(to top, #f5f5f5 90%, #B8DBD9); /* Standard syntax */
         justify-content: space-between;        
     }
     .dashboard-tile-receivers-profile-picture{
-        height: 100px;
+        height: 70px;
+        width: 70px;
+        /* outline: solid yellow 3px; */
+        
     }
     .dash-tile-profile-picture{
-			width: 70px;
-			height: 70px;
+            width: 100%;
+            height: 70px;
 			border: solid #F4F4F9 3px;
-			border-radius: 50%;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: 50% 10%
     }
         .dashboard-tile-receivers-name {
             margin-top:9px;
-            
+        }
+        #profileLink{
+            text-decoration: none;
+            color: inherit;
+            font-weight: bold;
+
         }
         .dashboard-tile-when-received{
             margin-top:5px;
@@ -101,9 +110,13 @@ background: linear-gradient(to top, #f5f5f5 90%, #B8DBD9); /* Standard syntax */
 .dashboard-tile-title{
     font-size: 20px;
     color: #536976;
-    display: flex;
-    justify-content: space-between;  
+    /* display: flex;
+    justify-content: space-between;   */
 } 
+.dashboard-tile-title > #profileLink {
+    font-weight: normal;
+
+}
     .dashboard-tile-body {
         /* text-align: center; */
         font-size: 30px;
@@ -111,10 +124,12 @@ background: linear-gradient(to top, #f5f5f5 90%, #B8DBD9); /* Standard syntax */
     }
         
     .dashboard-tile-message {
-        
+        padding-left: 5px;
+        padding-top: 10px;
     }
         
     .dashboard-tile-footer {
+        padding-top: 10px;
         display: flex;
         justify-content: center;
     }

@@ -48,8 +48,8 @@ class Nav extends Component {
     }
 
     render() {
-        // if (!this.props.user.id) {
-        if (1 + 1 === 3) {
+        if (!this.props.user.id) {
+        // if (1 + 1 === 3) {
             return (
                 <div className='Nav-Bar-Container'>
                     <div className='nav-bar'>

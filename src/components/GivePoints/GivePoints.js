@@ -107,7 +107,7 @@ class GivePoints extends Component {
 
                 <div className='number-of-points'>
                 <div className='give-points-field-name'>How Many Points To Send: </div>
-                    <input className='num-pts-send' name='pointsSent' placeholder='number required' type='number' value={this.state.pointsSent} onChange={(e) => {
+                    <input className='num-pts-send' name='pointsSent' type='number' value={this.state.pointsSent} onChange={(e) => {
                         this.setState({
                             pointsSent: e.target.value
                         })
@@ -135,7 +135,7 @@ class GivePoints extends Component {
                 </div>
 
                 <div className='give-points-send-button'>
-                    {this.state.sent === '' ? <button onClick={this.sendPoints}>Send Points!</button> : this.state.sent}
+                    {this.state.sent === '' ? <button onClick={this.sendPoints}>Send!</button> : this.state.sent}
                 </div>
                 </div>
 

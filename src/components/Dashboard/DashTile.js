@@ -5,7 +5,27 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { getPointHistory } from '../../ducks/reducer'; 
 import dateCreator from '../DateCreator';
-import timeago from 'timeago.js';
+import { Link } from 'react-router-dom';
+import TimeAgo from 'react-timeago';
+
+
+let currentdate = new Date();
+let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: "2-digit" , minute: "2-digit"};
+let timestamp = currentdate.toLocaleString('en-US',options)
+console.log('michaels',currentdate.toLocaleString('en-US', options))
+// (currentdate.getMonth() + 1) + "/"
+//     + currentdate.getDate() + "/"
+//     + currentdate.getFullYear() + " @ "
+//     + currentdate.getHours() + ":"
+//     + (currentdate.getMinutes() < 10 ? `0${currentdate.getMinutes()}`: currentdate.getMinutes());
+
+    // console.log('minutes',min)
+//     console.log('timestamp',
+//     (currentdate.getSeconds() < 10 ? `0${currentdate.getSeconds()}`: currentdate.getSeconds())
+// )
+console.log('michaels toLocaleString',timestamp)
+
+
 
 class DashTile extends Component {
     constructor(props) {
@@ -25,14 +45,11 @@ class DashTile extends Component {
     }
 
     render() {
-        var timeagoInstance = timeago();
-        timeagoInstance.format(Date.now(),'10/29/2017 - 3:02 am')
-        console.log('timeago',Date.now() )
+
         
         return (
             <div className="dashboard-point-tile">
-           { /* {timeago().format(1509005645-Date.now())} */}
-            {/* 10/28/2017 - 4:30 pm */}
+       
             
 
 
@@ -42,16 +59,16 @@ class DashTile extends Component {
                     return (
                         <div key={i} className='dashboard-point-history-tile'>
                             <div className='dashboard-tile-header'>
-                                <div className='dashboard-tile-receivers-profile-picture'><img className='dash-tile-profile-picture' src={points.img} alt=''/> </div>
-                                <div className='dashboard-tile-receivers-name'>{points.reciever}</div>
-                                <div className='dashboard-tile-when-received'>{points.timestamp }</div>
+                                <div className='dashboard-tile-receivers-profile-picture'><Link id='profileLink' to={`/friendprofile/${points.recieverid}`}><img className='dash-tile-profile-picture' src={points.img} alt=''/> </Link></div>
+                                <div className='dashboard-tile-receivers-name'><Link id='profileLink' to={`/friendprofile/${points.recieverid}`}>{points.reciever} </Link></div> 
+                                <div className='dashboard-tile-when-received'><TimeAgo date={points.timestamp} /></div>
                             </div>
-                            <div className='dashboard-tile-title'> Recognized by {points.sender} </div>
+                            <div className='dashboard-tile-title'> Recognized by <Link id='profileLink' to={`/friendprofile/${points.senderid}`}>{points.sender}</Link> </div>
                             <div className='dashboard-tile-message'> {points.message} </div>
 
                             <div className='dashboard-tile-footer'>
                                 {/* <div className='dashboard-tile-like-button'>Like Button</div> */}
-                                <div className='dashboard-tile-likes'>Likes: 5 </div>
+                                <div className='dashboard-tile-likes'>Likes: {Math.floor((Math.random() + 1 ) * 7)} </div>
                             </div>
                         </div>
                     )
