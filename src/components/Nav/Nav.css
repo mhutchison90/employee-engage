@@ -138,6 +138,21 @@
     right: 16px;
     font-size: 18px;
 }
+#demoButton{
+    display: inline-block;
+    background-color: #B8DBD9;    
+    cursor: pointer;
+    border-radius: 3px;
+    transition: .3s;
+    border: 2px solid #B8DBD9;
+    color: #ffffff;
+
+
+    position: absolute;
+    top: 13px;
+    left: 16px;
+    font-size: 18px;
+}
 
 @keyframes slide-down {
 	to {

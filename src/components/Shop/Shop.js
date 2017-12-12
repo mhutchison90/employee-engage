@@ -61,7 +61,7 @@ class Shop extends Component {
 
 
   render() {
-    // console.log(this.props.products)    
+    console.log(this.props.user)    
     return (
       <div className="Shop-Body-Container">
         <div className="Products-Container">

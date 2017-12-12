@@ -58,6 +58,7 @@ class Nav extends Component {
                             < li className='li-nav-link'> <NavLink className='nav-link' activeClassName='active' exact to='/'>Home</NavLink></li>
                             {/* < li className='li-nav-link'><NavLink className='nav-link' activeClassName='active' exact to='/Login'>Login</NavLink></li> */}
                             < li className='li-nav-link'><a href={process.env.REACT_APP_LOGIN}><button>Login</button></a> </li>
+                            < li className='li-nav-link-demo'><Link to={'/dashboard'}><button id='demoButton'>Go To Dashboard (demo)</button></Link> </li>
                         </ul>
                     </div>
                 </div>
