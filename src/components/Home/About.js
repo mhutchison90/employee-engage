@@ -17,6 +17,7 @@ export default class Home extends Component {
     render() {
         return (
             <div className='Home-Container'>
+            <div id='Container'>
                 <div>
                     <ul>
                         <li><NavLink className='nav-link' activeClassName='active' exact to='/'>Home</NavLink></li>
@@ -25,9 +26,16 @@ export default class Home extends Component {
                         <li><NavLink className='nav-link' activeClassName='active' exact to='/Contact'>Contact</NavLink></li>
                     </ul>
                 </div>
-                <h1>About</h1>
-                <p>
-                Bacon ipsum dolor amet pork chop beef ribs swine meatloaf, flank shank tongue turkey doner pig shoulder ham hock ribeye. Tail chicken brisket picanha. Corned beef kevin ball tip shank cupim hamburger tri-tip doner drumstick andouille spare ribs turkey ham filet mignon chuck. Bresaola pork chop burgdoggen, fatback meatloaf prosciutto turducken short ribs drumstick shank pig. Meatloaf brisket pork loin alcatra. Capicola swine picanha, drumstick frankfurter spare ribs sausage tri-tip. Turkey tongue sausage, meatloaf pork chop brisket ribeye short loin doner kevin ball tip leberkas.                </p>
+                <header>
+                <h1> Employee Engage </h1>
+               <h3> Is a software that allows employees to...</h3>
+               </header>
+               <p>Show Peer to Peer Recognition</p>
+               <p>Get Rewards, Gifts, and SWAG</p>
+               <p>User Profiles that Connect Employees</p>
+               <p>Feel Part Of The Team</p>
+               <p></p>
+               <p></p>
                 <div id="hiw-login-container"></div>
                 <div>
                 </div>
@@ -35,6 +43,7 @@ export default class Home extends Component {
 
 
 
+            </div>
             </div>
         );
     };

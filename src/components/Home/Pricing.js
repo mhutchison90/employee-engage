@@ -17,6 +17,7 @@ export default class Pricing extends Component {
     render() {
         return (
             <div className='Home-Container'>
+                <div id='Container'>
                 <div>
                     <ul>
                         <li><NavLink className='nav-link' activeClassName='active' exact to='/'>Home</NavLink></li>
@@ -25,9 +26,10 @@ export default class Pricing extends Component {
                         <li><NavLink className='nav-link' activeClassName='active' exact to='/Contact'>Contact</NavLink></li>
                     </ul>
                 </div>
-                <h1>Pricing</h1>
-                <p>
-                Bacon ipsum dolor amet pork chop beef ribs swine meatloaf, flank shank tongue turkey doner pig shoulder ham hock ribeye. Tail chicken brisket picanha. Corned beef kevin ball tip shank cupim hamburger tri-tip doner drumstick andouille spare ribs turkey ham filet mignon chuck. Bresaola pork chop burgdoggen, fatback meatloaf prosciutto turducken short ribs drumstick shank pig. Meatloaf brisket pork loin alcatra. Capicola swine picanha, drumstick frankfurter spare ribs sausage tri-tip. Turkey tongue sausage, meatloaf pork chop brisket ribeye short loin doner kevin ball tip leberkas.                </p>
+                <header>
+                   <h1> Worth every penny.</h1>
+                   </header>
+                <p>Our software solution enables enterprises to have an energetic and positive environment where people are anxious to help each other. We do this by giving every employee a little inﬂuence currency they can use to say thanks to those who are helping to build the company.</p>
                 <div id="hiw-login-container"></div>
                 <div>
                 </div>
@@ -35,6 +37,7 @@ export default class Pricing extends Component {
 
 
 
+            </div>
             </div>
         );
     };
