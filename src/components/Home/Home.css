@@ -16,11 +16,9 @@ li{
 	justify-content: flex-start;
 	align-items: center;
     align-content: stretch; 
-    border: solid yellow 3px;
     text-align: center;   
 }   
 .Home-Container > #Container {
-    border: solid rgb(20, 255, 192) 3px;   
     display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
