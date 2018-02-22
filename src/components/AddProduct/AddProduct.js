@@ -36,7 +36,7 @@ export default class AddEmployee extends Component {
         return (
             <div className='App'>
                 <h1>Add Product</h1>
-                {console.log(this.state)}
+                {/* {console.log(this.state)} */}
 
 
                 Product Name: <input name='productname' type='text' value={this.state.productname} onChange={(e) => {

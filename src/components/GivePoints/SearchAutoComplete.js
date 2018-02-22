@@ -13,7 +13,7 @@ export default class SearchAutoComplete extends Component {
     }
 
     render() {
-        console.log('id from autocomplete ', this.state.id)
+        // console.log('id from autocomplete ', this.state.id)
         var menuStyle = {
             borderRadius: '9px',
             boxShadow: '0 2px 12px rgba(0, 0, 0, 0.1)',

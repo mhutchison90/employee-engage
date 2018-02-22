@@ -73,7 +73,7 @@ class Dashboard extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log("state from Dashboard", state)
+    // console.log("state from Dashboard", state)
     return {
         user: state.user,
         pointHistory: state.pointHistory

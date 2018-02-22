@@ -48,7 +48,7 @@ export default class AllEmployees extends Component {
     // }
 
     render() {
-        console.log('all employees state: ',this.state.value)        
+        // console.log('all employees state: ',this.state.value)        
         return (
             <div className='App'>
                <h1>All Employees Search</h1>

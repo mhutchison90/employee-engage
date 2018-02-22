@@ -44,7 +44,7 @@ class Admin extends Component {
 
 
 function mapStateToProps({user}) {
-    console.log('state from Admin', user)
+    // console.log('state from Admin', user)
     return {user};
   }
   

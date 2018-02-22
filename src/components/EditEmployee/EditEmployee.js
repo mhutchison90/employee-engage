@@ -36,7 +36,7 @@ class EditEmployee extends Component {
         return (
             <div className='EditEmployee-Body-Container'>
                 <h1>Edit Employee</h1>
-                {console.log(this.state)}
+                {/* {console.log(this.state)} */}
 
                 First Name: <input name='firstname' type='text' value={this.state.firstname} onChange={(e) => {
                     this.setState({
@@ -98,7 +98,7 @@ class EditEmployee extends Component {
 };
 
 function mapStateToProps(state) {
-    console.log('user state from edit employee: ', state)
+    // console.log('user state from edit employee: ', state)
     return { 
         user: state.user
      };

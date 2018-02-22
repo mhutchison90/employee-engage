@@ -16,7 +16,7 @@ export default function() {
     date = `${month}${day}${year}`;
     time = `${hour}:${minute} ${ampm}`;
   
-    console.log( `${date} - ${time}` );
+    // console.log( `${date} - ${time}` );
     return `${date} `;
   }
   //- ${time}

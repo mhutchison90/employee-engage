@@ -8,7 +8,7 @@ module.exports = {
     db.reset_user([employeeid, userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance,profilePicture])
       .then(() => res.status(200).send(req.body))
       .catch(() => res.status(500).send());
-    console.log(req.body)
+    // console.log(req.body)
   },
   //ADD NEW USER
   createUser: (req, res, next) => {
@@ -28,7 +28,7 @@ module.exports = {
     db.edit_employee([employeeid,lastname,firstname,viewname,email,profilePicture])
       .then(() => res.status(200).send(req.body))
       .catch(() => res.status(500).send());
-    console.log(req.body)
+    // console.log(req.body)
   },
 
   allUsers: (req, res) => {
@@ -65,7 +65,7 @@ module.exports = {
     db.send_points([me, sendTo, pointsSent, message,timestamp])
       .then(() => res.status(200).send(req.body))
       .catch(() => res.status(500).send());
-    console.log(req.body)
+    // console.log(req.body)
   },
 
   getActiveUser: (req, res, next) => {

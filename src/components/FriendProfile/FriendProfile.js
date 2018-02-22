@@ -17,7 +17,7 @@ class FriendProfile extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.match.params.id)
+        // console.log(this.props.match.params.id)
         axios.get(`/api/user/${this.props.match.params.id}`).then(res => {
             this.setState({
                 friendInfo: res.data
@@ -27,7 +27,7 @@ class FriendProfile extends Component {
 
     render() {
         const user = this.state.friendInfo;
-        console.log('friend info user: ', user)
+        // console.log('friend info user: ', user)
         return (
             <div className='f-Profile-Body-Container'>
                 <div className='f-profile-header'>

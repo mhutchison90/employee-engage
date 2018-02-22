@@ -49,7 +49,7 @@ class Shop extends Component {
 
   deleteProduct(id) {
     // const { productid } = this.state
-    console.log('deleted!')
+    // console.log('deleted!')
     axios.delete('/api/product/delete/' + id)
       .then(res => {
         this.setState({
@@ -61,7 +61,7 @@ class Shop extends Component {
 
 
   render() {
-    console.log(this.props.user)    
+    // console.log(this.props.user)    
     return (
       <div className="Shop-Body-Container">
         <div className="Products-Container">

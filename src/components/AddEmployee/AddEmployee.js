@@ -65,7 +65,7 @@ export default class AddEmployee extends Component {
 
 
     render() {
-        console.log(this.state.usersList)
+        // console.log(this.state.usersList)
         return (
             <div className='App'>
                 <h1>Add Employee</h1>

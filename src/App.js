@@ -12,13 +12,13 @@ class App extends Component {
 
     axios.put('/api/reset/user')
       .then(res => {
-        console.log('DEMO USER RESET')
+        // console.log('DEMO USER RESET')
       })
 
   }
 
   render() {
-    console.log('PATH: ',this.props.location.pathname)
+    // console.log('PATH: ',this.props.location.pathname)
     return (
       <div className='App-Container'>
       {this.props.location.pathname === '/' ? 

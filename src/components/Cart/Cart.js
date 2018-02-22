@@ -79,7 +79,7 @@ class Cart extends Component {
                 <p>{item.saleprice} Points</p>
 
                 <div className="removeFroomCart" onClick={() => {
-                  console.log('removed!')
+                 //  console.log('removed!')
                   // {cartTotal -= item.saleprice}
                   this.props.removeProductFromCart(i)
                 }}>Remove from cart</div>

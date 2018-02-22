@@ -26,7 +26,7 @@ class Profile extends Component {
         this.toggle_showPurchaseHistory('Purchase-History-Container')
         this.props.getUserInfo();
         axios.get('/api/user/transactions/' + this.props.user.employeeid).then(res => {
-            console.log('MJH employeeid', this.props.user.employeeid)
+            // console.log('MJH employeeid', this.props.user.employeeid)
             this.setState({
                 transactions: res.data
             })

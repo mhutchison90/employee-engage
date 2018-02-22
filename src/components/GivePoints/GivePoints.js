@@ -122,7 +122,7 @@ class GivePoints extends Component {
                     className='send-points-textarea'
                     name='message' 
                     type='text' 
-                    maxlength='200'
+                    maxLength='200'
                     value={this.state.message} 
                     onChange={(e) => {
                        this.setState({
@@ -148,7 +148,7 @@ class GivePoints extends Component {
 };
 
 function mapStateToProps(state) {
-    console.log("state from givePoints", state)
+    // console.log("state from givePoints", state)
     return {
         employeeList: state.employeeList,
         user: state.user,

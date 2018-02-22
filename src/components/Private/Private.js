@@ -39,7 +39,7 @@ class Private extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log("state from private", state)
+    // console.log("state from private", state)
     return {
         user: state.user
     }

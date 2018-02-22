@@ -32,7 +32,7 @@ class EditProfile extends Component {
 
     componentWillMount() {
         const user = this.props.user;
-        console.log('MJH HERE: ', user.viewname)
+        // console.log('MJH HERE: ', user.viewname)
         this.setState({
             userrole: user.userrole,
             companyid: 1,
@@ -78,7 +78,7 @@ class EditProfile extends Component {
         const { from } = this.props.location.state || '/'
         const { fireRedirect } = this.state
         const user = this.props.user;
-        console.log('this.state edit profile', this.user)
+        // console.log('this.state edit profile', this.user)
         return (
             <div className='Edit-Profile-Container'>
                 <h1>Edit Profile</h1>
@@ -127,7 +127,7 @@ class EditProfile extends Component {
 };
 
 function mapStateToProps(state) {
-    console.log('user state from edit employee: ', state)
+    // console.log('user state from edit employee: ', state)
     return {
         user: state.user
     };

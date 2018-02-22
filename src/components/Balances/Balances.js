@@ -23,7 +23,7 @@ class Balances extends Component {
     }
 
     render() {
-        console.log("employeesList state", this.props.employeesList)
+        // console.log("employeesList state", this.props.employeesList)
         const employees = this.props.employeesList;
         return (
             employees.map((balances, i) => {

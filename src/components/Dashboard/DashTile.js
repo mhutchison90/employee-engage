@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 let currentdate = new Date();
 let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: "2-digit" , minute: "2-digit"};
 let timestamp = currentdate.toLocaleString('en-US',options)
-console.log('michaels',currentdate.toLocaleString('en-US', options))
+// console.log('michaels',currentdate.toLocaleString('en-US', options))
 // (currentdate.getMonth() + 1) + "/"
 //     + currentdate.getDate() + "/"
 //     + currentdate.getFullYear() + " @ "
@@ -23,7 +23,7 @@ console.log('michaels',currentdate.toLocaleString('en-US', options))
 //     console.log('timestamp',
 //     (currentdate.getSeconds() < 10 ? `0${currentdate.getSeconds()}`: currentdate.getSeconds())
 // )
-console.log('michaels toLocaleString',timestamp)
+// console.log('michaels toLocaleString',timestamp)
 
 
 
@@ -52,9 +52,7 @@ class DashTile extends Component {
        
             
 
-
-{console.log('Point hist props from dashtile:',this.props.pointHistory)
-}
+{/* {console.log('Point hist props from dashtile:',this.props.pointHistory)} */}
                 {this.props.pointHistory.map((points, i) => {
                     return (
                         <div key={i} className='dashboard-point-history-tile'>

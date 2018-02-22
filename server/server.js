@@ -53,12 +53,12 @@ passport.use(new Auth0Strategy({
             //     console.log('NOT employed')
             //     return done(null, null)
             // }
-            console.log('5current user')
+            // console.log('5current user')
             return done(null, user[0].id)
         } else {
             const user = profile._json;
             db.create_user([user.name, user.email, user.picture, user.identities[0].user_id]).then(user => {
-                console.log('6create new user')
+                // console.log('6create new user')
                 return done(null, user[0].id)
             })
         }
