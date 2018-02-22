@@ -4,5 +4,5 @@
 SELECT *
 FROM employee
 JOIN users ON employee.email=users.email
-where employeeid= $1;
+where employeeid= $1; 
 -- USE THIS LATER ONCE APP IS FURTHER ALONG

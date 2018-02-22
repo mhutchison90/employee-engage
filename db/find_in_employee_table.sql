@@ -1,3 +1,4 @@
 SELECT email 
 FROM employee
-WHERE email =$1;
+WHERE email = 'Demo@DemoEmail.com';  --hardcoded Demo user id here
+--Maybe not used?

@@ -1,13 +1,14 @@
 import axios from 'axios';
 
 const initialState = {
-    user: {id:1},
+    user: {employeeid:309},
     product: {},
     employees: [{}],
     employeesList: [{}],
     cart: [],
     products: [],
     employeeList:[],
+    usersPointHistory:[],//ACTIVE USERS HISTORY
     pointHistory:[],
     // cartTotal: ''
 }
@@ -23,6 +24,8 @@ const SET_PRODUCTS_ON_REDUX = 'SET_PRODUCTS_ON_REDUX';
 const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART';
 const REMOVE_PRODUCT_FROM_CART = 'REMOVE_PRODUCT_FROM_CART';
 const SET_LIST_OF_EMPLOYEES = 'SET_LIST_OF_EMPLOYEES';
+//ACTIVE USERS HISTORY
+const GET_USERS_POINT_HISTORY = 'GET_USERS_POINT_HISTORY';
 const GET_POINT_HISTORY = 'GET_POINT_HISTORY';
 
 
@@ -40,7 +43,7 @@ export function getListOfEmployees(employeeid) {
 }
 
 export function getUserInfo() {
-    const userData = axios.get('/auth/me').then(res => {
+    const userData = axios.get('/api/user/309').then(res => {
         return res.data
     })
     return {
@@ -48,7 +51,16 @@ export function getUserInfo() {
         payload: userData
     }
 }
-
+//ACTIVE USERS HISTORY
+export function getUsersPointHistory() {
+    const usersPointHistoryData = axios.get('/api/users/pointhistory/*').then(res => {
+        return res.data
+    })
+    return {
+        type: GET_USERS_POINT_HISTORY,
+        payload: usersPointHistoryData
+    }
+}
 export function getPointHistory() {
     const pointHistoryData = axios.get('/api/user/pointhistory/*').then(res => {
         return res.data
@@ -142,6 +154,8 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { cart: copy });
             case SET_LIST_OF_EMPLOYEES:
             return Object.assign({}, state, { employeeList: action.payload });
+            case GET_USERS_POINT_HISTORY + '_FULFILLED':
+            return Object.assign({}, state, { usersPointHistory: action.payload });//ACTIVE USERS HISTORY
             case GET_POINT_HISTORY + '_FULFILLED':
             return Object.assign({}, state, { pointHistory: action.payload });
 

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import { setOneProductOnRedux, addProductToCart } from '../../ducks/reducer';
+import { setOneProductOnRedux, addProductToCart, getUserInfo } from '../../ducks/reducer';
 import './Details.css'
 import '../Cart/Cart'
 import { Link } from 'react-router-dom'
 import swal from 'sweetalert';
+import { Redirect } from 'react-router'
 // import NotEnoughPoints from '../Alerts/NotEnoughPoints'
 
 class Details extends Component {
@@ -16,24 +17,32 @@ class Details extends Component {
             giver: '',
             productid: '',
             total: '',
-            pointbalance: ''
+            pointbalance: '',
+            newTotal: '',
+            user: {},
+            fireRedirect: false
+
         }
         this.purchaseProduct = this.purchaseProduct.bind(this)
     }
 
     componentWillMount() {
         const productID = this.props.match.params.productid;
-        // console.log(productID)
-        // this.props.match stores params
-        // the variable productid was declared in Route path in App.js
-        // the action value stored on productid is assigned in Link in Shop.js when you click
+
+        axios.get(`/api/product/${productID}`)
+            .then(product => {
+                this.setState({
+                    newTotal: product.data.saleprice,
+                })
+
+            })
+
         this.setState({
             productid: this.props.match.params.productid,
             giver: this.props.user.employeeid,
             total: this.props.product.saleprice,
             pointbalance: this.props.user.pointbalance
         })
-        console.log('this.state', this.state)
 
         axios.get(`/api/product/${productID}`)
             .then(product => {
@@ -48,17 +57,19 @@ class Details extends Component {
     }
 
     purchaseProduct() {
-        console.log('this.state', this.state)
-        // this.setState({
-        //     productid: this.props.match.params.productid,
-        //     giver: this.props.user.employeeid,
-        //     total: this.props.product.saleprice,
-        //     pointbalance: this.props.user.pointbalance
-        // })
-
-        const { productid, giver, total, pointbalance } = this.state
-        if (this.state.pointbalance > this.state.total) {
-            axios.put('/api/transaction', { productid, giver, total }).then(res => {
+        const { productid, giver, newTotal, pointbalance } = this.state
+        if (this.state.pointbalance > this.state.newTotal) {
+            axios.put('/api/transaction', { productid, giver, newTotal }).then(res => {
+                this.props.getUserInfo();
+                swal({
+                    title: "THANKS!",
+                    text: `you successfully purchased ${this.props.product.productname}. Enjoy!`,
+                    icon: "success",
+                    button: "Sweet!"
+                })
+                .then(() => {
+                    this.setState({ fireRedirect: true });
+                  });
             })
         } else {
             swal({
@@ -70,9 +81,11 @@ class Details extends Component {
     }
 
     render() {
+        const { from } = this.props.location.state || '/'
+        const { fireRedirect } = this.state
         const product = this.props.product;
         // const {saleprice, productname, productdescription} = this.props.product;
-        console.log(this.state)
+        // console.log(this.state)
         // console.log('product', product)
         return (
             <div className="Details-Body-Container">
@@ -87,6 +100,9 @@ class Details extends Component {
                     <Link className='details-go-back-to-shop' to="/shop"><div>Go back to the shop</div></Link>
 
                 </div>
+                {fireRedirect && (
+          <Redirect to={from || '/Shop'}/>
+        )}
             </div>
 
         )
@@ -97,13 +113,15 @@ function mapStateToProps(state) {
     return {
         product: state.product,
         cart: state.cart,
+        user: state.user,
         user: state.user
     };
 
 }
 const mapDispatchToProps = {
     setOneProductOnRedux: setOneProductOnRedux,
-    addProductToCart: addProductToCart
+    addProductToCart: addProductToCart,
+    getUserInfo:getUserInfo
 }
 
-export default connect(mapStateToProps, mapDispatchToProps )(Details);
+export default connect(mapStateToProps, mapDispatchToProps)(Details);

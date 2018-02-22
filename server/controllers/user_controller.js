@@ -1,4 +1,15 @@
 module.exports = {
+  // RESET DEMO USER
+  resetUser: (req, res, next) => {
+    const db = req.app.get('db');
+    // const { params } = req;
+    const { employeeid, userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance,profilePicture } = req.body;
+
+    db.reset_user([employeeid, userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance,profilePicture])
+      .then(() => res.status(200).send(req.body))
+      .catch(() => res.status(500).send());
+    console.log(req.body)
+  },
   //ADD NEW USER
   createUser: (req, res, next) => {
     const db = req.app.get('db');
@@ -12,9 +23,9 @@ module.exports = {
   editUser: (req, res, next) => {
     const db = req.app.get('db');
     // const { params } = req;
-    const { employeeid, userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance,profilePicture } = req.body;
+    const { employeeid,lastname,firstname,viewname,email,profilePicture } = req.body;
 
-    db.edit_employee([employeeid, userrole, companyid, lastname, firstname, reportsto, email, pointbalance, allowancebalance,profilePicture])
+    db.edit_employee([employeeid,lastname,firstname,viewname,email,profilePicture])
       .then(() => res.status(200).send(req.body))
       .catch(() => res.status(500).send());
     console.log(req.body)

@@ -5,8 +5,16 @@
  display: flex;
  flex-direction: column;
  align-items: center;
+ position: relative;
  
 }
+.edit-profile-container{
+	position: absolute;
+	top: 5px;
+	right: 16px;
+	font-size: 18px;
+}
+
 .profile-header{
     display: flex;
     flex-direction: column;
@@ -69,13 +77,15 @@
 		.edit-profile-button {
 			order:2;
 			text-decoration: none;
-			margin:10px;
+			/* margin:3px; */
 			display: inline-block;
-			padding: 10px;
+			padding: 6px;
 			cursor: pointer;
-			border-radius: 3px;
+			border-radius: 5px;
 			transition: .3s;
-			background: rgb(64, 172, 39);
+			background: #253237;
+			color: white;
+			font-size: 14px;
 		}
 		.edit-profile-button:hover {
 			color:  RGBA(0, 220, 255, 1.00);
@@ -140,13 +150,52 @@ animation-fill-mode: both;
 	
 }
 
+.History-Container{
+	/* background-color: tan; */
+	height: 100%;
+	max-height: 250px;
+	min-height: 90px;
+	overflow: scroll;
+	overflow-y: auto;
+    overflow-x: hidden;
+
+}
+.history-content{
+	background-color: rgba(209, 232, 230, 0.516);
+	padding-top: 5px;
+	padding-bottom: 3px;
+	/* padding-left: 5px;
+	padding-right: 5px; */
+	border-radius: 10px;
+}
 
 
 	.point-history-item {
-		outline: solid black 1px;
+		border-bottom: solid black 1px;
+		/* outline:  */
+		display: flex;
+		justify-content: space-between;
+		height: 25px;
+		font-weight: bold;
+		font-size: 20px;
+		padding-bottom: 5px;
+	}
+	.point-history-item-even {
+		/* outline: solid black 1px; */
 		display: flex;
 		justify-content: space-between;
 		height: 20px;
+		background-color: #B8DBD9;
+
+	}
+	.point-history-item-odd {
+		/* outline: solid black 1px; */
+		background-color: #D1E8E6;
+		color: black;
+		display: flex;
+		justify-content: space-between;
+		height: 20px;
+		padding: 3px;
 
 	}
 			.point-history-giver{
@@ -184,10 +233,8 @@ animation-fill-mode: both;
 	}
 
 	.toggle_PointHistory{
-		background-color: #9DDDDB;
-		/* border: solid 3px linear-gradient(#9DDDDB, #586F7C); */
 		border-radius: 9px;
-		color: #253237;
+		color: white;
 		padding: 15px 32px;
 		text-align: center;
 		text-decoration: none;
@@ -196,13 +243,18 @@ animation-fill-mode: both;
 		margin: 4px 2px;
 		cursor: pointer;
 		width: 70%;
-		background: rgb(64, 172, 39);
+		background: #253237;
 	}
+	.toggle_PointHistory:hover {
+		color:  RGBA(0, 220, 255, 1.00);
+		background-color: white;
+		border: 2px solid RGBA(0, 220, 255, 1.00);
+		/* border-radius: 9px; */
+	  }
 	.toggle_PurchaseHistory{
-		background-color: #9DDDDB;
 		/* border: solid 3px linear-gradient(#9DDDDB, #586F7C); */
 		border-radius: 9px;
-		color: #253237;
+		color: white;
 		padding: 15px 32px;
 		text-align: center;
 		text-decoration: none;
@@ -211,7 +263,13 @@ animation-fill-mode: both;
 		margin: 4px 2px;
 		cursor: pointer;
 		width: 70%;
-		background: rgb(64, 172, 39);
+		background: #253237;
 	}
+	.toggle_PurchaseHistory:hover {
+		color:  RGBA(0, 220, 255, 1.00);
+		background-color: white;
+		border: 2px solid RGBA(0, 220, 255, 1.00);
+		/* border-radius: 9px; */
+	  }
 	
 	

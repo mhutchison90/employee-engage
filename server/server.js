@@ -107,6 +107,7 @@ app.get('/api/list/users', user_controller.autoCompleteUsersList);
 app.delete('/api/user/delete/:employeeid', user_controller.deleteUser);
 app.get('/api/user/:id', user_controller.getActiveUser);
 // app.get('/api/email/auth/:id', user_controller.isUserInEmployeeTable);
+app.put('/api/reset/user', user_controller.resetUser);
 
 
 // --PRODUCT ENDPOINTS--
@@ -117,6 +118,7 @@ app.post('/api/add/product', products_controller.createProduct);
 app.get('/api/products', products_controller.allProducts);
 app.get('/api/product/:id', products_controller.singleProduct);
 app.get('/api/user/transactions/:id', products_controller.myTransactions);
+app.get('/api/users/pointhistory/:id', products_controller.usersPointHistory);
 app.get('/api/user/pointhistory/:id', products_controller.myPointHistory);
 app.delete('/api/product/delete/:productid', products_controller.deleteProduct);
 

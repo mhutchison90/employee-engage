@@ -1,3 +1,5 @@
+@import '../../GlobalStyleVariables.css';
+
 .f-Profile-Body-Container{
     height: 94vh;    
     display: flex;
@@ -14,59 +16,185 @@
     margin-top: 20px; 
 }
 
-.f-profile-user-info{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;  
-    margin-top: 20px; 
-
-    height: 160px;
-    width:450px;
-    /*margin-top: 20px; */
-    /* background: linear-gradient(to bottom right, #F4F4F9, #B8DBD9); */
-    margin: 5px;
-    border-radius: 10px;
-    /* background: linear-gradient(to bottom,#D1E8E6 90%, #B8DBD9 );  */
-    background: #D1E8E6;
-}
 .f-user-name-header{
     font-size: 30px;
     color: #253237;
     order: 1
 }
 .f-profile-image{
-    order: 2
-}
-.f-profile-user-name{
-    font-size: 20px;
-    color: #253237;
-}
-.f-profile-email{
-    font-size: 20px;
-    color: #253237;
-}
-.f-profile-employee-id{
-    font-size: 20px;
-    color: #253237;
-}
-.f-profile-allowancebalance{
-    font-size: 20px;
-    color: #253237;
-}
-.f-profile-pointbalance{
-    font-size: 20px;
-    color: #253237;
-}
-.f-profile-userrole{
-    font-size: 20px;
-    color: #253237;
+    order: 2;
+    grid-row-start:    1;
+    grid-row-end:      5;
+    grid-column-start: 1;
+    grid-column-end:  2;
+    margin: auto;
+    /* margin-top: 5px; */
 }
 .f-profile-picture{			
     width: 190px;
     height: 190px;
     border: solid #F4F4F9 5px;
-    border-radius: 50%;}
+    border-radius: 50%;
+
+}
+.f-profile-user-info-container{
+    margin-top: 10px;
+    background-color: teal;
+    height: 350px;
+    width:600px;
+    display: grid;
+    grid-template-rows:   1fr 1fr 1fr 1fr 1fr 1fr 1fr 3fr;
+    grid-template-columns: 4fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    background: #D1E8E6;
+    border-radius: 10px;
+}
+.f-profile-user-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;  
+    /* margin-top: 20px;  */
+
+    height: 350px;
+    width:600px;
+    /*margin-top: 20px; */
+    /* background: linear-gradient(to bottom right, #F4F4F9, #B8DBD9); */
+    margin: 5px;
+    border-radius: 10px;
+    /* background: linear-gradient(to bottom,#D1E8E6 90%, #B8DBD9 );  */
+    background: #D1E8E6;
+    display: none;
+}
+.f-profile-user-name{
+    font-size: var( --content-font-size );
+    color: #253237;
+    grid-row-start:    1;
+    grid-row-end:      2;
+    grid-column-start: var( --content-column-start );
+    grid-column-end: var( --content-column-end );
+    padding-left: var( --content-indent-padding );
+    margin-left: var( --content-indent-margin );
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.f-profile-email{
+    font-size: var( --content-font-size );
+    color: #253237;
+    grid-row-start:    2;
+    grid-row-end:      3;
+    grid-column-start: var( --content-column-start );
+    grid-column-end: var( --content-column-end );
+    padding-left: var( --content-indent-padding );
+    margin-left: var( --content-indent-margin );
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.f-profile-employee-id{
+    font-size: var( --content-font-size );
+    color: #253237;
+    grid-row-start:    3;
+    grid-row-end:      4;
+    grid-column-start: var( --content-column-start );
+    grid-column-end: var( --content-column-end );
+    padding-left: var( --content-indent-padding );
+    margin-left: var( --content-indent-margin );
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.f-profile-allowancebalance{
+    font-size: var( --content-font-size );
+    color: #253237;
+    grid-row-start:    4;
+    grid-row-end:      5;
+    grid-column-start: var( --content-column-start );
+    grid-column-end: var( --content-column-end );
+    padding-left: var( --content-indent-padding );
+    margin-left: var( --content-indent-margin );
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.f-profile-pointbalance{
+    font-size: var( --content-font-size );
+    color: #253237;
+    grid-row-start:    5;
+    grid-row-end:      6;
+    grid-column-start: var( --content-column-start );
+    grid-column-end: var( --content-column-end );
+    padding-left: var( --content-indent-padding );
+    margin-left: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.f-profile-userrole{
+    font-size: var( --content-font-size );
+    color: #253237;
+    grid-row-start:    6;
+    grid-row-end:      7;
+    grid-column-start: var( --content-column-start );
+    grid-column-end: var( --content-column-end );
+    padding-left: var( --content-indent-padding );
+    margin-left: var( --content-indent-margin );
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.BIO-Label{
+    grid-row-start:    7;
+    grid-row-end:      8;
+    grid-column-start: 1;
+    grid-column-end:  2;
+    margin-block-start: auto;
+    font-size: 24px;
+    margin-left: var( --content-indent-margin );
+}
+.f-profile-bio{
+    /* padding-top: 20px; */
+    /* border: solid black 1px; */
+    /* height: 100%;
+    width: 100%; */
+    grid-row-start:    8;
+    grid-row-end:      9;
+    grid-column-start: 1;
+    grid-column-end:  8;
+    margin-left: var( --content-indent-margin );
+    margin-right: 5px;
+    margin-bottom: 10px;
+    line-height: normal;
+}
+  /*        --label-indent: -15px;
+    --label-weight: bold; */
+  /* var( --label-weight ); */
+
+.f-profile-user-name::before{
+    content: 'Username: ';
+    font-weight: var( --label-weight );
+    margin-left: var( --label-indent );
+}
+.f-profile-email::before{
+    content: 'Email: ';
+    font-weight: var( --label-weight );
+    margin-left: var( --label-indent );
+}
+.f-profile-employee-id::before{
+    content: 'Employee ID: ';
+    font-weight: var( --label-weight );
+    margin-left: var( --label-indent );
+
+}
+.f-profile-allowancebalance::before{
+    content: 'Allowance Balance: ';
+    font-weight: var( --label-weight );
+    margin-left: var( --label-indent );
+}
+.f-profile-pointbalance::before{
+    content: 'Point Balance: ';
+    font-weight: var( --label-weight );
+    margin-left:  var( --label-indent );
+}
+.f-profile-userrole::before{
+    content: 'Userrole: ';
+    font-weight: var( --label-weight );
+    margin-left:  var( --label-indent );
+}
 
 /* 
 .Profile-Body-Container{

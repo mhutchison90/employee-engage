@@ -26,11 +26,12 @@ class Profile extends Component {
         this.toggle_showPurchaseHistory('Purchase-History-Container')
         this.props.getUserInfo();
         axios.get('/api/user/transactions/' + this.props.user.employeeid).then(res => {
+            console.log('MJH employeeid', this.props.user.employeeid)
             this.setState({
                 transactions: res.data
             })
         })
-        axios.get('/api/user/pointhistory/' + this.props.user.employeeid).then(res => {
+        axios.get('/api/users/pointhistory/' + this.props.user.employeeid).then(res => {
             this.setState({
                 pointHistory: res.data
             })
@@ -76,79 +77,114 @@ class Profile extends Component {
 
         return (
             <div className='Profile-Body-Container'>
-                <div className='profile-header'>
-                    <div className='user-name-header'>{user.id ? user.user_name + "'s Profile" : null}</div>
-                    <div className='profile-image'><img className='profile-picture' src={user.img} alt='' /></div>
+                <div className='edit-profile-container' >
+                    <Link className='edit-profile-button' to={'/editprofile/' + user.employeeid}>EDIT PROFILE</Link>
+                </div>
+                    <div className='profile-header'>
+                        <div className='user-name-header'>{user.id ? user.viewname + "'s Profile" : null}</div>
+                        {/* <div className='profile-image'><img className='profile-picture' src={user.img} alt='' /></div> */}
                 </div>
 
-                
-                    <div className='profile-user-info'>
-                        <div className='profile-user-name'><p>Username: {user.id ? user.user_name : null}</p></div>
-                        <div className='profile-email'><p>Email: {user.id ? user.email : null} </p></div>
-                        <div className='profile-authid'><p>Auth ID: {user.id ? user.auth_id : null} </p></div>
-                        <div className='profile-employee-id'><p>EmployeeID: {user.id ? user.employeeid : null} </p></div>
-                        <div className='profile-allowancebalance'><p>allowancebalance: {user.id ? user.allowancebalance : null} </p></div>
-                        <div className='profile-pointbalance'><p>pointbalance: {user.id ? user.pointbalance : null} </p></div>
-                        <div className='profile-userrole'><p>userrole: {user.id ? user.userrole : null} </p></div>
-                        <Link className='edit-profile-button' to={'/editprofile/' + user.employeeid}>EDIT PROFILE</Link>
-                    </div>
-               
+
+                {/* <div className='profile-user-info'>
+                    <div className='profile-user-name'><p>Username: {user.id ? user.user_name : null}</p></div>
+                    <div className='profile-email'><p>Email: {user.id ? user.email : null} </p></div>
+                    <div className='profile-authid'><p>Auth ID: {user.id ? user.auth_id : null} </p></div>
+                    <div className='profile-employee-id'><p>EmployeeID: {user.id ? user.employeeid : null} </p></div>
+                    <div className='profile-allowancebalance'><p>allowancebalance: {user.id ? user.allowancebalance : null} </p></div>
+                    <div className='profile-pointbalance'><p>pointbalance: {user.id ? user.pointbalance : null} </p></div>
+                    <div className='profile-userrole'><p>userrole: {user.id ? user.userrole : null} </p></div>
+                    <Link className='edit-profile-button' to={'/editprofile/' + user.employeeid}>EDIT PROFILE</Link>
+                </div> */}
+                <div className='f-profile-user-info-container'>
+                    <div className='f-profile-image'>{user.id ? <img className='f-profile-picture' src={user.img} alt='' /> : null}</div>
+                    <div className='f-profile-user-name'>{user.id ? user.viewname : null}</div>
+                    <div className='f-profile-email'>{user.id ? user.email : null} </div>
+                    <div className='f-profile-employee-id'>{user.id ? user.employeeid : null} </div>
+                    <div className='f-profile-allowancebalance'>{user.id ? user.allowancebalance : null} </div>
+                    <div className='f-profile-pointbalance'>{user.id ? user.pointbalance : null} </div>
+                    <div className='f-profile-userrole'>{user.id ? user.userrole : null} </div>
+                    <div className='BIO-Label'> Bio: </div>
+                    <div className='f-profile-bio'>{user.id ? user.bio : null} </div>
+                </div>
+
+
 
                 <div className="Transaction-History-Container">
 
-                    <div className='toggle_PointHistory' onClick={_ => { this.toggle_showPointHistory('Point-History-Container') }}>Show Point History</div>
+                    <div className='toggle_PointHistory' onClick={_ => { this.toggle_showPointHistory('Point-History-Container') }}>Show My Recent Recognition</div>
 
                     <div className='Point-History-Drop-Down-Container'>
                         <div id="Point-History-Container">
-                            {this.state.pointHistory.length ? null : 'No history to show at this time.'}
-                            {this.state.pointHistory.map((points, i) => {
-                                return (
-                                    <div key={i} className={`point-history-item`}>
-                                        <div className='point-history-giver'>
-                                            {points.sender}
+                            <div className='History-Container'>
+                                <div className='history-content'>
+
+                                    {this.state.pointHistory.length ?
+                                        <div className={`point-history-item`}>
+                                            <div className='point-history-giver'>
+                                                From
                                         </div>
-                                        <div className='point-history-reciever'>
-                                            {points.reciever}
+                                            <div className='point-history-reciever'>
+                                                To
                                         </div>
-                                        <div className='point-history-total'>
-                                            {points.total}
+                                            <div className='point-history-total'>
+                                                Amount
                                         </div>
-                                        {/* <div className='point-history-timestamp'>
+                                        </div> : 'No history to show at this time.'}
+
+                                    {this.state.pointHistory.map((points, i) => {
+                                        return (
+                                            <div key={i} className={i % 2 ? `point-history-item-odd` : `point-history-item-even`}>
+                                                <div className='point-history-giver'>
+                                                    {points.sender}
+                                                </div>
+                                                <div className='point-history-reciever'>
+                                                    You
+                                        </div>
+                                                <div className='point-history-total'>
+                                                    {points.total}
+                                                </div>
+                                                {/* <div className='point-history-timestamp'>
                                         {points.timestamp}
                                     </div> */}
-                                    </div>
-                                )
-                            })}
+                                            </div>
+                                        )
+                                    })}
+                                </div>
+                            </div>
                         </div>
                     </div>
 
 
-
-                    <div className='toggle_PurchaseHistory' onClick={_ => { this.toggle_showPurchaseHistory('Purchase-History-Container') }}>Show Purchase History</div>
+                    <div className='toggle_PurchaseHistory' onClick={_ => { this.toggle_showPurchaseHistory('Purchase-History-Container') }}>Show My Recent Purchases</div>
                     <div id="Purchase-History-Container">
-                        {this.state.transactions.length ? null : 'No history to show at this time.'}
-                        {this.state.transactions.map((product, i) => {
-                            // map through products here to display all
-                            return (
-                                <div key={i} className={`purchase-history-item${i}`}>
-                                    <Link to={`/details/${product.productid}`} >
-                                        <img className='purchase-history-image' src={product.imageurl} alt={product.productname} />
-                                    </Link>
-                                    <div className='purchase-history-productname'>
-                                        {product.productname}
-                                    </div>
-                                    <div className='purchase-history-productdescription'>
-                                        {product.productdescription}
-                                    </div>
-                                    <div className='purchase-history-saleprice'>
-                                        {product.saleprice}
-                                    </div>
-                                    {/* <div className='purchase-history-orderdate'>
+                        <div className='History-Container'>
+                            <div className='history-content'>
+                                {this.state.transactions.length ? null : 'No history to show at this time.'}
+                                {this.state.transactions.map((product, i) => {
+                                    // map through products here to display all
+                                    return (
+                                        <div key={i} className={`purchase-history-item${i}`}>
+                                            <Link to={`/details/${product.productid}`} >
+                                                <img className='purchase-history-image' src={product.imageurl} alt={product.productname} />
+                                            </Link>
+                                            <div className='purchase-history-productname'>
+                                                {product.productname}
+                                            </div>
+                                            <div className='purchase-history-productdescription'>
+                                                {product.productdescription}
+                                            </div>
+                                            <div className='purchase-history-saleprice'>
+                                                {product.saleprice}
+                                            </div>
+                                            {/* <div className='purchase-history-orderdate'>
                                         {product.orderdate}
                                     </div> */}
-                                </div>
-                            )
-                        })}
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

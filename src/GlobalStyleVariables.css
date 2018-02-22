@@ -1,0 +1,14 @@
+:root {
+    /* --label-indent: -25px; */
+    --label-weight: bold;
+
+
+    --content-indent-padding: 25px;
+    --content-indent-margin: 5px;
+
+    --content-column-start: 2;
+    --content-column-end: 8;
+
+    --content-font-size: 20px;
+  }
+  /* var(--theme-main-color); */

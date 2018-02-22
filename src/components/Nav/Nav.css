@@ -35,19 +35,24 @@
     justify-content: space-around; */         
 }
         .li-nav-search-bar{
+            height:100%;
             background-color: #EE6C4D;
             /* border: solid 2px #FCA418; */
-            margin-left: 20px;
+            /* margin-left: 20px; */
             padding: 3px;
-            
-            
+            border-top-right-radius: 9px;
+            border-bottom-right-radius: 9px;
         }
         .li-nav-search-button{
             text-decoration: none;
             /* background-color: #FCA418; */
             color: black;
-            
-            
+        }
+        
+        ul > li > div> input{
+            height: 16px;
+            padding:0px;
+            margin: 0px;
         }
         .li-nav-link{
             padding: 0 15px;
@@ -161,7 +166,7 @@
 .nav-logout-link{
     color: white;
     text-decoration: none;
-    margin-bottom: 9px;
+    margin-bottom: 6px;
 }
 .mobile-nav-bar{
 display:none;

@@ -3,4 +3,5 @@
 SELECT *
 FROM employee
 INNER JOIN users ON employee.email=users.email
-Where id=$1;
+Where employeeid=309; --hardcoded Demo user id here
+--Maybe not used?

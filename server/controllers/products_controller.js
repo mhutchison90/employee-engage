@@ -11,9 +11,9 @@ module.exports = {
 
     newPurchase: (req, res, next) => {
         const db = req.app.get('db');
-        const { productid,	giver,total} = req.body;
+        const { productid,	giver,newTotal} = req.body;
         
-        db.purchase_product([productid,	giver,total])
+        db.purchase_product([productid,	giver,newTotal])
         // .then(() => res.status(200).send(req.body))
         // .then(response => {console.log('response', response)})
         
@@ -47,11 +47,19 @@ module.exports = {
           .catch(() => res.status(500).send());
       },
 
-      myPointHistory: (req, res) => {
+      usersPointHistory: (req, res) => {
         const db = req.app.get('db');
         const { params } = req;
     
         db.users_point_history([params.id])
+          .then(transactions => res.status(200).send(transactions))
+          .catch(() => res.status(500).send());
+      },
+      myPointHistory: (req, res) => {
+        const db = req.app.get('db');
+        const { params } = req;
+    
+        db.point_history([params.id])
           .then(transactions => res.status(200).send(transactions))
           .catch(() => res.status(500).send());
       },

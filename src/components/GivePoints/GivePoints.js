@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import './GivePoints.css';
 import axios from 'axios';
 import SearchAutoComplete from './SearchAutoComplete';
-import { getListOfEmployees, getPointHistory } from '../../ducks/reducer'
+import { getListOfEmployees, getPointHistory, getUserInfo } from '../../ducks/reducer'
 import { connect } from 'react-redux';
 import dateCreator from '../DateCreator';
 
@@ -29,6 +29,7 @@ class GivePoints extends Component {
             sent: '',
             pointHistory: [],
             timestamp: Date.now(),
+            userInfo:{}
             
             }
         this.sendPoints = this.sendPoints.bind(this)
@@ -78,6 +79,8 @@ class GivePoints extends Component {
             })
         }).then(_ => {
             this.props.getPointHistory();
+            this.props.getUserInfo();
+
         })
     }
 
@@ -149,8 +152,9 @@ function mapStateToProps(state) {
     return {
         employeeList: state.employeeList,
         user: state.user,
-        pointHistory: state.pointHistory
+        pointHistory: state.pointHistory,
+        userInfo: state.userInfo
     }
 }
 
-export default connect(mapStateToProps, { getListOfEmployees, getPointHistory })(GivePoints);
+export default connect(mapStateToProps, { getListOfEmployees, getPointHistory, getUserInfo })(GivePoints);

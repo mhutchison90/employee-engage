@@ -55,10 +55,10 @@ class Nav extends Component {
                     <div className='nav-bar'>
                         <ul className='nav-ul-links'>
                             {/* --NOT LOGGED IN NAV-- */}
-                            < li className='li-nav-link'> <NavLink className='nav-link' activeClassName='active' exact to='/'>Home</NavLink></li>
+                            < li className='li-nav-link'> <NavLink className='nav-link' activeClassName='active' exact to='/'>Welcome To Employee Engage</NavLink></li>
                             {/* < li className='li-nav-link'><NavLink className='nav-link' activeClassName='active' exact to='/Login'>Login</NavLink></li> */}
-                            < li className='li-nav-link'><a href={process.env.REACT_APP_LOGIN}><button>Login</button></a> </li>
-                            < li className='li-nav-link-demo'><Link to={'/dashboard'}><button id='demoButton'>Go To Dashboard (demo)</button></Link> </li>
+                            {/* < li className='li-nav-link'><a href={process.env.REACT_APP_LOGIN}><button>Login</button></a> </li>
+                            < li className='li-nav-link-demo'><Link to={'/dashboard'}><button id='demoButton'>Go To Dashboard (demo)</button></Link> </li> */}
                         </ul>
                     </div>
                 </div>
@@ -108,11 +108,7 @@ class Nav extends Component {
                     </div>
                     <div className="dropdown">
                         <div className="dropbtn"><img className='nav-bar-notification-svg' src={notificationIcon} alt='' /></div>
-                        <div className='dropdown-content' >
-                            <div className='nav-notification-item'>Rob Aschliman just sent you some points!</div>
-                            <div className='nav-notification-item'>Thank you for purchasing a Diet Mtn Dew</div>
-                            <div className='nav-notification-item'>Emily Hutchison just sent you some points!</div>
-                        </div>
+                        
                     </div>
                 </div>
             )

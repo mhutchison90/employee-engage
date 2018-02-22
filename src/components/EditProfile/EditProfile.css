@@ -1,3 +1,5 @@
+@import '../../GlobalStyleVariables.css';
+
 .Edit-Profile-Container{
     height: 94vh;
     height: 94vh;
@@ -5,4 +7,180 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    }   
+}   
+.update-user-button{
+    order:2;
+    text-decoration: none;
+    /* margin:3px; */
+    display: inline-block;
+    padding: 6px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: .3s;
+    background: #253237;
+    color: white;
+    font-size: 14px;
+    margin: 4px 2px;
+}
+.update-user-button:hover {
+    color:  RGBA(0, 220, 255, 1.00);
+    background-color: white;
+    border: 2px solid RGBA(0, 220, 255, 1.00);
+}
+.edit-info-box{
+    margin-top: 10px;
+    background-color: teal;
+    height: 350px;
+    width:600px;
+    display: grid;
+    grid-template-rows:   1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 3fr;
+    grid-template-columns: 4fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    background: #D1E8E6;
+    border-radius: 10px;
+}
+.edit-info-box > .f-profile-image{
+    order: 2;
+    grid-row-start:    1;
+    grid-row-end:      9;
+    grid-column-start: 1;
+    grid-column-end:  2;
+    margin: auto;
+    /* margin-top: 5px; */
+}
+input{
+    margin-top: 5px;
+    outline:none;
+    font-size: 11px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+.edit-profile-image{
+    font-size: 12px;
+    color: #253237;
+    grid-row-start:    8;
+    grid-row-end:      9;
+    grid-column-start: var( --content-column-start );
+    grid-column-end: var( --content-column-end );
+    padding-left: var( --content-indent-padding );
+    margin-left: var( --content-indent-margin );
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.edit-profile-image > input{
+    width: 253px;
+}
+.edit-profile-image::before{
+    content: 'Profile Image: ';
+    font-size: var( --content-font-size );
+    font-weight: var( --label-weight );
+    margin-left:  var( --label-indent );
+}
+.edit-info-box > .f-profile-user-name{
+    font-size: var( --content-font-size );
+    color: #253237;
+    grid-row-start:    1;
+    grid-row-end:      3;
+    grid-column-start: 2;
+    grid-column-end: 8;
+    padding-left: var( --content-indent-padding );
+    margin-left: var( --content-indent-margin );
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.edit-info-box > .f-profile-email{
+    font-size: var( --content-font-size );
+    color: #253237;
+    grid-row-start:    3;
+    grid-row-end:      4;
+    grid-column-start: 2;
+    grid-column-end: 8;
+    padding-left: var( --content-indent-padding );
+    margin-left: var( --content-indent-margin );
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.edit-info-box > .f-profile-employee-id{
+    font-size: var( --content-font-size );
+    color: #253237;
+    grid-row-start:    4;
+    grid-row-end:      5;
+    grid-column-start: 2;
+    grid-column-end: 8;
+    padding-left: var( --content-indent-padding );
+    margin-left: var( --content-indent-margin );
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.edit-info-box > .f-profile-allowancebalance{
+    font-size: var( --content-font-size );
+    color: #253237;
+    grid-row-start:    5;
+    grid-row-end:      6;
+    grid-column-start: 2;
+    grid-column-end: 8;
+    padding-left: var( --content-indent-padding );
+    margin-left: var( --content-indent-margin );
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.edit-info-box > .f-profile-pointbalance{
+    font-size: var( --content-font-size );
+    color: #253237;
+    grid-row-start:    6;
+    grid-row-end:      7;
+    grid-column-start: 2;
+    grid-column-end: 8;
+    padding-left: var( --content-indent-padding );
+    margin-left: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.edit-info-box > .f-profile-userrole{
+    font-size: var( --content-font-size );
+    color: #253237;
+    grid-row-start:    7;
+    grid-row-end:      8;
+    grid-column-start: 2;
+    grid-column-end: 8;
+    padding-left: var( --content-indent-padding );
+    margin-left: var( --content-indent-margin );
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.edit-info-box > .BIO-Label{
+    grid-row-start:    9;
+    grid-row-end:      10;
+    grid-column-start: 1;
+    grid-column-end:  2;
+    margin-block-start: auto;
+    font-size: 24px;
+}
+.edit-info-box > .f-profile-bio{
+        /* padding-top: 20px; */
+    /* border: solid black 1px; */
+    /* height: 100%;
+    width: 100%; */
+    grid-row-start:    10;
+    grid-row-end:      11;
+    grid-column-start: 1;
+    grid-column-end:  8;
+    margin-left: var( --content-indent-margin );
+    margin-right: 5px;
+    margin-bottom: 10px;
+    line-height: normal;
+}
+.edit-profile-email{
+    
+}
+.edit-profile-pointbalance{
+    
+}
+.edit-profile-allowancebalance{
+    
+}
+.edit-profile-reportsto{
+    
+}
+.edit-profile-userrole{
+    
+}

@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { getPointHistory } from '../../ducks/reducer'; 
 import dateCreator from '../DateCreator';
 import { Link } from 'react-router-dom';
-import TimeAgo from 'react-timeago';
+// import TimeAgo from 'react-timeago';
 
 
 let currentdate = new Date();
@@ -61,7 +61,7 @@ class DashTile extends Component {
                             <div className='dashboard-tile-header'>
                                 <div className='dashboard-tile-receivers-profile-picture'><Link id='profileLink' to={`/friendprofile/${points.recieverid}`}><img className='dash-tile-profile-picture' src={points.img} alt=''/> </Link></div>
                                 <div className='dashboard-tile-receivers-name'><Link id='profileLink' to={`/friendprofile/${points.recieverid}`}>{points.reciever} </Link></div> 
-                                <div className='dashboard-tile-when-received'><TimeAgo date={points.timestamp} /></div>
+                                {/* <div className='dashboard-tile-when-received'><TimeAgo date={points.timestamp} /></div> */}
                             </div>
                             <div className='dashboard-tile-title'> Recognized by <Link id='profileLink' to={`/friendprofile/${points.senderid}`}>{points.sender}</Link> </div>
                             <div className='dashboard-tile-message'> {points.message} </div>
